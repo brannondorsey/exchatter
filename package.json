@@ -12,12 +12,7 @@
     "url": "http://github.com/brannondorsey/exchatter/issues",
     "email": "brannon@brannondorsey.com"
   },
-  "license": {
-    "url": "https://raw.github.com/brannondorsey/exchatter/master/license",
-    "type": "MIT"
-  },
   "author": "Brannon Dorsey <brannon@brannondorsey.com> (http://brannondorsey.com)",
-  "main": "src/cosine.js",
   "directories": {
     "lib": "src"
   },
@@ -25,16 +20,14 @@
     "type": "git",
     "url": "git://github.com/brannondorsey/exchatter.git"
   },
-  "scripts": {
-    "test": "make test test-coveralls"
-  },
-  "devDependencies": {
-    "mocha-lcov-reporter": "0.0.x",
-    "jscoverage": "0.3.x",
-    "coveralls": "2.6.x",
-    "mocha": "1.16.x"
+  "dependencies" : {
+    "cosine": "0.0.1"
   },
   "engines": {
-    "node": ">=0.8"
+    "node": ">=v0.10.0"
+  },
+  "license": {
+    "url": "https://raw.github.com/brannondorsey/exchatter/master/license",
+    "type": "MIT"
   }
 }
