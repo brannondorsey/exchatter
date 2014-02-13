@@ -1,0 +1,40 @@
+{
+  "name": "exChatter",
+  "version": "0.0.1",
+  "description": "A Node js framework for creating personalized chatbots using a corpus of SMS and Facebook style chats",
+  "keywords": [
+    "chatbot",
+    "artificial intelligence",
+    "ai"
+  ],
+  "homepage": "https://github.com/brannondorsey/exchatter",
+  "bugs": {
+    "url": "http://github.com/brannondorsey/exchatter/issues",
+    "email": "brannon@brannondorsey.com"
+  },
+  "license": {
+    "url": "https://raw.github.com/brannondorsey/exchatter/master/license",
+    "type": "MIT"
+  },
+  "author": "Brannon Dorsey <brannon@brannondorsey.com> (http://brannondorsey.com)",
+  "main": "src/cosine.js",
+  "directories": {
+    "lib": "src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/brannondorsey/exchatter.git"
+  },
+  "scripts": {
+    "test": "make test test-coveralls"
+  },
+  "devDependencies": {
+    "mocha-lcov-reporter": "0.0.x",
+    "jscoverage": "0.3.x",
+    "coveralls": "2.6.x",
+    "mocha": "1.16.x"
+  },
+  "engines": {
+    "node": ">=0.8"
+  }
+}
