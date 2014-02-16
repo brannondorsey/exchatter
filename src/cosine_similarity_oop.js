@@ -32,12 +32,12 @@ if (typeof args.message !== 'undefined') {
 			},
 			preference: [
 				{
-					from: "8049215907",
-					modifier: .7
+					to: "8049215907",
+					modifier: -.1
 				},
 				{
-					to: "Me",
-					modifier: -.1
+					from: "Me",
+					modifier: .1
 				}
 			],
 			limit: 5,

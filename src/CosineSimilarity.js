@@ -17,7 +17,8 @@ CosineSimilarity.prototype.findSimilar = function(query, options){
 
 		if (typeof options.onlyScore === 'object'){
 			self._filter(message, options.onlyScore, function(optionValue, propertyName){
-				if(message[propertyName] == optionValue) matchFound = true;
+				var pattern = new RegExp(optionValue, 'i');
+				if(pattern.test(message[propertyName])) matchFound = true;
 			});
 		}
 		
@@ -27,8 +28,9 @@ CosineSimilarity.prototype.findSimilar = function(query, options){
 			passesOptions){
 
 			self._filter(message, options.dontScore, function(optionValue, propertyName){
+				var pattern = new RegExp(optionValue, 'i');
 				// this message should be neglected (given a score of 0)
-				if(message[propertyName] == optionValue) passesOptions = false; 
+				if(pattern.test(message[propertyName])) passesOptions = false;
 			});
 		}
 
@@ -40,17 +42,16 @@ CosineSimilarity.prototype.findSimilar = function(query, options){
 			options.preference.forEach(function(preference){
 				
 				self._filter(message, preference, function(optionValue, propertyName){
+					
+					var pattern = new RegExp(optionValue, 'i');
+
 					if(propertyName != 'modifier' &&
-					   message[propertyName] == optionValue){
+					   pattern.test(message[propertyName])){
 						message.score += parseFloat(preference.modifier);
-						// console.log(message.score);
-						// console.log(preference.modifier);
-						// console.log();
 					}
 				});
 			});
 		}
-
 	});
 
 	//sort corpus by score, highest first
