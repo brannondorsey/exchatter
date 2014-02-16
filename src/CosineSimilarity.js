@@ -15,18 +15,18 @@ CosineSimilarity.prototype.findSimilar = function(query, options){
 
 		var matchFound = false;
 
-		if (typeof options.includeOnly === 'object'){
-			self._filter(message, options.includeOnly, function(optionValue, propertyName){
+		if (typeof options.onlyScore === 'object'){
+			self._filter(message, options.onlyScore, function(optionValue, propertyName){
 				if(message[propertyName] == optionValue) matchFound = true;
 			});
 		}
 		
 		if (!matchFound) passesOptions = false;
 
-		if (typeof options.includeOnly === 'object' && 
+		if (typeof options.dontScore === 'object' && 
 			passesOptions){
 
-			self._filter(message, options.ignore, function(optionValue, propertyName){
+			self._filter(message, options.dontScore, function(optionValue, propertyName){
 				// this message should be neglected (given a score of 0)
 				if(message[propertyName] == optionValue) passesOptions = false; 
 			});
@@ -35,6 +35,22 @@ CosineSimilarity.prototype.findSimilar = function(query, options){
 		//calculate similarity score
 		var score = (passesOptions) ? _cosine(query.split(' '), message.text.split(' ')) : 0;
 		message.score = score;
+
+		if (options.preference instanceof Array) {
+			options.preference.forEach(function(preference){
+				
+				self._filter(message, preference, function(optionValue, propertyName){
+					if(propertyName != 'modifier' &&
+					   message[propertyName] == optionValue){
+						message.score += parseFloat(preference.modifier);
+						// console.log(message.score);
+						// console.log(preference.modifier);
+						// console.log();
+					}
+				});
+			});
+		}
+
 	});
 
 	//sort corpus by score, highest first

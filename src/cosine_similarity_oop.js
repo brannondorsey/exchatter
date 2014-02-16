@@ -24,24 +24,24 @@ if (typeof args.message !== 'undefined') {
 	
 		var cosignSimilarity = new CosineSimilarity(corpus);
 		var scoredCorpus = cosignSimilarity.findSimilar(input, {
-			includeOnly: {
+			onlyScore: {
 				from: ["8049215907", "Me"]
 			},
-			ignore: {
-				from: "Me"
+			dontScore: {
+				
 			},
 			preference: [
 				{
-					from: "Me",
-					modifier: .05
+					from: "8049215907",
+					modifier: .7
 				},
 				{
-					to: "8046789909",
+					to: "Me",
 					modifier: -.1
 				}
 			],
-			limit: 5
-			// minScore: .51
+			limit: 5,
+			minScore: .33
 		});
 		
 		for(var i = 0; i < scoredCorpus.length; i++){
