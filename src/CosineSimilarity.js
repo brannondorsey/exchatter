@@ -4,65 +4,38 @@ var CosineSimilarity = function(corpus){
 	this._corpus = corpus;
 }
 
-
-/*
-	minScore: 68,
-	limit: 20,
-
-
- */
 CosineSimilarity.prototype.findSimilar = function(query, options){
 
 	var self = this;
-	//loop through
+
+	//loop through messages
 	this._corpus.forEach(function(message, i){
 
 		var passesOptions = true;
 
 		var matchFound = false;
 
-		self._filter(message, options.include, function(optionValue, propertyName){
-			if(message[propertyName] == optionValue) matchFound = true;
-		});
+		if (typeof options.includeOnly === 'object'){
+			self._filter(message, options.includeOnly, function(optionValue, propertyName){
+				if(message[propertyName] == optionValue) matchFound = true;
+			});
+		}
 		
 		if (!matchFound) passesOptions = false;
 
-		if (passesOptions){
-			self._filter(message, options.neglect, function(optionValue, propertyName){
+		if (typeof options.includeOnly === 'object' && 
+			passesOptions){
+
+			self._filter(message, options.ignore, function(optionValue, propertyName){
 				// this message should be neglected (given a score of 0)
 				if(message[propertyName] == optionValue) passesOptions = false; 
 			});
 		}
-		
-
-		// if (typeof options.include == 'object'){
-
-		// 	//for each property that was included in "include"
-		// 	for(var propertyName in options.include){
-		
-		// 		//if correct var type (array) was passed into option's "include"
-		// 		if(options.include[propertyName] instanceof Array){
-				
-		// 			var matchFound = false;
-
-		// 			options.include[propertyName].forEach(function(requirement){
-		// 				if(message[propertyName] == requirement) matchFound = true;
-		// 			});
-					
-		// 			if (!matchFound) passesOptions = false;
-
-		// 		} else {
-		// 			if(message[propertyName] !== options.include[propertyName]) passesOptions = false;
-		// 		}
-		// 	}
-		// }
 
 		//calculate similarity score
 		var score = (passesOptions) ? _cosine(query.split(' '), message.text.split(' ')) : 0;
 		message.score = score;
 	});
-
-
 
 	//sort corpus by score, highest first
 	var scoredCorpus = this._corpus.sort(function(a, b){
@@ -73,11 +46,34 @@ CosineSimilarity.prototype.findSimilar = function(query, options){
 		return 0;
 	});
 
+	if (typeof options.minScore !== 'undefined') {
+
+		var minScore = parseFloat(options.minScore);
+		var minScoreIndex;
+
+		// console.log('minScore is ' + minScore);
+		for (var i = 0; i < scoredCorpus.length; i++) {
+		
+			if (scoredCorpus[i].score >= minScore) {
+				// console.log("this score was " + scoredCorpus[i].score + ' and the index was ' + i);
+				minScoreIndex = i;
+			} else break;
+		}
+		// console.log(minScoreIndex);
+		if (typeof minScoreIndex !== 'undefined') {
+			var minScored = scoredCorpus.slice(0, minScoreIndex);
+		} else return []; //return an empty array
+		
+	}
+
 	var returnVal; //use returnVal to protect corpus from manipulation
 
 	//limit number of elements if limit option was included
-	if (typeof options.limit !== 'undefined') returnVal = scoredCorpus.slice(0, parseInt(options.limit));
-	else returnVal = scoredCorpus;
+	if (typeof options.limit !== 'undefined'){
+		var temp = (typeof minScored !== 'undefined') ? minScored : scoredCorpus;
+		returnVal = temp.slice(0, parseInt(options.limit));
+	} 
+	else returnVal = (typeof minScored !== 'undefined') ? minScored : scoredCorpus;
 
 	return returnVal;
 }

@@ -24,22 +24,35 @@ if (typeof args.message !== 'undefined') {
 	
 		var cosignSimilarity = new CosineSimilarity(corpus);
 		var scoredCorpus = cosignSimilarity.findSimilar(input, {
-			include: {
+			includeOnly: {
 				from: ["8049215907", "Me"]
 			},
-			neglect: {
+			ignore: {
 				from: "Me"
 			},
-			limit: 100
+			preference: [
+				{
+					from: "Me",
+					modifier: .05
+				},
+				{
+					to: "8046789909",
+					modifier: -.1
+				}
+			],
+			limit: 5
+			// minScore: .51
 		});
-		console.log(scoredCorpus.length);
-		var numbPrint = 5;
-		for(var i = 0; i < numbPrint; i++){
-			console.log(scoredCorpus[i].text  + ' | from: ' + scoredCorpus[i].from + ' | score: ' + scoredCorpus[i].score);
+		
+		for(var i = 0; i < scoredCorpus.length; i++){
+			console.log('score: ' + scoredCorpus[i].score);
+			console.log('from: ' + scoredCorpus[i].from);
+			console.log('message: ' + scoredCorpus[i].text);
+			console.log();
 		}
 		
-		//console.log(scoredCorpus[0].text + ' | score: ' + scoredCorpus[0].score);
 	});
+
 } else {
 
 	console.log('Please include a --message or -m value');
