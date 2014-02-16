@@ -21,7 +21,8 @@
     "url": "git://github.com/brannondorsey/exchatter.git"
   },
   "dependencies" : {
-    "cosine": "0.0.1"
+    "cosine": "0.0.1",
+    "argv": "0.0.2"
   },
   "engines": {
     "node": ">=v0.10.0"

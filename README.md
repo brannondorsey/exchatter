@@ -128,6 +128,20 @@ __5.__ Calculate a similarity score (scalar) for each element in `m` (vector) in
 #Class Outlines
 
 ```
+class CosineSimilarity(corpus)
+
+	properties:
+	
+	methods:
+	
+		query({
+		
+		
+		});
+
+```
+
+```
 class Ex(phoneNumber, LoversPhoneNumber)
 
 	properties:
