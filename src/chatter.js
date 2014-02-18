@@ -7,18 +7,20 @@ var rl = readline.createInterface({
   output: process.stdout
 });
 
-var cosineSimilarity,
-corpus,
-scoredCorpus;
+var cosineSimilarity, corpus, scoredCorpus;
 
 fs.readFile('data/all_combined.json', function(err, data){
 
 	if (err) throw err;
-	corpus = JSON.parse(data);
 
+	corpus = JSON.parse(data);
 	cosineSimilarity = new CosineSimilarity(corpus);
+
+	//say hi!
 	respond("Hi there!\n");
 });
+
+//------------------------------------------------------------------
 
 function respond(response) {
 
@@ -26,6 +28,9 @@ function respond(response) {
 	 	
 	 	// get most similar texts
 	  	scoredCorpus = cosineSimilarity.findSimilar(input, {
+	  		scoreOnly: [{
+	  			to: "Me"
+	  		}],
 			limit: 5,
 			minScore: .65,
 		});
@@ -54,7 +59,6 @@ function respond(response) {
 		  			break;
 		  		}
 		  	}
-
 	  	}
 
 		respond(prompt + '\n');

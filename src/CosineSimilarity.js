@@ -11,32 +11,55 @@ CosineSimilarity.prototype.findSimilar = function(query, options){
 	//loop through messages
 	this._corpus.forEach(function(message, i){
 
-		var passesOptions = true;
+		var passesAllFilterSets = true;
 
-		var matchFound;
+		// var matchFound;
 
 		if (typeof options.onlyScore === 'object'){
-			matchFound = false;
-			self._filter(message, options.onlyScore, function(optionValue, propertyName){
-				var pattern = new RegExp(optionValue, 'i');
-				if(pattern.test(message[propertyName])) matchFound = true;
-			});
+			
+			// matchFound = false;
+			var matchesFilters = [];
+
+			//for all onlyScore filter objects...
+			for (var i = 0; i < options.onlyScore.length; i++) {
+				
+				var matches = [];
+				var filter = options.onlyScore[i];
+				var propertyValueIsArray;
+				self._filter(message, filter, function(optionValue, propertyName, isArray){
+					
+					propertyValueIsArray = isArray;
+					var pattern = new RegExp(optionValue, 'i');
+					if (pattern.test(message[propertyName])) {
+						matches.push(true);
+					} else matches.push(false);
+				});
+				
+				//if message failed at least one requirement of the instruction
+				var passes = (matches.indexOf(false) == -1 || 
+					          propertyValueIsArray && matches.indexOf(true) != -1) ? true : false;
+				
+				matchesFilters.push(passes);
+			}
+
+			// if message passes no onlyScore instruction objects
+			if (matchesFilters.indexOf(true) == -1) passesAllFilterSets = false; //matchFound = false;
 		}
 		
-		if (matchFound === false) passesOptions = false;
+		// if (matchFound === false) passesAllInstructionSets = false;
 
 		if (typeof options.dontScore === 'object' && 
-			passesOptions){
+			passesAllFilterSets){
 			
 			self._filter(message, options.dontScore, function(optionValue, propertyName){
 				var pattern = new RegExp(optionValue, 'i');
 				// this message should be neglected (given a score of 0)
-				if(pattern.test(message[propertyName])) passesOptions = false;
+				if(pattern.test(message[propertyName])) passesAllFilterSets = false;
 			});
 		}
 
 		//calculate similarity score
-		var score = (passesOptions) ? _cosine(query.split(' '), message.text.split(' ')) : 0;
+		var score = (passesAllFilterSets) ? _cosine(query.split(' '), message.text.split(' ')) : 0;
 		message.score = score;
 
 		if (options.preference instanceof Array) {
@@ -104,23 +127,26 @@ CosineSimilarity.prototype.getCorpus = function(){
 	return this._corpus;
 }
 
-//uses applies query parameters passed using options
+//runs fn on each obj's property
 CosineSimilarity.prototype._filter = function(message, obj, fn){
 	
 	if (typeof obj == 'object'){
 
 		//for each property that was included in "include"
 		for(var propertyName in obj){
-	
+			
+			var isArray;
+
 			//if correct var type (array) was passed into option's "include"
 			if(obj[propertyName] instanceof Array){
-
+				isArray = true;
 				obj[propertyName].forEach(function(requirement){
-					fn(requirement, propertyName);
+					fn(requirement, propertyName, isArray);
 				});
 
 			} else {
-				fn(obj[propertyName], propertyName);
+				isArray = false;
+				fn(obj[propertyName], propertyName, isArray);
 			}
 		}
 	} 
