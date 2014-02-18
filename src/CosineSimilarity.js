@@ -1,7 +1,7 @@
 var _cosine = require('cosine');
 
 var CosineSimilarity = function(corpus){
-	this._corpus = corpus;
+	this._corpus = corpus.slice(); //make a copy
 }
 
 CosineSimilarity.prototype.findSimilar = function(query, options){
@@ -13,20 +13,21 @@ CosineSimilarity.prototype.findSimilar = function(query, options){
 
 		var passesOptions = true;
 
-		var matchFound = false;
+		var matchFound;
 
 		if (typeof options.onlyScore === 'object'){
+			matchFound = false;
 			self._filter(message, options.onlyScore, function(optionValue, propertyName){
 				var pattern = new RegExp(optionValue, 'i');
 				if(pattern.test(message[propertyName])) matchFound = true;
 			});
 		}
 		
-		if (!matchFound) passesOptions = false;
+		if (matchFound === false) passesOptions = false;
 
 		if (typeof options.dontScore === 'object' && 
 			passesOptions){
-
+			
 			self._filter(message, options.dontScore, function(optionValue, propertyName){
 				var pattern = new RegExp(optionValue, 'i');
 				// this message should be neglected (given a score of 0)
@@ -55,7 +56,7 @@ CosineSimilarity.prototype.findSimilar = function(query, options){
 	});
 
 	//sort corpus by score, highest first
-	var scoredCorpus = this._corpus.sort(function(a, b){
+	var scoredCorpus = this._corpus.slice().sort(function(a, b){
 		if (a.score < b.score)
 		     return 1;
 		if (a.score > b.score)
@@ -95,7 +96,7 @@ CosineSimilarity.prototype.findSimilar = function(query, options){
 	return returnVal;
 }
 
-CosineSimilarity.prototype.updateCorpus = function(corpus){
+CosineSimilarity.prototype.replaceCorpus = function(corpus){
 	this._corpus = corpus;
 }
 
