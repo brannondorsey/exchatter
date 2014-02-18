@@ -24,19 +24,19 @@ if (typeof args.message !== 'undefined') {
 	
 		var cosignSimilarity = new CosineSimilarity(corpus);
 		var scoredCorpus = cosignSimilarity.findSimilar(input, {
-			onlyScore: [{
-				from: "^804",
-				date: "^2012-03-20",
-				to: "Me"
-			},
-			{
-				from: "Me",
-				date: "^2012-03-20",
-				to: "^804"
-			}],
-			// dontScore: {
-				
-			// },
+			onlyScore: [
+				{
+					from: "^804",
+					date: "^2012-03-20",
+					to: "Me"
+				},
+				{
+					from: "Me",
+					date: "^2012-03-20",
+					to: "^804"
+				}
+			],
+			
 			// preference: [
 			// 	{
 			// 		to: "8049215907",

@@ -11,52 +11,63 @@ CosineSimilarity.prototype.findSimilar = function(query, options){
 	//loop through messages
 	this._corpus.forEach(function(message, i){
 
+		//boolean holding wether this message passes ALL filters
 		var passesAllFilterSets = true;
 
-		// var matchFound;
-
-		if (typeof options.onlyScore === 'object'){
-			
-			// matchFound = false;
-			var matchesFilters = [];
-
-			//for all onlyScore filter objects...
-			for (var i = 0; i < options.onlyScore.length; i++) {
-				
-				var matches = [];
-				var filter = options.onlyScore[i];
-				var propertyValueIsArray;
-				self._filter(message, filter, function(optionValue, propertyName, isArray){
-					
-					propertyValueIsArray = isArray;
-					var pattern = new RegExp(optionValue, 'i');
-					if (pattern.test(message[propertyName])) {
-						matches.push(true);
-					} else matches.push(false);
-				});
-				
-				//if message failed at least one requirement of the instruction
-				var passes = (matches.indexOf(false) == -1 || 
-					          propertyValueIsArray && matches.indexOf(true) != -1) ? true : false;
-				
-				matchesFilters.push(passes);
-			}
-
-			// if message passes no onlyScore instruction objects
-			if (matchesFilters.indexOf(true) == -1) passesAllFilterSets = false; //matchFound = false;
+		if (options.onlyScore instanceof Array){
+			passesAllFilterSets = self._passesFilter(options.onlyScore, message, true);
 		}
-		
-		// if (matchFound === false) passesAllInstructionSets = false;
 
-		if (typeof options.dontScore === 'object' && 
+		if (options.dontScore instanceof Array &&
 			passesAllFilterSets){
-			
-			self._filter(message, options.dontScore, function(optionValue, propertyName){
-				var pattern = new RegExp(optionValue, 'i');
-				// this message should be neglected (given a score of 0)
-				if(pattern.test(message[propertyName])) passesAllFilterSets = false;
-			});
+			passesAllFilterSets = self._passesFilter(options.dontScore, message, false, true);
+			if (passesAllFilterSets) {
+				//console.log(passesAllFilterSets);
+			}
 		}
+
+		// //check message agains all onlyScore filters
+		// if (typeof options.onlyScore === 'object'){
+			
+		// 	// boolean array that holds which onlyScore objects 
+		// 	// message passes (represented as `true`)
+		// 	var matchesFilters = [];
+
+		// 	//for all onlyScore filter objects...
+		// 	for (var i = 0; i < options.onlyScore.length; i++) {
+				
+		// 		var matches = [];
+		// 		var filterObj = options.onlyScore[i];
+		// 		var propertyValueIsArray; //boolean
+
+		// 		self._forEachFilterObjProp(message, filterObj, function(value, propertyName, isArray){
+					
+		// 			propertyValueIsArray = isArray;
+		// 			var pattern = new RegExp(value, 'i');
+		// 			var isMatch = (pattern.test(message[propertyName])) ? true : false;
+		// 			matches.push(isMatch);
+
+		// 		});
+				
+		// 		var passes = (matches.indexOf(false) == -1 || 
+		// 			          propertyValueIsArray && matches.indexOf(true) != -1) ? true : false;
+
+		// 		matchesFilters.push(passes);
+		// 	}
+
+		// 	// if message passes no onlyScore instruction objects
+		// 	if (matchesFilters.indexOf(true) == -1) passesAllFilterSets = false;
+		// }
+		
+		// if (typeof options.dontScore === 'object' && 
+		// 	passesAllFilterSets){
+			
+		// 	self._filter(message, options.dontScore, function(optionValue, propertyName){
+		// 		var pattern = new RegExp(optionValue, 'i');
+		// 		// this message should be neglected (given a score of 0)
+		// 		if(pattern.test(message[propertyName])) passesAllFilterSets = false;
+		// 	});
+		// }
 
 		//calculate similarity score
 		var score = (passesAllFilterSets) ? _cosine(query.split(' '), message.text.split(' ')) : 0;
@@ -76,6 +87,7 @@ CosineSimilarity.prototype.findSimilar = function(query, options){
 				});
 			});
 		}
+
 	});
 
 	//sort corpus by score, highest first
@@ -102,7 +114,8 @@ CosineSimilarity.prototype.findSimilar = function(query, options){
 		}
 		// console.log(minScoreIndex);
 		if (typeof minScoreIndex !== 'undefined') {
-			var minScored = scoredCorpus.slice(0, minScoreIndex);
+			var minScored = (minScoreIndex != 0) ? scoredCorpus.slice(0, minScoreIndex) : [scoredCorpus[0]];
+			// console.log(minScored);
 		} else return []; //return an empty array
 		
 	}
@@ -112,7 +125,7 @@ CosineSimilarity.prototype.findSimilar = function(query, options){
 	//limit number of elements if limit option was included
 	if (typeof options.limit !== 'undefined'){
 		var temp = (typeof minScored !== 'undefined') ? minScored : scoredCorpus;
-		returnVal = temp.slice(0, parseInt(options.limit));
+		returnVal = (temp.length > 1) ? temp.slice(0, parseInt(options.limit)) : temp;
 	} 
 	else returnVal = (typeof minScored !== 'undefined') ? minScored : scoredCorpus;
 
@@ -127,8 +140,40 @@ CosineSimilarity.prototype.getCorpus = function(){
 	return this._corpus;
 }
 
+CosineSimilarity.prototype._passesFilter = function(filterObjArray, message) {
+	
+	// boolean array that holds which onlyScore objects 
+	// message passes (represented as `true`)
+	var matchesFilters = [];
+
+	//for all onlyScore filter objects...
+	for (var i = 0; i < filterObjArray.length; i++) {
+		
+		var matches = [];
+		var filterObj = filterObjArray[i];
+		var propertyValueIsArray; //boolean
+
+		this._forEachFilterObjProp(message, filterObj, function(value, propertyName, isArray){
+			
+			propertyValueIsArray = isArray;
+			var pattern = new RegExp(value, 'i');
+			var isMatch = (pattern.test(message[propertyName])) ? true : false;
+			matches.push(isMatch);
+
+		});
+
+		var passes = (matches.indexOf(false) == -1 || 
+			          propertyValueIsArray && matches.indexOf(true) != -1) ? true : false;
+		// || strict && matches.indexOf(true) == -1
+		
+		matchesFilters.push(passes);
+	}
+	return (matchesFilters.indexOf(true) != -1)
+	//return (strict) ? (matchesFilters.indexOf(false) != -1) : (matchesFilters.indexOf(true) != -1);
+}
+
 //runs fn on each obj's property
-CosineSimilarity.prototype._filter = function(message, obj, fn){
+CosineSimilarity.prototype._forEachFilterObjProp = function(message, obj, fn){
 	
 	if (typeof obj == 'object'){
 
