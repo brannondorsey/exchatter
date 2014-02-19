@@ -9,7 +9,7 @@ var rl = readline.createInterface({
 
 var cosineSimilarity, corpus, scoredCorpus;
 
-fs.readFile('data/all_combined.json', function(err, data){
+fs.readFile('data/corpuses/brannon_dorsey/all.json', function(err, data){
 
 	if (err) throw err;
 

@@ -16,7 +16,7 @@ if (typeof args.message !== 'undefined') {
 
 	var input = args.message;
 
-	fs.readFile('data/all_combined.json', function(err, data){
+	fs.readFile('data/corpuses/brannon_dorsey/all.json', function(err, data){
 		
 
 		if (err) throw err;
@@ -24,31 +24,8 @@ if (typeof args.message !== 'undefined') {
 	
 		var cosignSimilarity = new CosineSimilarity(corpus);
 		var scoredCorpus = cosignSimilarity.findSimilar(input, {
-			onlyScore: [
-				{
-					from: "^804",
-					date: "^2012-03-20",
-					to: "Me"
-				},
-				{
-					from: "Me",
-					date: "^2012-03-20",
-					to: "^804"
-				}
-			],
-			
-			// preference: [
-			// 	{
-			// 		to: "8049215907",
-			// 		modifier: -.1
-			// 	},
-			// 	{
-			// 		from: "Me",
-			// 		modifier: .1
-			// 	}
-			// ],
 			limit: 10,
-			minScore: .01
+			minScore: .4
 		});
 		
 		for(var i = 0; i < scoredCorpus.length; i++){
