@@ -97,7 +97,7 @@ if (typeof args.message !== 'undefined' &&
 
 			  		if (foundResponses.indexOf(response.text) == -1) {
 
-				  		console.log('###"' + response.text + '"');
+				  		console.log('####"' + response.text + '"');
 				  		console.log();
 				  		console.log('```');
 				  		console.log('Score: ' + similar.score);
