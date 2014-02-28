@@ -12,7 +12,9 @@
 - Create an algorithm that analyzes a corpus of messages from one person and breaks it into conversation chunks by analyzing timestamps.
 - Hash table of most used words
 - Use interests to gather add-on corpuses of data
-- Use a lexicon for Slot method. For instance "I ate at __Bluebell__ in __San Francisco__" could appear to a computer as "I ate at __a restaurant__ in __a city__"
+- Use a lexicon for Slot method. For instance "I ate at __Bluebell__ in __San Francisco__" could appear to a computer as "I ate at __a restaurant__ in __a city__".
+- Bot should make periodic typing errors dependent on how often the ex makes mistakes (this can be found by writing a regular expression that searches 1 word responses that contain a '*'). Bots can then correct themselves.
+- If someone says “you [something]” then bot should be liable to spit it back changing the “you” to an “I” and even changing the verb form of the verb “to be” and the case of the object, and prefacing it with a short question. (taken from [Turing Test, etc.](www.gigamonkeys.com/resume/turing.html))
 
 ##Things to think about
 - __Start using CouchDB soon!__ Get a feel for it so that I can figure out how to best approach using it for machine learning. Im thinking that all training processes will be run on the each corpus and the results (graphs, probabilities, etc...) will be saved in a document that includes the corpus itself. That way calculations at runtime will be kept to a minimum.
