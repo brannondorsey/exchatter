@@ -5,6 +5,9 @@ A list of unique features to use for classification and personalized text genera
 - Average and probability distribution (PD) (i.e. 10% x, 30% y, 60% z) response time.
 - Average and PD re-response rate
 - PD positive, negative, and neutral sentiment
+- PD of positive, negative, and neutral sentiment given that prompt is positive
+- PD of positive, negative, and neutral sentiment given that prompt is negative
+- PD of positive, negative, and neutral sentiment given that prompt is neutral (Note: In practice, also calculate a PD of the three types of sentiment based on the best nearest-neighbor approach. This will be calculated live.) 
 - PD of one word, two word, three word, etc responses (possibly dependent on one word, two word, three word prompts etc)
 - PD of one sentence, two sentence, and three sentence responses (possibly dependent on one sentence, two sentence, three sentence prompts etc)
 - Ordered list of most used positive and most used negative 1 word responses
@@ -36,3 +39,10 @@ A list of unique features to use for classification and personalized text genera
 - Use of capitalization
 - Tone
 - Chance to use parenthesis, commas, and ellipses...
+
+
+##Non-language based features
+- Message frequency, length, re-response rate, tone, and sentiment, etc... (FLRTS...) dependent on the time of day
+- Message frequency, length, re-response rate, tone, and sentiment, etc... (FLRTS...) dependent on the day of the week (especially weekday vs weekend).
+- Message FTSRTS... dependent on the month of the year
+- Message FTSRTS... dependent on the sex of the other conversation partner

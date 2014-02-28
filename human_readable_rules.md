@@ -15,6 +15,9 @@
 - Use a lexicon for Slot method. For instance "I ate at __Bluebell__ in __San Francisco__" could appear to a computer as "I ate at __a restaurant__ in __a city__".
 - Bot should make periodic typing errors dependent on how often the ex makes mistakes (this can be found by writing a regular expression that searches 1 word responses that contain a '*'). Bots can then correct themselves.
 - If someone says “you [something]” then bot should be liable to spit it back changing the “you” to an “I” and even changing the verb form of the verb “to be” and the case of the object, and prefacing it with a short question. (taken from [Turing Test, etc.](www.gigamonkeys.com/resume/turing.html))
+- Calculate sentiment detection not just based on boolean results (positive, negative, and neutral) but the score of each (80% positive, etc...)
+- Because SMS and text message conversations take place over a greater length of time than a Facebook or gmail chat (where both conversators are directing their attention mostly towards the computer, whereas with text messages their attention is directed towards a range of physical and mental activities in daily life) how can I best translate SMS message __time__ data to internet chat __time__ data? Perhaps I can use the PAN corpus to create a graph of average (and probability distribution (PD)) message times and map my SMS data averages and PD to those times.
+
 
 ##Things to think about
 - __Start using CouchDB soon!__ Get a feel for it so that I can figure out how to best approach using it for machine learning. Im thinking that all training processes will be run on the each corpus and the results (graphs, probabilities, etc...) will be saved in a document that includes the corpus itself. That way calculations at runtime will be kept to a minimum.
@@ -23,6 +26,11 @@
 - Create a system for annotation. Probably browser based... That way I can get results based on each algorithmic revision.
 - Where do I get sample question/discourse data to run auto chats for transcript purposes. Preferably data that reflects a similar context to that which would be reflective of the kinds of interactions that users will have with an exchatter on http://myex.es.
 - How can the collective messages from the entire chat play a role?
+- What are the things that I think about (and take into account) when reading and replying to SMS and chat messages? 
+- How do decision trees play in to this? The actions and decisions (related specifically to their message discourses) of each person can be represented in a personalized decision tree. Each person's tree is weighted in similar ways that their past experiences, person that the conversation involves, messages that make up the current conversation, time of day, day of the week (weekend vs weekday), consciousness, state, etc... How can I model these?
+- How is laughter expressed? "lol", "haha", "hahahahahaha"
+- What __main differences__ can I find in chat logs between humans on IRC and chat logs between chatbots and humans on IRC? How can I then use this knowledge to direct my chatbot conversation towards the Human to Human 
+
 
 ##Testing Data
 - Create a list of 50 easy (common), medium (uncommon), and hard (rare) example prompts/questions.
