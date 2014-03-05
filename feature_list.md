@@ -8,6 +8,7 @@ A list of unique features to use for classification and personalized text genera
 - PD of positive, negative, and neutral sentiment given that prompt is positive
 - PD of positive, negative, and neutral sentiment given that prompt is negative
 - PD of positive, negative, and neutral sentiment given that prompt is neutral (Note: In practice, also calculate a PD of the three types of sentiment based on the best nearest-neighbor approach. This will be calculated live.) 
+- Average Difference in sentiment score between a prompt and a response
 - PD of one word, two word, three word, etc responses (possibly dependent on one word, two word, three word prompts etc)
 - PD of one sentence, two sentence, and three sentence responses (possibly dependent on one sentence, two sentence, three sentence prompts etc)
 - Ordered list of most used positive and most used negative 1 word responses
@@ -33,12 +34,18 @@ A list of unique features to use for classification and personalized text genera
 - Chance and PD to *correct a misspelling. (Use regular expression to check if response is one word and contains a "*").
 - Create a model for most discussed subjects using topic detection
 - Chance to use emoticons and emoji
+- Chance to use emoticons and emoji at the end of a message vs in the body
+- Chance to send an all emoticon message
+- Chance to respond to emoticon/emoji with emoticon/emoji
 - Chance to use the same words present in prompt in the response
 - How sentiment depends on conversation length
 - Most used conversation initiation and conversation ending messages
 - Use of capitalization
 - Tone
 - Chance to use parenthesis, commas, and ellipses...
+- Use of ALL CAPS!
+- Unique words. i.e. words that are uncommon or weighted more frequently in their lexicon than in others.
+- List of habitually miss-spelled words. e.g. "wud" for "would", "gotta" for "got to", etc...
 
 
 ##Non-language based features
