@@ -2,3 +2,5 @@
 node_modules/*
 data/corpuses/*
 data/pan-12/*
+*ignore.txt
+*ignore.*

@@ -24,7 +24,10 @@
     "cosine": "0.0.1",
     "argv": "0.0.2",
     "xml2js": "0.4.1",
-    "request": "2.34.0"
+    "request": "2.34.0",
+    "underscore": "1.6.0",
+    "sentiment": "0.2.1",
+    "spellcheck": "0.0.4"
   },
   "engines": {
     "node": ">=v0.10.0"
