@@ -1,0 +1,35 @@
+14315 messages.
+6696 messages from "Me".
+Mean: 0.35648148148148145
+Median: 0
+Range: 61
+Min: -20
+Max: 41
+Standard Deviation: 2.4305797347605127
+Positive Distribution: 0.31242532855436084
+Neutral Distribution: 0.4786439665471924
+Negative Distribution: 0.20893070489844684
+
+14315 messages.
+139 messages from "Me". to Ex (4015950807)
+Mean: 0.4676258992805755
+Median: 0
+Range: 30
+Min: -20
+Max: 10
+Standard Deviation: 3.2987945438875803
+Positive Distribution: 0.381294964028777
+Neutral Distribution: 0.34532374100719426
+Negative Distribution: 0.2733812949640288
+
+14315 messages.
+1106 messages from "Me". to Kyle Nielsen
+Mean: 0.2848101265822785
+Median: 0
+Range: 60
+Min: -19
+Max: 41
+Standard Deviation: 2.9866013043136723
+Positive Distribution: 0.2667269439421338
+Neutral Distribution: 0.5280289330922242
+Negative Distribution: 0.20524412296564196

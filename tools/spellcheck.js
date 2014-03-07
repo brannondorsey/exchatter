@@ -47,7 +47,6 @@ if (typeof args.input !== 'undefined') {
 				  		console.log("Spell fixed: " + correctedWords.join(' '));
 				  		console.log();
 				  	}
-				  	
 				});
 			})
 		});

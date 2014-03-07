@@ -3,48 +3,54 @@ _ = require('underscore')._,
 sentiment = require('sentiment');
 
 fs.readFile('data/corpuses/brannon_dorsey/all.json', function (err, data) {
+  
   if (err) throw err;
-
   var messages = JSON.parse(data);
   console.log(messages.length + " messages.");
 
-  var fromMe = _.where(messages, {from: "Me", to: "8049215907"});
-  console.log(fromMe.length + " messages from \"Me\" to ex");
+  fs.readFile('data/emoticons/emoticons_sentiment.json', function(err, data){
 
-  var sentimentRanked = [];
-  var scores = [];
-  var callbacksFired = 0;
+	  if (err) throw err;
+  	  var emoticons = JSON.parse(data);
 
-  	_.each(fromMe, function(message, index) {
-  	
-		sentiment(message.text, function(err, result){
+	  var fromMe = _.where(messages, {from: "Me"});
+	  console.log(fromMe.length + " messages from \"Me\".");
 
-	  		callbacksFired++;
+	  var sentimentRanked = [];
+	  var scores = [];
+	  var callbacksFired = 0;
 
-	  		sentimentRanked.push({
-				text: message.text,
-				sentiment: result.score
+	  	_.each(fromMe, function(message, index) {
+	  	
+			sentiment(message.text, function(err, result){
+
+		  		callbacksFired++;
+
+		  		sentimentRanked.push({
+					text: message.text,
+					sentiment: result.score
+				});
+
+				scores.push(result.score);
+
+				// if all sentiment callbacks have fired
+				if (callbacksFired == fromMe.length) {
+			
+					scores = _.sortBy(scores, function(num){ return - num; });
+
+					console.log("Mean: " + mean(scores));
+					console.log("Median: " + median(scores));
+					console.log("Range: " + range(scores));
+					console.log("Min: " + _.min(scores));
+					console.log("Max: " + _.max(scores));
+					console.log("Standard Deviation: " + stdDeviation(scores));
+					var distribution = sentimentDistribution(scores);
+					console.log("Positive Distribution: " + distribution.positive);
+					console.log("Neutral Distribution: " + distribution.neutral);
+					console.log("Negative Distribution: " + distribution.negative);
+				}
 			});
-
-			scores.push(result.score);
-
-			// if all sentiment callbacks have fired
-			if (callbacksFired == fromMe.length) {
-		
-				scores = _.sortBy(scores, function(num){ return - num; });
-
-				console.log("Mean: " + mean(scores));
-				console.log("Median: " + median(scores));
-				console.log("Range: " + range(scores));
-				console.log("Min: " + _.min(scores));
-				console.log("Max: " + _.max(scores));
-				console.log("Standard Deviation: " + stdDeviation(scores));
-				var distribution = sentimentDistribution(scores);
-				console.log("Positive Distribution: " + distribution.positive);
-				console.log("Neutral Distribution: " + distribution.neutral);
-				console.log("Negative Distribution: " + distribution.negative);
-			}
-		});
+  		});
   	});
 });
 

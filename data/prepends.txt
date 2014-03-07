@@ -1,0 +1,9 @@
+[0-9]K, thousand
+[0-9]M, million
+[0-9]G, thousand or gram or kilogram or lb
+[0-9][mkMKbBgG]
+am/pm
+tb/gb/mb/kb/b
+sec/hr/m/d
+mm/cm/m/km
+in/ft/yd/mi

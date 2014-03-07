@@ -8,7 +8,7 @@ A list of unique features to use for classification and personalized text genera
 - PD of positive, negative, and neutral sentiment given that prompt is positive
 - PD of positive, negative, and neutral sentiment given that prompt is negative
 - PD of positive, negative, and neutral sentiment given that prompt is neutral (Note: In practice, also calculate a PD of the three types of sentiment based on the best nearest-neighbor approach. This will be calculated live.) 
-- Average Difference in sentiment score between a prompt and a response
+- Average Difference in sentiment score between a prompt and a response (use this model live)
 - PD of one word, two word, three word, etc responses (possibly dependent on one word, two word, three word prompts etc)
 - PD of one sentence, two sentence, and three sentence responses (possibly dependent on one sentence, two sentence, three sentence prompts etc)
 - Ordered list of most used positive and most used negative 1 word responses
