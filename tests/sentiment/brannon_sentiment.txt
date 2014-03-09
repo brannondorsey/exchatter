@@ -1,0 +1,25 @@
+ALL MESSAGES
+54064 messages.
+25482 messages from "Me".
+Mean: 0.8946707479789655
+Median: 0
+Range: 47
+Min: -20
+Max: 27
+Standard Deviation: 2.729140955657133
+Positive Distribution: 0.4142924417235696
+Neutral Distribution: 0.4304214739816341
+Negative Distribution: 0.15528608429479632
+
+TO EX
+54064 messages.
+7858 messages from "Me" to ex
+Mean: 1.038432171035887
+Median: 0
+Range: 42
+Min: -15
+Max: 27
+Standard Deviation: 3.0834741548904714
+Positive Distribution: 0.42708068210740646
+Neutral Distribution: 0.4027742428098753
+Negative Distribution: 0.17014507508271826

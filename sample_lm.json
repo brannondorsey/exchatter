@@ -70,6 +70,9 @@
 		},
 		"negative": {
 			"percent": 0.17
+		},
+		"conversationLength": {
+
 		}
 	},
 	"misspellings": {
