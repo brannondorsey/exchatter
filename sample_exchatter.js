@@ -1,5 +1,16 @@
-var tom = new exChatter('Thomas', config, function(){
+var tom = new ExChatter('Thomas', config, function(){
 	// on load callback
+});
+
+var tom = new ExChatter("path/to/toms/model.json", function(){
+	
+	tom.respond('Hi, how are you?', function(message){
+		console.log(message.text);
+	});
+
+	tom.on('responding', function(0.8){
+		console.log("Tom is typing...");
+	});
 });
 
 //--------------------------------------------------------------------
@@ -19,9 +30,9 @@ tom.lastMessage;
 //--------------------------------------------------------------------
 // methods
 
-tom.respond('Hi, how are you?', function(text, millis){
+tom.respond('Hi, how are you?', function(message, millis){
 	/*
-		string text: string
+		Message text: string
 		int millis (optional): timeout for response. If ommitted, 
 
 	 */
@@ -31,7 +42,7 @@ tom.on('send', function(text){
 	// fired when the tom.respond callback is called
 });
 
-tom.on('recieve', function(text){
+tom.on('receive', function(text){
 	// fired when tom.respond is called
 });
 
@@ -40,12 +51,14 @@ tom.on('responding', function(percent){
 })
 
 tom.on('noresponse', function(millis){
-	// fired when tom hasn't recieved a response in millis milliseconds.
+	// fired when tom hasn't received a response in millis milliseconds.
 });
 
 tom.on('error', function(err){
     // called on some sort of error
 });
+
+tom.mapTime();
 
 tom.rules(function(prompt, response, conversation){
 	/*

@@ -9,7 +9,7 @@ ExChatter(config, function(){
 	// on load callback
 })
 ```
-The `config` parameter is an object, or "path/to/model.js":
+The `config` parameter is an object, or the `"path/to/model.js"`:
 
 ## Properties
 
@@ -28,16 +28,18 @@ The `config` parameter is an object, or "path/to/model.js":
 
 ### Respond
 
-The `respond` method is used to generate a response to any prompt.
+The `respond(prompt, callback)` method is used to generate a response to any prompt.
+Here are the parameter's available in its callback:
+
+- `message`: the Message object 
+- `millis`: an optional timeout for response. If omitted, ExChatter will generate a personalized timeout using its `model`.
 
 ```javascript
 
-respond(prompt, function(text, millis){
+respond(prompt, function(message, millis){
 	/*
-		string text: string
-		int millis (optional): timeout for response. If ommitted, 
-
-	 */
+		code to output message.text...
+	*/
 })
 ```
 
@@ -54,11 +56,11 @@ It accepts the following events:
 
 ```javascript
 
-on('receive', function(text){
+on('receive', function(message){
 	// fired when the respond method is called
 });
 
-on('send', function(text){
+on('send', function(message){
 	// fired when the respond callback is called
 });
 
@@ -80,18 +82,39 @@ on('error', function(err){
 
 `rules(fn)`
 
-The rules method is used to handle hard coded rules. It is great for extending the ExChatter framework to meet an application's needs. The function `fn` passed into this method will be will be processed right before ExChatter returns a response with the `respond()` method. To have an effect on the output, you must return a string from inside `fn`.
+The rules method is used to handle hard coded rules. It is great for extending the ExChatter framework to meet an application's needs. The function `fn` passed into this method will be called right before ExChatter returns a response with the `respond()` method. To manipulate the output, you must return a string from inside `fn`.
+
+Here are a list of the parameters you have access to inside of `fn`:
+
+- `prompt`: the Message object that was prompted to ExChatter
+- `response`: the Message object that ExChatter generated as a response but has not yet sent
+- `conversation`: the Conversation object that represents the current chat. This is an alias of the ExChatter's `currentConversation` property.
 
 ```javascript
 
 rules(function(prompt, response, conversation){
-	/*	
-		Message prompt: the Message object that was prompted to the bot
-		Message response: the Message object that the bot generated as a response (but has not yet sent)
-		Conversation conversation: the Conversation object that represents the current chat. Alias of
-		the exChatter.currentConversation property.
-	 */
+	/*
+		Apply some rules to change the response text (response.text).
+		Don't forget to return a string at the end of your manipulation
+		or else nothing will actually change.
+	*/
 });
 ```
 
 ## Example
+
+Here is an example implementation of the ExChatter API:
+
+```javascript
+
+var tom = new ExChatter("path/to/toms/model.json", function(){
+	
+	tom.respond('Hi, how are you?', function(message){
+		console.log(message.text);
+	});
+
+	tom.on('responding', function(0.8){
+		console.log("Tom is typing...");
+	});
+});
+```
