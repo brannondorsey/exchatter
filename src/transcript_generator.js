@@ -1,4 +1,4 @@
-var CosineSimilarity = require('./CosineSimilarity.js'),
+var CosineSimilarity = require('./classes/CosineSimilarity.js'),
 argv = require('argv'),
 fs = require('fs');
 

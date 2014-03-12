@@ -32,17 +32,17 @@ tom.lastMessage;
 
 tom.respond('Hi, how are you?', function(message, millis){
 	/*
-		Message text: string
+		Message text
 		int millis (optional): timeout for response. If ommitted, 
 
 	 */
 });
 
-tom.on('send', function(text){
+tom.on('send', function(message){
 	// fired when the tom.respond callback is called
 });
 
-tom.on('receive', function(text){
+tom.on('receive', function(message){
 	// fired when tom.respond is called
 });
 

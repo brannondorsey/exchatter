@@ -1,7 +1,7 @@
 var fs = require('fs'),
 _ = require('underscore')._;
 
-function Contractions(){
+function Contraction(){
 
 	var contractionsFile = fs.readFileSync("data/dictionaries/contractions.csv", "utf8");
 	
@@ -35,40 +35,31 @@ function Contractions(){
 		tense: "present"
 	}
  */
-Contractions.prototype.expand = function(string, options){
+Contraction.prototype.expand = function(string, options){
 	
-	var word = this.splitPunctuation(string);
+	var words = [];
 	var self = this;
+	_.each(string.split(' '), function(word){
+		if (word != '') words.push(self._tranlateWord("expansion", word, options));
+	});
+
+	return words.join(' ');
 	
-	if (word.length > 1) {
-
-		var actualWord;
-		var punctuation = "";
-
-		_.each(word, function(part){
-
-			if (!/[^\w\s\n\t]|_/.test(part)) {
-				actualWord = part;
-			} else {
-				punctuation += part;
-			}
-		});
-
-		word = self._translate("expansion", actualWord, options);
-		word += punctuation;
-	} else {
-		word = self._translate("expansion", word[0], options);
-	}
-
-	return word;
 }
 
-Contractions.prototype.contract = function(string, options){
-	return this._translate("contraction", string, options);
+Contraction.prototype.contract = function(string, options){
+	
+	var words = [];
+	var self = this;
+	_.each(string.split(' '), function(word){
+		if (word != '') words.push(self._tranlateWord("contraction", word, options));
+	});
+
+	return words.join(' ');
 }
 
-Contractions.prototype.splitPunctuation = function(string){
-	var string = string.replace(/[^\w\s]|_/g, function ($1) { return ' ' + $1 + ' ';})
+Contraction.prototype.splitPunctuation = function(string){
+	var string = string.replace(/[^\w\s']|_/g, function ($1) { return ' ' + $1 + ' ';})
 	string = string.replace(/[ ]+/g, ' ').split(' ');
 	var nullChar = _.indexOf(string, '');
 	if (nullChar != -1) {
@@ -77,7 +68,39 @@ Contractions.prototype.splitPunctuation = function(string){
 	return string;
 }
 
-Contractions.prototype._translate = function(type, string, options){
+Contraction.prototype._tranlateWord = function(type, string, options){
+
+	var word = this.splitPunctuation(string);
+	var self = this;
+	
+	if (word.length > 1) {
+
+		var actualWord;
+		var punctuation = "";
+
+		var temp = [];
+
+		_.each(word, function(part){
+
+			if (!/[^\w\s\n\t']|_/.test(part)) {
+				// actualWord = part;
+				temp.push(self._translate(type, part, options));
+			} else {
+				temp.push(part);
+			}
+		});
+
+		word = temp.join('');
+		// word = self._translate(type, actualWord, options);
+		// word += punctuation;
+	} else {
+		word = self._translate(type, word[0], options);
+	}
+
+	return word;
+}
+
+Contraction.prototype._translate = function(type, string, options){
 
 	var matchUsing = (type == "expansion")? "contraction" : "expansion"; 
 	// be sure to check if is capitalized and return using same style
@@ -140,4 +163,4 @@ Contractions.prototype._translate = function(type, string, options){
 	return returnVal;
 }
 
-module.exports = Contractions;
+module.exports = Contraction;

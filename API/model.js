@@ -14,13 +14,15 @@
 				Messages
 				
 					Sentences
-		
-		
-		Generator
-		
+			
+
+		GeneralCorpus
+
+		Noramalizer
+
 		Matcher
 
-		GeneralCorpus	
+		Generator
 
 
  */
