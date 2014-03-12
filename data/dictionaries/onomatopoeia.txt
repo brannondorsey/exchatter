@@ -26,3 +26,21 @@ oof
 mmm
 eee
 meh
+grr
+hmph
+argh
+gaa
+ha
+wa
+err
+zzz
+whooops
+wooow
+
+/*
+	[{
+		onomatopoeia: "hm",
+		regex: //gi,
+		sentiment: 0
+	}]
+ */
