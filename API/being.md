@@ -1,0 +1,138 @@
+# Being Obj
+
+`Being` objects represent the data and `model`s for each personalized ExChatter. They are modeled after real people.
+
+```javascript
+
+{
+	id: "sha1",
+	name: "string",
+	age: 23,
+	sex: "string",
+	location: "string",
+	interests: [],
+	corpusPath: "string",
+	model: {
+		conversationData :{
+			startMessages: [],
+			stopMessages: [],
+			startMessageResponses: [],
+			stopMessageResponses: [] 
+		},
+		messageData: {
+			responseRate: ".3",
+			sentences:{
+
+			},
+			words: {
+				total: 55000,
+				lengths: [115, 255, 400, 500, 600, 783, 400, 200, 100, 50, 10] // each index represents a word of n length 
+
+			},
+			laughs: {
+				perMessage: 0.1,
+				chanceToUseBoth: 0.01,
+				haha:{
+					chanceToRepresentLaugh: 0.7,
+					lengths: [ 14, 200, 40, 13, 14] // each index denotes a new 'ha'
+				},
+				lol:{
+					chanceToRepresentLaugh: 0.3,
+					lengths: [ 114, 45, 5, 2] // each index denotes a new 'lol'
+				}
+			}
+
+		},
+		sentimentData: {
+			mean: 0.8722293,
+			range: 47,
+			min: -27,
+			max: 19,
+			differences: {
+				mean: "...",
+				range: "...",
+				min: "...",
+				max: "...",
+				stdDeviation: "...",
+				positivePrompt: {
+					mean: "...",
+					range: "...",
+					min: "...",
+					max: "...",
+					stdDeviation: "..."
+				},
+				neutralPrompt: {
+					mean: "...",
+					range: "...",
+					min: "...",
+					max: "...",
+					stdDeviation: "..."
+				},
+				negativePrompt: {
+					mean: "...",
+					range: "...",
+					min: "...",
+					max: "...",
+					stdDeviation: "..."
+				}
+			},
+			positive: {
+				percent: 0.413
+			},
+			neutral: {
+				percent: 0.473
+			},
+			negative: {
+				percent: 0.17
+			},
+			conversationLength: {
+
+			}
+		},
+		misspellingData: {
+			total: 458,
+			percent: 0.2, // total misspellings/ total words
+			mostMisspelled: [
+				{ 
+					misspelling: "dat",
+					correct: "that",
+					frequency: 7,
+				}
+			]
+		},
+		ngrams: {
+			unigrams: {
+				see: "bigrams..."
+			},
+			bigrams: {
+				all: {
+					key: ["aaw", "aat", "and"],
+					table: [
+								[0.001, 0.001, 0.3],
+								[0.001, 0.001, 0.3]
+								[0.001, 0.001, 0.3]
+							 ],
+					normalized: {
+						key: ["aw", "at", "and"],
+						table: [
+								[0.001, 0.001, 0.3],
+								[0.001, 0.001, 0.3]
+								[0.001, 0.001, 0.3]
+							 ]
+					}
+				},
+				positive: {
+					see: "bigrams.all..."
+				},
+				neutral: {
+					"see": "bigrams.all..."
+				},
+				negative: {
+					"see": "bigrams.all..."
+				}
+			}
+		}
+	}
+}
+
+```

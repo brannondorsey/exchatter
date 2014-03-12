@@ -1,6 +1,8 @@
 # ExChatter API
 
-Below is an outline of the proposed ExChatter API.
+Below is an outline of the proposed ExChatter API. 
+You might want to take a look at the proposed [`Being`](being.md), 
+[`Conversation`](conversation.md), and [`Messages`](message.md) objects as well.
 
 ## Constructor
 

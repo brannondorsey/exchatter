@@ -58,7 +58,6 @@ tom.on('error', function(err){
     // called on some sort of error
 });
 
-tom.mapTime();
 
 tom.rules(function(prompt, response, conversation){
 	/*
