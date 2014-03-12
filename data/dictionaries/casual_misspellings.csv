@@ -21,6 +21,8 @@ w/e, whatever
 wu, what's up
 yea, yeah
 yee, yes
+yayya, yay
+yayy, yay
 ofa, of a
 hbu, how about you
 wuld, would
@@ -40,6 +42,7 @@ n, in
 id, I would
 nvmd, nevermind
 nm, nevermind
+sori, sorry
 ddnt, didn't
 dnt, dont
 tel, tell
@@ -63,6 +66,7 @@ ad, advertisement
 ackin, acting
 goda, got to
 gotta, got to
+gota, got to
 dolla, dollar
 dollas, dollars
 fuk, fuck
@@ -85,6 +89,7 @@ da, the
 bf, boyfriend
 gf, girlfriend
 fb, facebook
+fbook, facebook
 d8, date
 dnt, don't
 ddnt, didn't
@@ -96,6 +101,7 @@ k, okay
 nvr, never
 nething, anything
 pic, picture
+pics, pictures
 pict, picture
 vid, video
 vids, videos
@@ -123,15 +129,18 @@ bc, because
 tech, technology
 coo, cool
 wut, what
+whut, what
 bbq, barbeque
 kul, cool
 cul, cool
 kewl, cool
+kool, cool
 o, oh
 gawd, god
 pls, please
 plz, please
 justa, just a
+jus, just
 naw, no
 tha, the
 hav, have
@@ -177,16 +186,21 @@ tll, tell
 dwn, down
 im, I'm
 bcause, because
+damnit, damn it
+damit, damn it
 godamn, god damn
-godamnit, god damnit
+godamnit, god damn it
 goddamn, god damn
-goddamnit, god damnit
+goddamnit, god damn it
 yeap, yep
 thng, thing
 thang, thing
+thangs, things
 exept, except
 comming, coming
+commin, coming
 comin, coming
+comn, coming
 gotit, got it
 das, thats
 outta, out of
@@ -195,13 +209,19 @@ lil, little
 thinkso, think so
 dogg, dog
 dawg, dog
+dawgs, dogs
+doggs, dogs
 sheit, shit
 doin, doing
 brotha, brother
+bro, brother
 sista, sister
+sis, sister
 dem, them
 goin, going
 tryna, trying to
+trynna, trying to
+tryina, trying to
 aight, alright
 nah, no
 eben, even
@@ -211,7 +231,10 @@ imma, I am going to
 workin, working
 asswell, as well
 aswell, as well
+whatchyu, what are you
 whatchu, what are you
+whatcha, what are you
+watcha, what are you
 watchu, what are you
 whachu, what are you
 wha, what
@@ -220,6 +243,8 @@ dayum, damn
 goodluck, good luck
 nite, night
 wierd, weird
+werd, weird
+roommate, room mate
 roomate, room mate
 thinkso, think so
 whas, what is
@@ -231,12 +256,16 @@ thinkin, thinking
 somethin, something
 sayin, saying
 gettin, getting
+gottit, got it
+gotit, got it
 playin, playing
 hangin, hanging
 boutta, about to
 bouta, about to
 makin, making
 leavin, leaving
+leabin, leaving
+leabing, leaving
 yall, y'all
 y'all, you all
 yins, you all
@@ -264,8 +293,13 @@ didja, did you
 amd, and
 bein, being
 gotchu, got you
+onna, on a
+ona, on a
 inna, in a
-in, a
+ina, a
+img, image
+idont, I don't
+ido, I do
 drivin, driving
 piture, picture
 lense, lens
@@ -274,6 +308,7 @@ itl, it'll
 tellin, telling
 tryin, trying
 betta, better
+bettah, better
 domt, don't
 eatin, eating
 probly, probably
@@ -310,11 +345,18 @@ getn, getting
 ima, I am going to
 bday, birthday
 wa, what
-mon, monday
-tues, tuesday
-wed, wednesday
-thurs, thursday
-fri, friday
+mon, Monday
+tues, Tuesday
+wed, Wednesday
+thurs, Thursday
+fri, Friday
+monday, Monday
+tuesday, Tuesday
+wednesday, Wednesday
+thursday, Thursday
+friday, Friday
+saturday, Saturday
+sunday, Sunday
 interwebs, internet
 ta, to
 mins, minutes
@@ -322,6 +364,7 @@ okie, okay
 okie dokie, okay
 oky, okay
 okiee, okay
+oki, okay
 darlin, darling
 yess, yes
 noo, no
@@ -334,6 +377,8 @@ sesh, session
 luv, love
 kno, know
 goodbie, goodbye
+goodby, goodbye
+goodbi, goodbye
 whateva, what ever
 tonite, tonight
 thatd, that would
@@ -349,3 +394,135 @@ mic, microphone
 mr, mister
 ms, miss
 mrs, misses
+kindsa, kind of
+wount, won't
+heyy, hey
+whoa, woah
+sheit, shit
+ypu, you
+gots, got
+sleepin, sleeping
+nuffin, nothing
+boi, boy
+ino, I know
+esplain, explain
+yessir, yes sir
+nosir, no sir
+thankyou, thank you
+tuff, tough
+tuf, tough
+gotsta, got to
+fone, phone
+enuf, enough
+checkin, checking
+chekn, checking
+apt, apartment
+dyu, do you
+thot, thought
+prez, president
+msg, message
+msgs, messages
+movin, moving
+missin, missing
+dumbass, dumb ass
+bitchass, bitch ass
+punkass, punk ass
+drinkin, drinking
+atchu, at you
+atcho, at your
+holla, hollar
+seein, seeing
+nxt, next
+lettin, letting
+homedawg, homedog
+homedawgs, homedogs
+havin, having
+havn, having
+emsil, email
+diggin, digging
+headn, heading
+headin, heading
+alrighty, alright
+staying, staying
+todo, to do
+witchu, with you
+witcho, with your
+whicha, with you
+wicha, with you
+proj, project
+lazer, laser
+idano, I don't know
+idanno, I don't know
+letchu, let you
+iunno, I don't know
+dif, diff
+funy, funny
+funi, funny
+funni, funny
+comeon, come on
+bfast, breakfast
+cmon, come on
+c'mon, come on
+er, or
+te, the
+teh, the
+ahold, a hold
+ayo, hey you
+heyo, hey you
+fasho, for sure
+forsure, for sure
+ay, aye
+tmrw, tomorrow
+fav, favorite
+chil, chill
+yez, yes
+poifect, perfect
+oke, okay
+omgod, oh my god
+werk, work
+werkin, working
+walkin, walking
+brehther, brother
+mang, man
+atleast, at least
+okey, okay
+fo, for
+letchya, let you
+blowin, blowing
+probs, probably
+ovah, over
+ovr, over
+atchya, at you
+whatd, what did
+whadya, what did you
+whaddya, what did you
+whatya, what do you
+whattya, what do you
+treatin, treating
+askin, asking
+woulda, would have
+poo, poop
+poopy, poop
+pooh, poop
+anywho, anyway
+yeh, yes
+wouldja, would you
+twerk, dance
+shyt, shit
+rply, reply
+roomie, room mate
+nutsack, nut sack
+lvl, level
+mabye, maybe
+wrk, work
+quik, quick
+liv, live
+convo, conversation
+tnite, tonight
+vday, valentines day
+xmas, christmas
+uncomfy, uncomfortable
+thanku, thank you
+obvi, obviously
+lyd, lied
+evr, ever

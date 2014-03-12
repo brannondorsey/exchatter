@@ -35,27 +35,12 @@ function Contraction(){
 		tense: "present"
 	}
  */
-Contraction.prototype.expand = function(string, options){
-	
-	var words = [];
-	var self = this;
-	_.each(string.split(' '), function(word){
-		if (word != '') words.push(self._tranlateWord("expansion", word, options));
-	});
-
-	return words.join(' ');
-	
+Contraction.prototype.expand = function(string, options) {
+	return this._translateWords("expansion", string, options);
 }
 
-Contraction.prototype.contract = function(string, options){
-	
-	var words = [];
-	var self = this;
-	_.each(string.split(' '), function(word){
-		if (word != '') words.push(self._tranlateWord("contraction", word, options));
-	});
-
-	return words.join(' ');
+Contraction.prototype.contract = function(string, options) {
+	return this._translateWords("contraction", string, options);
 }
 
 Contraction.prototype.splitPunctuation = function(string){
@@ -66,6 +51,17 @@ Contraction.prototype.splitPunctuation = function(string){
 		string.splice(nullChar, 1);
 	}
 	return string;
+}
+
+Contraction.prototype._translateWords = function(type, string, options) {
+
+	var words = [];
+	var self = this;
+	_.each(string.split(' '), function(word){
+		if (word != '') words.push(self._tranlateWord(type, word, options));
+	});
+
+	return words.join(' ');
 }
 
 Contraction.prototype._tranlateWord = function(type, string, options){
