@@ -36,20 +36,38 @@ function Contractions(){
 	}
  */
 Contractions.prototype.expand = function(string, options){
-	var words = splitSentence(string);
-	var newSentence = [];
+	
+	var word = this.splitPunctuation(string);
 	var self = this;
-	_.each(words, function(word){
-		newSentence.push(self._translate("expansion", string, options));
-	});
-	// come back here
+	
+	if (word.length > 1) {
+
+		var actualWord;
+		var punctuation = "";
+
+		_.each(word, function(part){
+
+			if (!/[^\w\s\n\t]|_/.test(part)) {
+				actualWord = part;
+			} else {
+				punctuation += part;
+			}
+		});
+
+		word = self._translate("expansion", actualWord, options);
+		word += punctuation;
+	} else {
+		word = self._translate("expansion", word[0], options);
+	}
+
+	return word;
 }
 
 Contractions.prototype.contract = function(string, options){
 	return this._translate("contraction", string, options);
 }
 
-Contractions.prototype.splitSentence = function(string){
+Contractions.prototype.splitPunctuation = function(string){
 	var string = string.replace(/[^\w\s]|_/g, function ($1) { return ' ' + $1 + ' ';})
 	string = string.replace(/[ ]+/g, ' ').split(' ');
 	var nullChar = _.indexOf(string, '');
@@ -118,7 +136,7 @@ Contractions.prototype._translate = function(type, string, options){
 		returnVal = returnVal.charAt(0).toUpperCase() + returnVal.substring(1);
 	}
 	if (isAllCaps) returnVal = returnVal.toUpperCase();
-
+	
 	return returnVal;
 }
 
