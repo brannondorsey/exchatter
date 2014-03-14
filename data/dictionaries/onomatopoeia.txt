@@ -6,6 +6,7 @@ hehe
 hahahaha
 lolololol
 wooo
+wow
 ughh
 hah
 ahhh
@@ -16,7 +17,6 @@ oooo
 eww
 woohoo
 woop
-woooo
 yeee
 uhhh
 egh
@@ -24,18 +24,19 @@ agh
 uhm
 oof
 mmm
+mhmm
 eee
 meh
 grr
 hmph
 argh
 gaa
+gah
 ha
 wa
 err
 zzz
 whooops
-wooow
 
 /*
 	[{

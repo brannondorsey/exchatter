@@ -25,3 +25,52 @@ Here is a list of situations that it should be able to handle:
 	Present Participle / Gerund
 	
 	Should I replace personal nouns etc in normalized with **PERSON**, or **PLACE**?
+
+
+## Steps
+
+For each word in this order (If a word matches in any step accept it and move on to the next word):
+
+1. Onomatopoeia
+2. Normalize use of 3+ letters (first to 2 and then 1)
+3. Slang Misspellings & Acronyms (also run onomatopoeia results on slang misspellings to further normalize).
+4. Slang Synonyms (using text_synonyms.csv)
+5. English
+
+
+## Regexes
+
+
+Match positive emoticons
+
+	/^[<=((=|)\[]?[:;8=BXx%][-^>*]{0,1}[\)\]bpPD>]$/
+
+Match neutral emoticons
+	
+	/^[<=((=|)\[]?[:;8=BXx%][-^>*]{0,1}((\[\])|(\(\))|[oO])$/
+	
+Match negative emoticons
+	
+	/^[<=((=|)\[]?[:;8=BXx%][-^>*]{0,1}[XcC/\\(|\[[Ss?]$/
+	
+Match onomatopoeias
+
+	aww
+	/^a+w{2,}$/
+	
+	aw (or aaw)
+	/^a{2,}w$/
+	
+	yay (or yyyyaaayyyy)
+	/^y+a+y+$/
+	
+	hm (or hmm)
+	/^hm+$/
+	
+	haha or hehe (or hahahahah or heheh)
+	/^(he|ha){2,}/
+	
+	lol (or lololol)
+	/^(lol){1,}(ol)*$/
+	
+	

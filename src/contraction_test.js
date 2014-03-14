@@ -1,4 +1,7 @@
 var Contraction = require('./classes/Contraction.js'),
+PatternHelper = require('./classes/PatternHelper.js'),
+patternHelper = new PatternHelper(),
+Normalizer = require('./classes/Normalizer'),
 _ = require('underscore'),
 fs = require('fs'),
 argv = require('argv');
@@ -39,13 +42,19 @@ if (!_.isUndefined(args.input) ||
 			if (err) throw err;
 			var messages = JSON.parse(data);
 
+			patternHelper.normalizeOnomatos(messages[100].text);
+
 			for ( var i = startIndex; i <= endIndex; i++) {
 
 				var message = messages[i];
-				console.log("Original:    " + message.text);
-				console.log("Contraction: " + contraction.contract(message.text));
-				console.log("Expansion:   " + contraction.expand(message.text));
-				console.log();
+
+				// console.log("Original:            " + message.text);
+				// console.log("Normalized Onomatos: " + patternHelper.normalizeOnomatos(message.text));
+				// console.log();
+				// console.log("Contraction: " + contraction.contract(message.text));
+				// console.log("Expansion:   " + contraction.expand(message.text));
+				// console.log();
+
 
 			}
 		});
