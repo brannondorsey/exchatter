@@ -1,10 +1,12 @@
 var Contraction = require('./classes/Contraction.js'),
 PatternHelper = require('./classes/PatternHelper.js'),
-patternHelper = new PatternHelper(),
 Normalizer = require('./classes/Normalizer'),
 _ = require('underscore'),
 fs = require('fs'),
 argv = require('argv');
+
+patternHelper = new PatternHelper();
+normalizer = new Normalizer();
 
 var args = argv.option([{
 	   
@@ -30,9 +32,9 @@ if (!_.isUndefined(args.input) ||
 	
 	if (!_.isUndefined(args.message)) {
 
-		console.log("Original:    " + args.message);
-		console.log("Contraction: " + contraction.contract(args.message));
-		console.log("Expansion:   " + contraction.expand(args.message));
+		var normalized = normalizer.normalize(message.text);
+		console.log("Original:   " + args.message);
+		console.log("Normalized: " + normalized);
 		console.log();
 
 	} else if (!_.isUndefined(args.input)) {
@@ -42,26 +44,20 @@ if (!_.isUndefined(args.input) ||
 			if (err) throw err;
 			var messages = JSON.parse(data);
 
-			// console.log(messages[100].text);
-			// console.log(patternHelper.normalizeOnomatos(messages[100].text));
-
+			
 			for ( var i = startIndex; i <= endIndex; i++) {
 
 				var message = messages[i];
 
-				var normalizedOnomatos = patternHelper.normalizeOnomatos(message.text);
-				if (message.text != normalizedOnomatos) {
-					console.log(message.text.length);
-					console.log(normalizedOnomatos.length);
-					console.log("Original:            " + message.text);
-					console.log("Normalized Onomatos: " + normalizedOnomatos);
+				// var normalized = normalizer.normalize(message.text);
+				var normalized = normalizer.normalizeSlang(message.text);
+				if (message.text != normalized) {
+		
+					console.log("Original:   " + message.text);
+					console.log("Normalized: " + normalized);
 					console.log();
-				}
-				
-				// console.log("Contraction: " + contraction.contract(message.text));
-				// console.log("Expansion:   " + contraction.expand(message.text));
-				// console.log();
-
+					
+				}	
 			}
 		});
 	}

@@ -14,15 +14,12 @@ var emoticons = {
 }
 
 var onomatos = [];
-onomatos['aww']  = /[\s\(]*a+w+([\s\)]|[^\w\s'])*/gi;
+onomatos['aww']  = /^a+w+$/gi;
 onomatos['yay']  = /^y+a+y+$/gi;
 onomatos['hm']   = /^h+m+$/gi;
 onomatos['haha'] = /^(he|ha){2,}$/gi; // also hehe
-onomatos['_haha'] = /(lol){1,}(ol)*/gi;
 onomatos['lol']  = /^(lol){1,}(ol)*$/gi;
-onomatos['_lol'] = /(lol){1,}(ol)*/gi;
 onomatos['hah']  = /^h+a+h*$/gi; // or haaaa
-onomatos['_hah']  = /h+a+h*/gi; // or haaaa
 onomatos['wo']   = /^w+o+$/gi;
 onomatos['wow']  = /^w+o+w+$/gi;
 onomatos['ugh']  = /^u+g+h+$/gi;
@@ -86,15 +83,77 @@ PatternHelper.prototype.getOnomato = function(word) {
 
 PatternHelper.prototype.normalizeOnomatos = function(sentence) {
 
-	for (var key in onomatos){
+	var words = sentence.split(' ');
+	var newWords = [];
+	var self = this;
 
-		var regex = onomatos[key];
-		if (regex.test(sentence)) {
-			sentence = sentence.replace(onomatos[key], key);
+	_.each(words, function(word){
+		
+		var matchFound = false;
+		
+		word = word.trim();
+		var originalWord = word;
+		var wordArray = self.splitPunctuation(word);
+		var punctuation = [];
+
+		if (wordArray.length > 1) {
+
+			word = wordArray[0];
+			punctuation = wordArray.slice(1);
+		}
+		for (var key in onomatos){
+
+			var regex = onomatos[key];
+			if (regex.test(word)) {
+				word = key;
+				matchFound = true;
+				break;
+			} 
+		}
+
+		if (punctuation.length > 0) {
+			_.each(punctuation, function(char){
+				word += char;
+			});
+		}
+
+		newWords.push(self.matchCase(originalWord, word));
+	});
+
+	return newWords.join(' ');
+}
+
+PatternHelper.prototype.eachWord = function(sentence, fn) {
+
+	var words = sentence.split(' ');
+	var newWords = [];
+	var self = this;
+
+	_.each(words, function(word){
+		
+		word = word.trim();
+		var originalWord = word;
+		var wordArray = self.splitPunctuation(word);
+		var punctuation = [];
+
+		if (wordArray.length > 1) {
+
+			word = wordArray[0];
+			punctuation = wordArray.slice(1);
 		}
 		
-	}
-	return sentence;
+		word = fn(word);
+
+		if (punctuation.length > 0) {
+			_.each(punctuation, function(char){
+				word += char;
+			});
+		}
+
+		newWords.push(word);
+	});
+
+	return newWords.join(' ');
 }
 
 PatternHelper.prototype.isEmoticon = function(word) {
@@ -173,6 +232,31 @@ PatternHelper.prototype.hasLaugh = function(sentence) {
 
 PatternHelper.prototype.hasMultipleSentences = function(string) {
 
+}
+
+PatternHelper.prototype.splitPunctuation = function(string){
+
+	var string = string.replace(/[^\w\s']|_/g, function ($1) { return ' ' + $1 + ' ';})
+	string = string.replace(/[ ]+/g, ' ').split(' ');
+	var nullChar = _.indexOf(string, '');
+	if (nullChar != -1) {
+		string.splice(nullChar, 1);
+	}
+	return string;
+}
+
+// only matches case of First letter or entire WORD
+PatternHelper.prototype.matchCase = function(input, output) {
+
+	// first cap
+	if (input.charAt(0) == input.charAt(0).toUpperCase()) {
+		output = output.charAt(0).toUpperCase() + output.substring(1);
+	}
+	// all cap
+	if (input == input.toUpperCase()){
+		output = output.toUpperCase();
+	}
+	return output;
 }
 
 

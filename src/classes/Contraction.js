@@ -1,4 +1,6 @@
 var fs = require('fs'),
+PatternHelper = require('./PatternHelper.js'),
+patternHelper = new PatternHelper(),
 _ = require('underscore')._;
 
 function Contraction(){
@@ -43,16 +45,6 @@ Contraction.prototype.contract = function(string, options) {
 	return this._translateWords("contraction", string, options);
 }
 
-Contraction.prototype.splitPunctuation = function(string){
-	var string = string.replace(/[^\w\s']|_/g, function ($1) { return ' ' + $1 + ' ';})
-	string = string.replace(/[ ]+/g, ' ').split(' ');
-	var nullChar = _.indexOf(string, '');
-	if (nullChar != -1) {
-		string.splice(nullChar, 1);
-	}
-	return string;
-}
-
 Contraction.prototype._translateWords = function(type, string, options) {
 
 	var words = [];
@@ -66,7 +58,7 @@ Contraction.prototype._translateWords = function(type, string, options) {
 
 Contraction.prototype._tranlateWord = function(type, string, options){
 
-	var word = this.splitPunctuation(string);
+	var word = patternHelper.splitPunctuation(string);
 	var self = this;
 	
 	if (word.length > 1) {
