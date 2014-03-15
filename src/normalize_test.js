@@ -3,6 +3,7 @@ PatternHelper = require('./classes/PatternHelper.js'),
 Normalizer = require('./classes/Normalizer'),
 _ = require('underscore'),
 fs = require('fs'),
+natural = require('natural'),
 argv = require('argv');
 
 patternHelper = new PatternHelper();
@@ -24,8 +25,8 @@ var args = argv.option([{
 	}]).run().options;
 
 var contraction = new Contraction();
-var startIndex = 0;
-var endIndex = 100;
+var startIndex = 500;
+var endIndex = 1000;
 
 if (!_.isUndefined(args.input) ||
 	!_.isUndefined(args.message)) {
@@ -50,9 +51,9 @@ if (!_.isUndefined(args.input) ||
 				var message = messages[i];
 
 				// var normalized = normalizer.normalize(message.text);
-				var normalized = normalizer.normalizeSlang(message.text);
+				var normalized = normalizer.normalize(message.text);
 				if (message.text != normalized) {
-		
+				
 					console.log("Original:   " + message.text);
 					console.log("Normalized: " + normalized);
 					console.log();

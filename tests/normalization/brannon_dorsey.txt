@@ -1,0 +1,1012 @@
+Original:   Do u know what time it is? Or when he is picking u up? Or anything? Cause he said he's driving me too, but I haven't heard from him or anything...
+Normalized: Do you know what time it is? Or when he is picking you up? Or anything? Cause he said he is driving me too, but I have not heard from him or anything...
+
+Original:   Well im not real sure yet cause he's in dc and i dont know exactly when he's getting back. But i think the thing starts around 9. Ill ask him.
+Normalized: Well I am not real sure yet cause he is in dc and i do not know exactly when he is getting back. But i think the thing starts around 9. I will ask him.
+
+Original:   Aight, cool, thanks!
+Normalized: Alright, cool, thanks!
+
+Original:   So i just called and texted him. No response yet. But i told him to either call or text you or call me back and then id tell you.
+Normalized: So i just called and texted him. No response yet. But i told him to either call or text you or call me back and then I would tell you.
+
+Original:   Okay! Thanks yeah, I'm sure he'll get back to us, I had called and texted him earlier and same, haha
+Normalized: Okay! Thanks yeah, I am sure he will get back to us, I had called and texted him earlier and same, haha
+
+Original:   He's in the white house?!!?!?! Why? That's awesome!
+Normalized: He is in the white house?!!?!?! Why? That is awesome!
+
+Original:   Haha yeah him and his family are touring it. 
+Normalized: Haha yeah him and his family are touring it.
+
+Original:   Damn I'm jelous! 
+Normalized: Damn I am jelous!
+
+Original:   Ayo! Tell yo sister that I met Raekwon!!!!
+Normalized: Hey you! Tell yo sister that I met Raekwon!!!!
+
+Original:   Hahaha! He'll have to tell us about it! I never been
+Normalized: Hahaha! He will have to tell us about it! I never been
+
+Original:   So I heard there was this crazy ass awesome band playing in Richmond tonight! 
+Normalized: So I heard there was this crazy ass awesome band playing in Richmond tonight!
+
+Original:   No, I can't remember exactly what it's called, "Grow" maybe...
+Normalized: No, I cannot remember exactly what it is called, "Grow" maybe...
+
+Original:   oh right I think I've heard of them...
+Normalized: oh right I think I have heard of them...
+
+Original:   Aren't they like the "Red Russias"?
+Normalized: Are not they like the "Red Russias"?
+
+Original:   Anyway, I figured I would go check them out, see wha all the hype was about, Wana come?
+Normalized: Anyway, I figured I would go check them out, see what all the hype was about, Want to come?
+
+Original:   Yeah it's (804) 439-2496, who's this?
+Normalized: Yeah it is (804) 439-2496, who is this?
+
+Original:   nahh sounds kinda lame
+Normalized: nahh sounds kind of lame
+
+Original:   yeah, I'm going to see the picasso exhibit at the vmfa
+Normalized: yeah, I am going to see the picasso exhibit at the vmfa
+
+Original:   Hahaha (touché) really! Well I was just gunna hang out with Elsa and Gelly! Claire is even coming! 
+Normalized: Haha (touché) really! Well I was just going to hang out with Elsa and Gelly! Claire is even coming!
+
+Original:   What do you think we should call the first company song? It was definitely an experimental piece 
+Normalized: What do you think we should call the first company song? It was definitely an experimental piece
+
+Original:    Silver sable and the wild pack feat. Doctor Dooms deadly doppleganger! It's an experimental title!
+Normalized: Silver sable and the wild pack feat. Doctor Dooms deadly doppleganger! It is an experimental title!
+
+Original:   I'm glad! I'll design that thing tommorrow
+Normalized: I am glad! I will design that thing tommorrow
+
+Original:   Okie dokie!!
+Normalized: Okay dokie!!
+
+Original:   Hey, Hooooooow would you feel about modeling for me on a photoshoot? 
+Normalized: Hey, Hooooooow would you feel about modeling for me on a photoshoot?
+
+Original:   hey man
+hope ur gud
+can u c what time vcu game is 2day m
+Normalized: hey man
+hope your gud
+can you see what time vcu game is Today m
+
+Original:   sori
+jus
+heard 7 10
+kul...we can watch it
+oughta b gud
+Normalized: sori
+jus
+heard 7 10
+kul...we can watch it
+oughta be good
+
+Original:   Hey, if it's against Perdue then it's 7:10pm
+Normalized: Hey, if it is against Perdue then it is 7:10pm
+
+Original:   ok! Will U be home at 230? Because I need to be at args at 330 and I'm almost positive that mom is taking me, but on the off chance, can we be in touch?
+Normalized: okay! Will YOU be home at 230? Because I need to be at args at 330 and I am almost positive that mom is taking me, but on the off chance, can we be in touch?
+
+Original:   can u txt her a reminder
+can backup but wud b tuff
+Normalized: can you text her a reminder
+can backup but would be tough
+
+Original:   I ardy have called, but I'm not worried, she will come through... Thang
+Normalized: I ardy have called, but I am not worried, she will come through... Thing
+
+Original:   will call round 2 30 n make sure all is well
+Normalized: will call round TO 30 in make sure all is well
+
+Original:   thats gr8t
+hav fun luv u
+Normalized: that is gr8t
+hav fun love you
+
+Original:   Im really not sure, to be honest
+Normalized: I am really not sure, to be honest
+
+Original:   Yeah, Im waiting on a response.
+Normalized: Yeah, I am waiting on a response.
+
+Original:   Ok thanks!
+Normalized: Okay thanks!
+
+Original:   Ugh, so I got a new phone and not everyone's number copied over from recording tech. I only have one recording tech person's number right now and I dont 
+Normalized: Ugh, so I got a new phone and not everyone's number copied over from recording technology. I only have one recording technology person's number right now and I do not
+
+Original:   think he's even started
+Normalized: think he is even started
+
+Original:   Almost done, can we take jaichelle home? She knows I'm driving...
+Normalized: Almost done, can we take jaichelle home? She knows I am driving...
+
+Original:   hahaha ok. will do.
+Normalized: haha okay. will do.
+
+Original:   Yessssssss! I knew I could count on you :) i mean there might be a zebra or two in da background but you only havta mount the elephant! How were the rest of the bands?
+Normalized: Yessssssss! I knew I could count on you :) i mean there might be a zebra or two in the background but you only havta mount the elephant! How were the rest of the bands?
+
+Original:   Man! Both of those names are all kindsa da best! Howev you been today? If u busy das cool! 
+Normalized: Man! Both of those names are all kind of the best! Howev you been today? If you busy thats cool!
+
+Original:   It's yo call, I'm just gunna design it
+Normalized: It is yo call, I am just going to design it
+
+Original:   May u send me dylan's number so i can ask her?
+Normalized: May you send me dylan's number so i can ask her?
+
+Original:   Oh, I was just with Dylan! Damn, sorry should have Axed :/ it's (804) 921-5871... What does it say on the assignment sheet?
+Normalized: Oh, I was just with Dylan! Damn, sorry should have Axed :/ it is (804) 921-5871... What does it say on the assignment sheet?
+
+Original:   Damn, I wish brotha! I gotsta be workin on dis drawing all week I'm all kindsa BEhind! I might try but I doubt it
+Normalized: Damn, I wish brother! I got to be working on dis drawing all week I am all kind of Behind! I might try but I doubt it
+
+Original:   sorry, judst got off work! and I got home at 3 last night so I kinda slept in till 1 by accident :/ and then I had to pick naomi up and be at this high school panel thing at orchard house by 2 haha... but I made it!  how about you?
+Normalized: sorry, judst got off work! and I got home at 3 last night so I kind of slept in until 1 by accident :/ and then I had to pick naomi up and be at this high school panel thing at orchard house by TO haha... but I made it! how about you?
+
+Original:   It's cool! I slept in again too:( I set my alarm for 830 and woke up at noon!!!!!! Then I read another chapter of gatsby ;PPPPPPP and then drove to pedisberg and back to shoot the trojan women... oh, and I stopped at tropical smoothie on the way back! Iv definately had 4 smoothies this weekend, haha! Haven't worked on my drawing much, the youge! 
+Normalized: It is cool! I slept in again too:( I set my alarm for 830 and woke up at noon!!!!!! Then I read another chapter of gatsby ;PPPPPPP and then drove to pedisberg and back to shoot the trojan women... oh, and I stopped at tropical smoothie on the way back! I have definately had FOR smoothies this weekend, haha! Have not worked on my drawing much, the youge!
+
+Original:   I saw no args kids that actually watched it :( except for maybe Kali, haha! Are u going to the Maggie walker soccer game tomorrow?
+Normalized: I saw no args kids that actually watched it :( except for maybe Kali, haha! Are you going to the Maggie walker soccer game tomorrow?
+
+Original:   It's the CD title! Not the company name!
+Normalized: It is the CD title! Not the company name!
+
+Original:   Damn, well that's an easy fix I can do tomorrow then, just work with me on it then, cool?
+Normalized: Damn, well that is an easy fix I can do tomorrow then, just work with me on it then, cool?
+
+Original:   Sounds good to me! I'll see you tomorrow!
+Normalized: Sounds good to me! I will see you tomorrow!
+
+Original:   Hey, I think I'm gunna go to the Maggie walker game with Kevin after school, and Travis isn't riding so you don't have to drive!
+Normalized: Hey, I think I am going to go to the Maggie walker game with Kevin after school, and Travis is not riding so you do not have to drive!
+
+Original:   Ok that sounds good. I will leabe u a note if u aren't home by the time I have to go to church for my evening mtg. Love, mom
+Normalized: Okay that sounds good. I will leabe you a note if you are not home by the time I have to go to church for my evening mtg. Love, mom
+
+Original:   K thanks, love you too
+Normalized: OKAY thanks, love you too
+
+Original:   Aching I slept in today :( 
+Normalized: Aching I slept in today :(
+
+Original:   I didn't go to school haha
+Normalized: I did not go to school haha
+
+Original:   Das what 
+Happens when you fuck wit da gaaaang!
+Normalized: Thats what Happens when you fuck wit the gaaaang!
+
+Original:   you can kill me if you want but I promise it's legit my friend
+Normalized: you can kill me if you want but I promise it is legit my friend
+
+Original:   how's your drawing?
+Normalized: how is your drawing?
+
+Original:   Don't talk about it be about it!
+Normalized: Do not talk about it be about it!
+
+Original:   um. well considering I was gone all weekend I couldn't work on it but I got some done today. I just don't think I'm gonna get any sleep this week
+Normalized: um. well considering I was gone all weekend I could not work on it but I got some done today. I just do not think I am going to get any sleep this week
+
+Original:   Haha same! I'm missing thursday!
+Normalized: Haha same! I am missing Thursday!
+
+Original:   yeah you gonna finish better than me haha
+Normalized: yeah you going to finish better than me haha
+
+Original:   Hahaha it's cool it's cool! It's just gunna be a shitty week
+Normalized: Hahaha it is cool it is cool! It is just going to be a shitty week
+
+Original:   Kevin all kindsa tricked me into going into jersey mikes instead :( hahaha
+Normalized: Kevin all kind of tricked me into going into jersey mikes instead :( haha
+
+Original:   man so you didn't get donuts OR free stuff :/
+Normalized: man so you did not get donuts OR free stuff :/
+
+Original:   Neither of those wonderful things :( it was pretty fucked up man... Did you/ are you still gunna get your frozen ice?
+Normalized: Neither of those wonderful things :( it was pretty fucked up man... Did you/ are you still going to get your frozen ice?
+
+Original:   well my dad was all drugged up because he got another one of those shots! haha I'll have to tell you the story tomorrow. but I'mm contemplating going by myself...
+Normalized: well my dad was all drugged up because he got another one of those shots! haha I will have to tell you the story tomorrow. but I'mm contemplating going by myself...
+
+Original:   sorry, I'm coming from drum lessons so I may go now. Still haven't decided. and I didn't ask about the sixe of the needle! but I will.
+Normalized: sorry, I am coming from drum lessons so I may go now. Still have not decided. and I did not ask about the sixe of the needle! but I will.
+
+Original:   Oh, das all kindsa on the other side of town! Since the time I texted you, and the time that you responded, I've decided that I an going to like this drawing :p haha
+Normalized: Oh, thats all kind of on the other side of town! Since the time I texted you, and the time that you responded, I have decided that I an going to like this drawing :p haha
+
+Original:   I've decided that I do like this drawing!
+Normalized: I have decided that I do like this drawing!
+
+Original:   yayy! so maybe now you will be more motivated to work on it! Right now I'm waiting in line for my ice cream and there is all kindsa terrifying lightning!
+Normalized: yay! so maybe now you will be more motivated to work on it! Right now I am waiting in line for my ice cream and there is all kind of terrifying lightning!
+
+Original:   Yeah! As soon as I start likin it it's due on Friday! AWESOME! and Hahahahaha yeah be safe driving home! I can hear at sheit from my house and I be feelin all kindsa cosy inside (no homo)! This morning was soooooo awesome! The world looked like it was dying! And then with this tonight.... I LOVE THUNDETSTORMS! and just gushing rain, haha
+Normalized: Yeah! As soon as I start liking it it is due on Friday! AWESOME! and Haha yeah be safe driving home! I can hear at shit from my house and I be feeling all kind of cosy inside (no homo)! This morning was soooooo awesome! The world looked like it was dying! And then with this tonight.... I LOVE THUNDETSTORMS! and just gushing rain, haha
+
+Original:   Ha! (actually that kinda sucks, SARS) and it's cause I'm starting some of dat lil ass shading dat I had been wanting o do!
+Normalized: Hah! (actually that kind of sucks, SARS) and it is cause I am starting some of that little ass shading that I had been wanting oh do!
+
+Original:   ohhhh. man you suck!
+Normalized: oh. man you suck!
+
+Original:   No I'm 90% sure that it's Thursday!
+Normalized: No I am 90% sure that it is Thursday!
+
+Original:   I just went outside! SHEIT BE CRAAAAAZY!
+Normalized: I just went outside! SHIT BE CRAAAAAZY!
+
+Original:   Haha ouch, looking fine... For what I have :( 
+Normalized: Haha ouch, looking fine... For what I have :(
+
+Original:   Yeah i cant tell if bartletts thinking about extending  the deadline or not. But its whatever i just want to move on to something else.
+Normalized: Yeah i cannot tell if bartletts thinking about extending the deadline or not. But its whatever i just want to move on to something else.
+
+Original:   Hahahahaha awwwwww :( I bet it was exciting tho :) my adrenaline would have been crazy!
+Normalized: Haha aww :( I bet it was exciting tho :) my adrenaline would have been crazy!
+
+Original:   Fuck that boy! I aint eben comin to school tomorrow!
+Normalized: Fuck that boy! I am not even coming to school tomorrow!
+
+Original:   Well arnt you motivated. I guess mines just showing no potential im ready to be food with it.
+Normalized: Well are not you motivated. I guess mines just showing no potential I am ready to be food with it.
+
+Original:   Hahaha yeaaaaaaaaaaahhh
+Normalized: Haha yeaaaaaaaaaaahhh
+
+Original:   You aint?
+Normalized: You am not?
+
+Original:   Nah! U ain't eber right?
+Normalized: No! YOU am not ever right?
+
+Original:   I aint tryna.  I gotta axe my parents
+Normalized: I am not trying to. I got to axe my parents
+
+Original:   I'm pretty sure I could prolly miss Thursday too, haha
+Normalized: I am pretty sure I could probably miss Thursday too, haha
+
+Original:   You gunna be there tomorrow?
+Normalized: You going to be there tomorrow?
+
+Original:   Probably not.  Well see.
+Normalized: Probably not. Well see.
+
+Original:   I am pretty sure I ain't!
+Normalized: I am pretty sure I am not!
+
+Original:   Dont do it!  Ill need company in anatomy shit
+Normalized: Do not do it! I will need company in anatomy shit
+
+Original:   Yeah, I prolly wont, just sayin I could!
+Normalized: Yeah, I probably will not, just saying I could!
+
+Original:   I couldn't even see the lanes! gahh it was terrifying. but now that I'm home it's fine, I love thunderstorms
+Normalized: I could not even see the lanes! gah it was terrifying. but now that I am home it is fine, I love thunderstorms
+
+Original:   :( were you on the highway? Next giant one we gotta go out in it and get completely drenched ;p
+Normalized: :( were you on the highway? Next giant one we got to go out in it and get completely drenched ;p
+
+Original:   no, I just drove down broad forever because I was too scared to go on the highway haha
+so how's the drawing going?
+Normalized: no, I just drove down broad forever because I was too scared to go on the highway haha
+so how is the drawing going?
+
+Original:   Hahaha! Weeeeeellll! Slowly but well! I am all kindsa skipping school to work on it tomorrow! You better not tell Lyons ;p!
+Normalized: Haha! Weeeeeellll! Slowly but well! I am all kind of skipping school to work on it tomorrow! You better not tell Lyons ;p!
+
+Original:   I won't! but you're still a slacker :P
+Normalized: I will not! but you are still a slacker :P
+
+Original:   Hey! I WAAAASSS a slacker :) now I'm being all proactive and gettn my work done/want to get it done/ maybe there's a chance I can go to tropical smoothie a lunch :)
+Normalized: Hey! I WAAAASSS a slacker :) now I am being all proactive and getting my work done/want to get it done/ maybe there is a chance I can go to tropical smoothie a lunch :)
+
+Original:   So I don't think that I am coming to school tomorrow, I gotta work on my drawing, but my mom will still be driving!
+Normalized: So I do not think that I am coming to school tomorrow, I got to work on my drawing, but my mom will still be driving!
+
+Original:   Ok cool
+Normalized: Okay cool
+
+Original:   hahaha wait you made this on an iPhone??
+Normalized: haha wait you made this on an iphone??
+
+Original:   Nahhhh, I made dat sheit on photoshop cs5, haha it's just dat I found it on my email and downloaded it to my phone!
+Normalized: Nahhhh, I made that shit on photoshop cs5, haha it is just that I found it on my email and downloaded it to my phone!
+
+Original:   Ohhh! so wait it's for an album cover?
+Normalized: Oh! so wait it is for an album cover?
+
+Original:   I just worked on a drawing for 2hrs. I haven't some that since freshman year!
+Normalized: I just worked on a drawing for 2hrs. I have not some that since freshman year!
+
+Original:   Can I come get my stuf at like 2 or 230? 
+Normalized: Can I come get my stuf at like TO or 230?
+
+Original:   Im at school.
+Normalized: I am at school.
+
+Original:   Did u brig it or is it at yo house?
+Normalized: Did you brig it or is it at yo house?
+
+Original:   I could prolly come get it at like 5... You locked ur car right?
+Normalized: I could probably come get it at like 5... You locked your car right?
+
+Original:   Yeah.  I think jacob has your computer though.
+Normalized: Yeah. I think jacob has your computer though.
+
+Original:   He isnt
+Normalized: He is not
+
+Original:   Agh, sheit I'll figure something out, can u just make sure that Naomi gets my lunchbox and backpack? 
+Normalized: Agh, shit I will figure something out, can you just make sure that Naomi gets my lunchbox and backpack?
+
+Original:   How?  i wont have it till i get off da bus.
+Normalized: How? i will not have it until i get off the bus.
+
+Original:   Hey, so I left all my sheit (my backpack and lunchbox) in kevins car yesterday... Do you think he could give it to you at the southside bus stop and I could come over to your house and get it this afternoon?
+Normalized: Hey, so I left all my shit (my backpack and lunchbox) in kevins car yesterday... Do you think he could give it to you at the southside bus stop and I could come over to your house and get it this afternoon?
+
+Original:   Like just hand it to her after you get off, and let da bus driver know so she wont be leavin... Is dat cool?
+Normalized: Like just hand it to her after you get off, and let the bus driver know so she will not be leaving... Is that cool?
+
+Original:   Yo u got my computer?
+Normalized: Yo you got my computer?
+
+Original:   Yeah dawg
+Normalized: Yeah dog
+
+Original:   Yeah 
+Normalized: Yeah
+
+Original:   Ground floor exploding opportunity in Richmond...must see B-) comp. Plan $$$ plan, don't miss! Join us at 6624 w. Broad st. 6:30 PM Get paid for life! Invite gu
+Normalized: Ground floor exploding opportunity in Richmond...must see BE-) comp. Plan $$$ plan, do not miss! Join us at 6624 w. Broad street. 6:30 PM Get paid for life! Invite gu
+
+Original:   est  
+Normalized: est
+
+Original:   Ok see you after carpool.we can pick up your stuff and maybe get some dinner too.
+Normalized: Okay see you after carpool.we can pick up your stuff and maybe get some dinner too.
+
+Original:   Alright cool, kevins actaully gunna gove my stuff to Naomi, but I think Jacob has my computer and he wasn't at school, so we may have to go get that instead. 
+Normalized: Alright cool, kevins actaully going to gove my stuff to Naomi, but I think Jacob has my computer and he was not at school, so we may have to go get that instead.
+
+Original:   Ok we can do whatever we need to do. Love, mom
+Normalized: Okay we can do whatever we need to do. Love, mom
+
+Original:   Yo dawg you eber used fireworks?
+Normalized: Yo dog you ever used fireworks?
+
+Original:   Oh, no that's a negative...
+Normalized: Oh, no that is a negative...
+
+Original:   Dat boy is good!
+Normalized: That boy is good!
+
+Original:   Dat boy is who?
+Normalized: That boy is who?
+
+Original:   Eah i got dat shit
+Normalized: Eah i got that shit
+
+Original:   Dizamn brotha I need it
+Normalized: Dizamn brother I need it
+
+Original:   Nah haha
+Normalized: No haha
+
+Original:   Ill bring dat shit tomorro yo
+Normalized: I will bring that shit tomorro yo
+
+Original:   I might need to come pick it up tonight 
+Normalized: I might need to come pick it up tonight
+
+Original:   Okay thats cool ass well
+Normalized: Okay that is cool ass well
+
+Original:   Prolly after 5
+Normalized: Probably after 5
+
+Original:   All right i wont be here from like 6:45 to 7:45
+Normalized: All right i will not be here from like 6:45 to 7:45
+
+Original:   Ok
+Normalized: Okay
+
+Original:   Haha I ment "coooo"
+Normalized: Haha I meant "coooo"
+
+Original:   Am i still supposed to bring dat shit to naomi dawg?
+Normalized: Am i still supposed to bring that shit to naomi dog?
+
+Original:   Aight.  How was your day off?
+Normalized: Alright. How was your day off?
+
+Original:   Damn, SARS, u should miss thursday then!
+Normalized: Damn, SARS, you should miss Thursday then!
+
+Original:   I may just do dat sheeit.
+Normalized: I may just do that sheeit.
+
+Original:   Hey, did i miss anything I'm drawing or melton?
+Normalized: Hey, did i miss anything I am drawing or melton?
+
+Original:   Damn, what do u think that means for me?
+Normalized: Damn, what do you think that means for me?
+
+Original:   drawing no, we have a test thursday in Melton and it was supposed to be today so no getting out of it haha
+Normalized: drawing no, we have a test Thursday in Melton and it was supposed to be today so no getting out of it haha
+
+Original:   technically thursday but ima bring mine friday I think, you get any more done today?
+Normalized: technically Thursday but I am going to bring mine Friday I think, you get any more done today?
+
+Original:   Yes! But not as much as I should have! There isn't much of a way that I'm gunna be done... Howed other peoples look?
+Normalized: Yes! But not as much as I should have! There is not much of a way that I am going to be done... How did other peoples look?
+
+Original:   well one of them sophomores is doing like one point perspective but no one else really brought there's in
+Normalized: well one of them sophomores is doing like one point perspective but no one else really brought there is in
+
+Original:   Haha... So basically no ones is gunna be done?
+Normalized: Haha... So basically no ones is going to be done?
+
+Original:   yeeeah I'm thinkin so
+Normalized: yeeeah I am thinking so
+
+Original:   If you can pull together a trick, you'll be good
+Normalized: If you can pull together a trick, you will be good
+
+Original:   very true! he's so angry right now it ain't even funny
+Normalized: very true! he is so angry right now it am not even funny
+
+Original:   no, he didn't need to haha
+Normalized: no, he did not need to haha
+
+Original:   Im gonna try and do as much talking as I can. But I mean, they're gonna expect at least something.
+Normalized: I am going to try and do as much talking as I can. But I mean, they are going to expect at least something.
+
+Original:   Unless we tell theme we legally can't do any magic outside the black box!
+Normalized: Unless we tell theme we legally cannot do any magic outside the black box!
+
+Original:   look! ders an emoticon on da package!!
+Normalized: look! ders an emoticon on the package!!
+
+Original:   Whaaaaaaaaaaat! Now das what I'm talkin bout willis!
+Normalized: Whaaaaaaaaaaat! Now thats what I am talking about willis!
+
+Original:   Yeah! I'll come up with something! When is it?
+Normalized: Yeah! I will come up with something! When is it?
+
+Original:   Yeah! I mean we were never not cool! :) I was having a super shitty day that day, and I had some doubts about us, and then a bunch of other stuff too! I mean nothings perfect, and were both pretty timid about things I think, but it's all good baby baby! Thanks for asking, you and Phil?
+Normalized: Yeah! I mean we were never not cool! :) I was having a super shitty day that day, and I had some doubts about us, and then a bunch of other stuff too! I mean nothings perfect, and were both pretty timid about things I think, but it is all good baby baby! Thanks for asking, you and Phil?
+
+Original:   Ugh, so it's during a lunch?
+Normalized: Ugh, so it is during a lunch?
+
+Original:   Hahaha thts good for YOU!
+Normalized: Hahaha that is good for YOU!
+
+Original:   I don't think so... ms. melton got mad because apparently the test was supposed to be today but we all thought it was thursday (We're still taking it thursday though!) other than that, pretty boring day.
+Normalized: I do not think so... miss. melton got mad because apparently the test was supposed to be today but we all thought it was Thursday (We are still taking it Thursday though!) other than that, pretty boring day.
+
+Original:   What! Bitches be trippin! Haha jk! My dy wasn't nearly as productive a it should have been! Skins is kinda addictive
+Normalized: What! Bitches be tripping! Haha just kidding! My dy was not nearly as productive a it should have been! Skins is kind of addictive
+
+Original:   Dat boy adobe fireworks is good!
+Normalized: That boy adobe fireworks is good!
+
+Original:   It's funny that ive watched 3 episodes... Cause it's SO "dramaey", the acting is terrible, and the filming is even worse! Hahaha! Yeah! Not nearly enough to finish before the deadline tho :( I'm totally freaking out about this whole "magic club has to have a table for shadow day" thing! Haha :/ how was work?
+Normalized: It is funny that I have watched 3 episodes... Cause it is SO "dramaey", the acting is terrible, and the filming is even worse! Haha! Yeah! Not nearly enough to finish before the deadline tho :( I am totally freaking out about this whole "magic club has to have a table for shadow day" thing! Haha :/ how was work?
+
+Original:   oh, because I genuinly like the UK version, the first 2 seasons at least.
+Normalized: oh, because I genuinly like the UK version, the first TO seasons at least.
+
+Original:   Yeah, I'm sayin I kinda like it to, I just can't tell why (haha no offense)... It definitely lends itself more to girls!
+Normalized: Yeah, I am saying I kind of like it to, I just cannot tell why (haha no offense)... It definitely lends itself more to girls!
+
+Original:   yeah i think it's a girly show, which is why I like it more. but I don't even think the acting is bad! but I will admit it's super drama-y
+Normalized: yeah i think it is a girly show, which is why I like it more. but I do not even think the acting is bad! but I will admit it is super drama-y
+
+Original:   Hahahahaha well it's not THAT bad ;p they are SO open with there sexuality! It is CRAZY!
+Normalized: Haha well it is not THAT bad ;p they are SO open with there sexuality! It is CRAZY!
+
+Original:   Hey dawg how do you set the crop tool in ps to do a specific size?
+Normalized: Hey dog how do you set the crop tool in ps to do a specific size?
+
+Original:   Yeah i found dat shit thanks dawg.
+Normalized: Yeah i found that shit thanks dog.
+
+Original:   Haha I don't think it's something I want to be watching when my parents are home... I think it's really funny!
+Normalized: Haha I do not think it is something I want to be watching when my parents are home... I think it is really funny!
+
+Original:   yeah same, I watched the other seasons and they're even worse (with the sex) but also the characters are just not as interesting!
+Normalized: yeah same, I watched the other seasons and they are even worse (with the sex) but also the characters are just not as interesting!
+
+Original:   Oh, do they have different characters each season?! That's kinda interesting! Have u seen the us one? 
+Normalized: Oh, do they have different characters each season?! That is kind of interesting! Have you seen the us one?
+
+Original:   they switch after 2 seasons. and I watched like 5 minutes of the first episode of the us version, it was just copied from the uk version. it was very not good
+Normalized: they switch after TO seasons. and I watched like 5 minutes of the first episode of the us version, it was just copied from the uk version. it was very not good
+
+Original:   I have to make a powerpoint about barcelona and study for a test :(
+but I'm excited for shadow day! shadows are so tiny and cute, like baby dogs!
+Normalized: I have to make a powerpoint about barcelona and study for a test :(
+but I am excited for shadow day! shadows are so tiny and cute, like baby dogs!
+
+Original:   You all KINDSA right! We should pick them up and hold them!!!!! JUST LIKE BABY DOGS!
+Normalized: You all KIND OF right! We should pick them up and hold them!!!!! JUST LIKE BABY DOGS!
+
+Original:   Ok! So not true! You suggested we bring collars and leashes and walk them around! That is a form of human suppression! My idea was simply an act of loving companionship! ;p 
+Normalized: Okay! So not true! You suggested we bring collars and leashes and walk them around! That is a form of human suppression! My idea was simply an act of loving companionship! ;p
+
+Original:   Woowwww, not supposed to be a winky face :/
+Normalized: Wow, not supposed to be a winky face :/
+
+Original:   since when is washing baby dogs creepy? And if there naked that is entirely there fault!!!! I'm just tryna make sure they have proper hygene! 
+Normalized: since when is washing baby dogs creepy? And if there naked that is entirely there fault!!!! I am just trying to make sure they have proper hygene!
+
+Original:   because they're cute like baby dogs but they are still people! if you want to bathe them go right ahead, we'll see if you still feel that way tomorrow
+Normalized: because they are cute like baby dogs but they are still people! if you want to bathe them go right ahead, we will see if you still feel that way tomorrow
+
+Original:   haha yeah! I definately took that one too far! And now I've spent the past like 3 txt messages trying to play it off, haha
+Normalized: haha yeah! I definately took that one too far! And now I have spent the past like 3 text messages trying to play it off, haha
+
+Original:   ahahaha I'm just glad you know that's creepy :P
+Normalized: ahahaha I am just glad you know that is creepy :P
+
+Original:   Oh, hey are u helping with the Spanish club table?
+Normalized: Oh, hey are you helping with the Spanish club table?
+
+Original:   no, but I may be helping with pete's. I didn't think I was but my name's on the list so who knows!
+Normalized: no, but I may be helping with pete's. I did not think I was but my name's on the list so who knows!
+
+Original:   Hahaha But we have a table set up! I really don't think there's any way around this!
+Normalized: Haha But we have a table set up! I really do not think there is any way around this!
+
+Original:   I don't think we'd have to try bery hard! Haha! Next year is gunna be the worst!
+Normalized: I do not think we would have to try bery hard! Haha! Next year is going to be the worst!
+
+Original:   hahaha I highly doubt that! seeing as my qualifications are that I own a deck of cards. and have been inside a magic shop. that's about it.
+Normalized: haha I highly doubt that! seeing as my qualifications are that I own a deck of cards. and have been inside a magic shop. that is about it.
+
+Original:   I don't know where a full deck is!  So you've got me there! AND! as far as the shop thing goes, you can't buy magic Gracie! It's in you :p haha
+Normalized: I do not know where a full deck is! So you have got me there! AND! as far as the shop thing goes, you cannot buy magic Gracie! It is in you :p haha
+
+Original:   hahaha well I don't think it's in me :/ sorry. guess I can't help, bummer
+Normalized: hahaha well I do not think it is in me :/ sorry. guess I cannot help, bummer
+
+Original:   Hahaha you seem sooo disapointed! ;)
+Normalized: Haha you seem sooo disapointed! ;)
+
+Original:   Guess what! I'm not dead!
+Normalized: Guess what! I am not dead!
+
+Original:   YES!!!!!!!! I was gunna text to you to ask haha :) howuzit?
+Normalized: YES!!!!!!!! I was going to text to you to ask haha :) howuzit?
+
+Original:   It was fine, she was just acting like kaitlin normally does (Which is already kinda drunk haha)
+Normalized: It was fine, she was just acting like kaitlin normally does (Which is already kind of drunk haha)
+
+Original:   Haha maybe she wasn't drunk then :) THAT'S REALLY SHOCKING I THOUGHT. but whaever I guess!
+Normalized: Haha maybe she was not drunk then :) THAT IS REALLY SHOCKING I THOUGHT. but whaever I guess!
+
+Original:   I mean it's not that shocking for me because I know some other stuff about kaitlin, but it is dissapointed. like I knew she COULD have those tendencies but I'm sad she's actually been following through with that, you know?
+Normalized: I mean it is not that shocking for me because I know some other stuff about kaitlin, but it is dissapointed. like I knew she COULD have those tendencies but I am sad she is actually been following through with that, you know?
+
+Original:   Yeah! I mean I dont know her like you do, but it is sad... And doing it at school is intense! Like I remember ben used to have weed at school like erryday! But he hasn't done that in like almost 2 years! 
+Normalized: Yeah! I mean I do not know her like you do, but it is sad... And doing it at school is intense! Like I remember ben used to have weed at school like erryday! But he has not done that in like almost TO years!
+
+Original:   yeah that's good! now that role goes to kyle!
+Normalized: yeah that is good! now that role goes to kyle!
+
+Original:   Haha, and I'm pretty sure ben finally has enough money to buy weed again, so he is going to, haha... MY DAD JUST CAME HOME WITH A CARLOAD OF CHIPS OREOS AND NUTTERBUTTERS!!!!!!! 
+Normalized: Haha, and I am pretty sure ben finally has enough money to buy weed again, so he is going to, haha... MY DAD JUST CAME HOME WITH A CARLOAD OF CHIPS OREOS AND NUTTERBUTTERS!!!!!!!
+
+Original:   There is now way I can eat all of this by the end of school!!!! No way! 
+Normalized: There is now way I can eat all of this by the end of school!!!! No way!
+
+Original:   There was like this overnight "retreat" for a ton of kids at seven hills, and apparently they don't like delicious things! 
+Normalized: There was like this overnight "retreat" for a ton of kids at seven hills, and apparently they do not like delicious things!
+
+Original:   You know das right! Sorry if I was all kindsa lame un da bus dawg!
+Normalized: You know thats right! Sorry if I was all kind of lame un the bus dog!
+
+Original:   what? you weren't!
+Normalized: what? you were not!
+
+Original:   Oh really! Haha cool then ... Necermind :) 
+Normalized: Oh really! Haha cool then ... Necermind :)
+
+Original:   haha yeah don't worry about it!
+Normalized: haha yeah do not worry about it!
+
+Original:   :)... Do you think that for the gala, when we give her a list, she's just gunna put them in the show? Or they are still gunna like "deliberate" on the best ones?
+Normalized: :)... Do you think that for the gala, when we give her a list, she is just going to put them in the show? Or they are still going to like "deliberate" on the best ones?
+
+Original:   who knows? ms. lyons will probably include all of your work though...
+Normalized: who knows? miss. lyons will probably include all of your work though...
+
+Original:   Haha I don't know about THAT :p!
+Normalized: Haha I do not know about THAT :p!
+
+Original:   hahaha she probably will though :P
+I would just list the things you want to be in the show, and let them choose whatever!
+Normalized: haha she probably will though :P
+I would just list the things you want to be in the show, and let them choose whatever!
+
+Original:   Yeah that sounds like a good idea! It's so the best because it's in a REAL gallery and all of the work is generally super good! And it's always the best night!!! It's like a summary of da whole year! Haha
+Normalized: Yeah that sounds like a good idea! It is so the best because it is in a REAL gallery and all of the work is generally super good! And it is always the best night!!! It is like a summary of the whole year! Haha
+
+Original:   yeah I love going, I'm bummed it's on a friday... do you know the date of it?
+Normalized: yeah I love going, I am bummed it is on a Friday... do you know the date of it?
+
+Original:   I just never remember it being this early! It april 8, just checked :) I'll go back with you another time if you can't make it!
+Normalized: I just never remember it being this early! It april 8, just checked :) I will go back with you another time if you cannot make it!
+
+Original:   ok! hopefully I can find a way to go, though!
+Normalized: okay! hopefully I can find a way to go, though!
+
+Original:   I hope so too! Alot of people will be a able to see pieces from our show too! Hey do you want me to see if we could put our video in there?
+Normalized: I hope so too! A lot of people will be a able to see pieces from our show too! Hey do you want me to see if we could put our video in there?
+
+Original:   Cool! I'll do so!
+Normalized: Cool! I will do so!
+
+Original:   Hi, this is Jake Dorsey (I completed behind the wheel with you over winter break, along with Henry Schick), I don't know if you remember, but I had misplaced my greecard and my drivers log at the time so you could not issue me my liscence. Well I have since aquired both of these and have everything in order! Is there any way you could stop by sometime to issue me my liscence?
+Normalized: Hi, this is Jake Dorsey (I completed behind the wheel with you over winter break, along with Henry Schick), I do not know if you remember, but I had misplaced my greecard and my drivers log at the time so you could not issue me my liscence. Well I have since aquired both of these and have everything in order! Is there any way you could stop by sometime to issue me my liscence?
+
+Original:   there's info on our wikispace of what to study, I printed of some notes and the vocab abd I'm finding the reast in the textbook...this sucks
+Normalized: there is info on our wikispace of what to study, I printed of some notes and the vocab abd I am finding the reast in the textbook...this sucks
+
+Original:   But I don't know how to learn!!!!!!!!!
+Normalized: But I do not know how to learn!!!!!!!!!
+
+Original:   aaghhhhhhhh I just started and it looks Like a bunch of random and obscure stuff!
+Normalized: agh I just started and it looks Like a bunch of random and obscure stuff!
+
+Original:   yeah I don't know any of this :( :(
+Normalized: yeah I do not know any of this :( :(
+
+Original:    (you can't see it but that was a crying emoji)!
+Normalized:  (you cannot see it but that was a crying emoji)!
+
+Original:   that one didn't need clarifying!
+Normalized: that one did not need clarifying!
+
+Original:   idano, dem emoticons is pretty ambiguous! 
+Normalized: I don't know, them emoticons is pretty ambiguous!
+
+Original:   yeah, the normal smiley is probably the most confusing of all!
+I have to go now though, I really need to concentrate on this  dumb history stuff!
+Normalized: yeah, the normal smiley is probably the most confusing of all!
+I have to go now though, I really need to concentrate on this dumb history stuff!
+
+Original:   K, goodluck! SARS for the lil ass distractions haha
+Normalized: OKAY, good luck! SARS for the little ass distractions haha
+
+Original:   And..... history studyin comin well?
+Normalized: And..... history studyin coming well?
+
+Original:   ummmmmm
+Normalized: um
+
+Original:   I just don't even know what to study
+Normalized: I just do not even know what to study
+
+Original:   How about we both make a pact not to! Haha jk, yeah same, fuck this! 
+Normalized: How about we both make a pact not to! Haha just kidding, yeah same, fuck this!
+
+Original:   yeah dude I'm just focusing on my drawing tonight
+Normalized: yeah dude I am just focusing on my drawing tonight
+
+Original:   Haha ive only worked on that for like an hour :/
+Normalized: Haha I have only worked on that for like an hour :/
+
+Original:   wow Aly is so helpful. I asked her what we're supposed to study and she goes "everything on the website"
+Normalized: wow Aly is so helpful. I asked her what we are supposed to study and she goes "everything on the website"
+
+Original:   Apparently it's was so fucking insane!
+Normalized: Apparently it is was so fucking insane!
+
+Original:   tomorrow's goin to suck.
+Normalized: tomorrow's going to suck.
+
+Original:   I'm feelin you dawg! I'm feelin you!
+Normalized: I am feeling you dog! I am feeling you!
+
+Original:   you get dat email from Bartlett??
+Normalized: you get that email from Bartlett??
+
+Original:   That make me Wana miss school haha
+Normalized: That make me Want to miss school haha
+
+Original:   grrr this suuucks. why do we hate drawring so much?
+Normalized: grr this suuucks. why do we hate drawring so much?
+
+Original:   I don't know, I think.... I... I... Think..... .... I think we suck... 
+Normalized: I do not know, I think.... I... I... Think..... .... I think we suck...
+
+Original:   Ill even go far enough to say that I like THIS drawing, I'm just such a little bitch having started so late
+Normalized: I will even go far enough to say that I like THIS drawing, I am just such a little bitch having started so late
+
+Original:   How's yours look?
+Normalized: How is yours look?
+
+Original:   kind of confusing- theres a lot of lines
+Normalized: kind of confusing- there is a lot of lines
+
+Original:   considering that we're probably some of the only ones that actually have something... I have no idea.
+Normalized: considering that we are probably some of the only ones that actually have something... I have no idea.
+
+Original:   I mean no one brings in there drawing so I don't know. I'm just assuming
+Normalized: I mean no one brings in there drawing so I do not know. I am just assuming
+
+Original:   I think so. you're probably one one of the furthest along. if not the furthest period
+Normalized: I think so. you are probably one one of the furthest along. if not the furthest period
+
+Original:   Why thanksya!... Are u gunna be up a while working on it?
+Normalized: Why thanksya!... Are you going to be up a while working on it?
+
+Original:   We REALLY gotta study together tomorrow :/
+Normalized: We REALLY got to study together tomorrow :/
+
+Original:   This Melton test is some sheeeeeeeeeeeeeit! 
+Normalized: This Melton test is some sheeeeeeeeeeeeeit!
+
+Original:   I ment to say that I prolly will be up til like 1 or 2 asswell
+Normalized: I meant to say that I probably will be up until like 1 or TO as well
+
+Original:   I am so screwed. I don't know any of this stuff after hours of studying :/
+Normalized: I am so screwed. I do not know any of this stuff after hours of studying :/
+
+Original:   Awwww :( I absolutely hate that feeling! It's worse than not studying at all! But I bet you know more than you think you do!
+Normalized: Aww :( I absolutely hate that feeling! It is worse than not studying at all! But I bet you know more than you think you do!
+
+Original:   yeah, hopefully! I've been trying to go through all this vocab :/
+Normalized: yeah, hopefully! I have been trying to go through all this vocab :/
+
+Original:   hahaha I have no filter either its cool! but dude man I KNOW
+Normalized: haha I have no filter either its cool! but dude man I KNOW
+
+Original:   Dude man I know asswell!
+Normalized: Dude man I know as well!
+
+Original:   I'm not even gunna make a "shuda taken master p" comment like I always do, that blows!... We do have FIGURE DRAWING to look forward to!
+Normalized: I am not even going to make a "should have taken master p" comment like I always do, that blows!... We do have FIGURE DRAWING to look forward to!
+
+Original:   ohhhhhhh shit! you're gonna KILL me even harder...
+Normalized: oh shit! you are going to KILL me even harder...
+
+Original:   So that's a no? Ouuuuch.... It's all gooooooooooos
+Normalized: So that is a no? Ouuuuch.... It is all gooooooooooos
+
+Original:   I'm really sorry :( but I'm POSITIVE I can go next friday. and that aint even an April fools
+Normalized: I am really sorry :( but I am POSITIVE I can go next Friday. and that am not even an April fools
+
+Original:   I'm fooooorreal
+Normalized: I am fooooorreal
+
+Original:   Why dontcha just leabe a lot blank, and then finish on tues after you done looked it all up :)
+Normalized: Why dontcha just leabe a lot blank, and then finish on Tuesday after you done looked it all up :)
+
+Original:   hopefully she'll let us do that, but she's not too happy with us so I don't want to count on anything! how's your drawing?
+Normalized: hopefully she will let us do that, but she is not too happy with us so I do not want to count on anything! how is your drawing?
+
+Original:   
+
+(thats you figure drawing)
+Normalized: 
+
+(that is you figure drawing)
+
+Original:   Good as ever! (which isn't necessarily a good thing, seeing as this project ha kinda run me over) I am 100% sure that I am not gunna finish in time tho! Thanks for axin! I am liking working on it tho... Hows... Whatever else you doin goin :) haha
+Normalized: Good as ever! (which is not necessarily a good thing, seeing as this project hah kind of run me over) I am 100% sure that I am not going to finish in time tho! Thanks for axin! I am liking working on it tho... How is... Whatever else you doing going :) haha
+
+Original:   Ohhhhh I just got you!!!!!!!!
+Normalized: Oh I just got you!!!!!!!!
+
+Original:   Hahahahahaha
+Normalized: Haha
+
+Original:   that's good! sometimes if a drawing is looking really good, mr. bartlett doesn't even care that it's not done! it's happened to me before! and i'm pretty much just studying, I think I'm gonna give up and go to sleep soon though...
+Normalized: that is good! sometimes if a drawing is looking really good, mister. bartlett does not even care that it is not done! it is happened to me before! and I am pretty much just studying, I think I am going to give up and go to sleep soon though...
+
+Original:   hahaha I hate you! 
+
+(that's me winning
+Normalized: haha I hate you! 
+
+(that is me winning
+
+Original:   Yeah, I'm hoping that's what will happen! Is life good?! :) 
+Normalized: Yeah, I am hoping that is what will happen! Is life good?! :)
+
+Original:   I'll getchew 
+Normalized: I will getchew 
+
+Original:   haha I can't believe there's an emoji that does that so perfectly
+Normalized: haha I cannot believe there is an emoji that does that so perfectly
+
+Original:   haha wait look at the pencil and paper.. it's writing backwards!
+Normalized: haha wait look at the pencil and paper.. it is writing backwards!
+
+Original:   Hahaha you right! Wel I'm pretty sure emoji are Japanese!
+Normalized: Haha you right! We will I am pretty sure emoji are Japanese!
+
+Original:   hahaha yes, life's good.
+Normalized: haha yes, life's good.
+
+Original:   Score! I'll let you sleep now, I am really bad at staying up late working on things, but I need to stop bothering you and try ;P
+Normalized: Score! I will let you sleep now, I am really bad at staying up late working on things, but I need to stop bothering you and try ;P
+
+Original:   yeah I'm gonna go to bed. Good luck with finishing everything! :)
+Normalized: yeah I am going to go to bed. Good luck with finishing everything! :)
+
+Original:   it's a clap! this   is a pray
+Normalized: it is a clap! this  is a pray
+
+Original:   Chicka chicka yeah yeah! Fake ID fake ID!  I don't think I'm gunna bring mine tomorrow, it's at da smudging stage
+Normalized: Chicka chicka yeah yeah! Fake I WOULD fake I WOULD! I do not think I am going to bring mine tomorrow, it is at the smudging stage
+
+Original:   fake id?
+Normalized: fake I would?
+
+Original:   ooooh yeah little bit of a struck but I gotcha
+Normalized: oh yeah little bit of a struck but I got you
+
+Original:   hahaha crap! just shows how concentrated I am...
+Normalized: haha crap! just shows how concentrated I am...
+
+Original:   i got a few more hours in me after a lil
+Normalized: i got a few more hours in me after a little
+
+Original:    bit a coffeeeeee 
+Normalized: bit a coffeeeeee 
+
+Original:   Hahahahaha
+Normalized: Haha
+
+Original:   Yeaap yeap! Haha, that's a big if!
+Normalized: Yeaap yep! Haha, that is a big if!
+
+Original:   hahahahahahaha!! the BCQ!!!
+Normalized: haha!! the BCQ!!!
+
+Original:   You know das right! It's fairly erotic!
+Normalized: You know thats right! It is fairly erotic!
+
+Original:   soo guess who's not coming to school tomorrow?
+Normalized: soo guess who is not coming to school tomorrow?
+
+Original:   Hahahahaha! Youuuuuuuuuuu?!?!
+Normalized: Haha! Youuuuuuuuuuu?!?!
+
+Original:   yes! my parents got tickets for a concert in DC so we're driving up there now and they're letting me skip since I don't have time to do all my homework :)
+Normalized: yes! my parents got tickets for a concert in DC so we are driving up there now and they are letting me skip since I do not have time to do all my homework :)
+
+Original:   Haha ohhh man! You are alll kindsa lucky that I'm not on yo ass about this for all of the times you get at me for playing hookie ;P
+Normalized: Haha oh man! You are alll kind of lucky that I am not on yo ass about this for all of the times you get at me for playing hookie ;P
+
+Original:   I know! I was really expecting a guilt trip in that text hahaha
+Normalized: I know! I was really expecting a guilt trip in that text haha
+
+Original:   I'm feelin it dawg! I'm just too NICE I guess :PPPPPPP haha I was actually about to call you and give you shit ;) I bet you are all kindsa exited!
+Normalized: I am feeling it dog! I am just too NICE I guess :PPPPPPP haha I was actually about to call you and give you shit ;) I bet you are all kind of exited!
+
+Original:   I am! :)
+and I'm very thankful for that, I would totally deserve it though! haha
+Normalized: I am! :)
+and I am very thankful for that, I would totally deserve it though! haha
+
+Original:   why thank you! I'm super excited 3DAY WEEKENDDDD!
+Normalized: why thank you! I am super excited 3DAY WEEKENDDDD!
+
+Original:   Hahahah! You Wana see Picasso on sayd 3day weekend? Or do a ton of drugs together or somethin', yano, the youge? Man! Me and Kevin are gunna have a mancave party in the dark room!
+Normalized: Hahahah! You Want to see Picasso on sayd 3day weekend? Or do a ton of drugs together or somethin', do you know, the youge? Man! Me and Kevin are going to have a mancave party in the dark room!
+
+Original:   yeah! I can go saturday!
+Normalized: yeah! I can go Saturday!
+
+Original:   Alright cool! I have to be at my house at 4pm to get my liscence (chicka chicka yeah yeah, fake ID fake ID) and I have to work on my drawing for the rest of the weekend, haha but that works!
+Normalized: Alright cool! I have to be at my house at 4pm to get my liscence (chicka chicka yeah yeah, fake I WOULD fake I WOULD) and I have to work on my drawing for the rest of the weekend, haha but that works!
+
+Original:   yay license!! and okay we can go before 4!
+so the band I'm gonna see tonight is Black Joe Lewis and the Honeybears, you should listen to the song "get your shit" like right now.
+Normalized: yay license!! and okay we can go before FOR!
+so the band I am going to see tonight is Black Joe Lewis and the Honeybears, you should listen to the song "get your shit" like right now.
+
+Original:   Hahaha Im in tropical smoothie with no headphone, but I will asap when I get home!! :) you always go see bands with wonderful names!
+Normalized: Haha I am in tropical smoothie with no headphone, but I will as soon as possible when I get home!! :) you always go see bands with wonderful names!
+
+Original:   I will :) and hell da fuck yeah! I'm eating a free sandwich right now :) we are definitely coming on Saturday! Cause you are being deprived!
+Normalized: I will :) and hell the fuck yeah! I am eating a free sandwich right now :) we are definitely coming on Saturday! Cause you are being deprived!
+
+Original:   haha ok! I don't think I've been to tropical smoothie since this summer!
+Normalized: haha okay! I do not think I have been to tropical smoothie since this summer!
+
+Original:   Yoour gunna get all kindsa addicted! Especially with these scratchers! And then you have to take me to frozen ice!
+Normalized: Yoour going to get all kind of addicted! Especially with these scratchers! And then you have to take me to frozen ice!
+
+Original:   ok deal!
+Normalized: okay deal!
+
+Original:   yeah aren't they awesome? I'll have to play some of the real recordings for you
+Normalized: yeah are not they awesome? I will have to play some of the real recordings for you
+
+Original:   They sound like they are really talented too! Whens the concert?
+Normalized: They sound like they are really talented too! When is the concert?
+
+Original:   we're almost there, it'll probably start at 9 amd there's one opening band
+Normalized: we are almost there, it will probably start at 9 and there is one opening band
+
+Original:   haha yeah apparently we got tickets a long time ago and I didn't know... and nice! that's the best!
+Normalized: haha yeah apparently we got tickets a long time ago and I did not know... and nice! that is the best!
+
+Original:   Thats in the top 5 best things to come home to i think! And yeah! I'm not sure how I'm gunna spend it yet tho! This whole post-school day has ben great!
+Normalized: That is in the top 5 best things to come home to i think! And yeah! I am not sure how I am going to spend it yet tho! This whole post-school day has ben great!
+
+Original:   Hahaha!!!! Oh my god!!! That's SOOOOO great! What did your dad say?!?!
+Normalized: Haha!!!! Oh my god!!! That is SOOOOO great! What did your dad say?!?!
+
+Original:   hahaha nothing. but my mom said "he's a lucky man!"
+Normalized: haha nothing. but my mom said "he is a lucky man!"
+
+Original:   Haha awwwww! You have da best family!!
+Normalized: Haha aww! You have the best family!!
+
+Original:   Sounds like it! Drunk people can be the best! Have fun! And if you get bored later, text me, cause I'll be up ALLLLLLLLLLL night :/ haha
+Normalized: Sounds like it! Drunk people can be the best! Have fun! And if you get bored later, text me, cause I will be up ALLLLLLLLLLL night :/ haha
+
+Original:   Go to dat kevinzweerink.com dawg.
+Normalized: Go to that kevinzweerink.com dog.
+
+Original:   Dawg, dat sheeeei looks all kindsa professional! It's crazy good! 
+Normalized: Dog, that sheeeei looks all kind of professional! It is crazy good!
+
+Original:   Thanks dawg!  im super excited!
+Normalized: Thanks dog! I am super excited!
+
+Original:   Yeah boooyyyy! It's really awesome! Was it cheap? What do you think it will bring you bidness?
+Normalized: Yeah boooyyyy! It is really awesome! Was it cheap? What do you think it will bring you bidness?
+
+Original:   It was like 50 dolla for a year.  most of that was activation cost i think though.  It probably wont bring me any bidness but its still real cool.
+Normalized: It was like 50 dollar for a year. most of that was activation cost i think though. It probably will not bring me any bidness but its still real cool.
+
+Original:   Yeah! It's totally worfth it! 
+Normalized: Yeah! It is totally worfth it!
+
+Original:   I need to get hoppin on dat photography again! Maybe do something awesome with it like that!
+Normalized: I need to get hopping on that photography again! Maybe do something awesome with it like that!
+
+Original:   I can help you sort of if you tryna do one o dem websites.
+Normalized: I can help you sort of if you trying to do one oh them websites.
+
+Original:   Yeah! Scrate up dawg! Thanks, Lemi get my sheei together, maybe nearer the end o da year! Gracies not coming tomorrow, so we da only ones in photo tomorrow! 
+Normalized: Yeah! Scrate up dog! Thanks, Let me get my sheei together, maybe nearer the end oh the year! Gracies not coming tomorrow, so we the only ones in photo tomorrow!
+
+Original:   DUBSTEP 2 THA MAXXXX!  You gonna sit up on dem stairs tomorrow then?
+Normalized: DUBSTEP TO THE MAXXXX! You going to sit up on them stairs tomorrow then?
+
+Original:   Hell da fuck yeah and HELL DA FUCK YEAH!
+Normalized: Hell the fuck yeah and HELL THE FUCK YEAH!
+
+Original:   How's it goin?
+Normalized: How is it going?
+
+Original:   Awww, so not well?
+Normalized: Aww, so not well?
+
+Original:   I mean it's alright, i just feel like I'm rushing it and I have too many things closeish to the horizon line
+Normalized: I mean it is alright, i just feel like I am rushing it and I have too many things closeish to the horizon line
+
+Original:   not really, how's yours?
+Normalized: not really, how is yours?
+

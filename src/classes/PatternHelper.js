@@ -259,5 +259,14 @@ PatternHelper.prototype.matchCase = function(input, output) {
 	return output;
 }
 
+// replaces ??, !!, or ?!?! with ?, !, and ?! respectively
+PatternHelper.prototype.replaceMultipleInterobangies = function(string) {
+	
+	string = string.replace(/\?{2,}/, function(match){ return '?' });
+	string = string.replace(/!{2,}/, function(match){ return '!' });
+	string = string.replace(/(((\?!)|(!\?)){2,})|\?+!+|!+\?+/, function(match){ return '?!' });
+	return string;
+}
+
 
 module.exports = PatternHelper;
