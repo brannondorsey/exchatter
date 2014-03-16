@@ -1,0 +1,235 @@
+Original:   Where do u have class ** I'm in Columbus 
+Normalized: Where do you have class ** I am in Columbus
+
+Original:   lol you wanna go so early ?
+Normalized: lol you want to go so early ?
+
+Original:   No way I'm stoned 
+Normalized: No way I am stoned
+
+Original:   U know the #
+Normalized: YOU know the #
+
+Original:   K
+Normalized: OKAY
+
+Original:   Ok
+Normalized: Okay
+
+Original:   Idk 
+Normalized: I do not know
+
+Original:   Lol delayed on train 
+Normalized: Lol delayed on train
+
+Original:   You asked me. I mean do you think it's not?
+Normalized: You asked me. I mean do you think it is not?
+
+Original:   Thought u had one
+Normalized: Thought you had one
+
+Original:   Okay wanna make a day of it? We can start at 11
+Normalized: Okay want to make a day of it? We can start at 11
+
+Original:   I'm sry
+Normalized: I am sorry
+
+Original:   ￼Should look like this when done. 
+Normalized: ￼Should look like this when done.
+
+Original:   No one would notice but u
+Normalized: No one would notice but you
+
+Original:   What're u up to tonight?
+Normalized: What are you up to tonight?
+
+Original:   Yeah ill hang till 1145 so I can catch the midnight train 
+Normalized: Yeah I will hang until 1145 so I can catch the midnight train
+
+Original:   She kinda my bae rn well see
+Normalized: She kind of my bae right now well see
+
+Original:   She's actually the most spoiled selfish stupid female character I've ever had forced down my throat 
+Normalized: She is actually the most spoiled selfish stupid female character I have ever had forced down my throat
+
+Original:   Itd not even like I know him
+Normalized: It would not even like I know him
+
+Original:   It's okay!
+Normalized: It is okay!
+
+Original:   Whatsup!
+Normalized: What is up!
+
+Original:    That sounds lovely. My day was pretty rough. Yoshi was really harsh on me today. 
+Normalized: That sounds lovely. My day was pretty rough. Yoshi was really harsh on me today.
+
+Original:   Ok! Yeah I'll just see how I feel and if you really want to go I can give you a ride there and maye talia can drive you home or something
+Normalized: Okay! Yeah I will just see how I feel and if you really want to go I can give you a ride there and maye talia can drive you home or something
+
+Original:   Oh at market st station? Yeah I can do that. Would you mind throwing me some cash for the tattoo? However much you think is appropriate for what you're getting
+Normalized: Oh at market street station? Yeah I can do that. Would you mind throwing me some cash for the tattoo? However much you think is appropriate for what you are getting
+
+Original:   Hahaha he's a good one. You guys would get along 
+Normalized: Haha he is a good one. You guys would get along
+
+Original:   Hahaha aw
+Normalized: Haha aww
+
+Original:   Great thank u so much :)))
+Normalized: Great thank you so much :)))
+
+Original:   Absolutely. Order pizza or something? I'm incredibly down. 
+Normalized: Absolutely. Order pizza or something? I am incredibly down.
+
+Original:   The first Haha 
+Normalized: The first Haha
+
+Original:   Aight dawg
+Normalized: Alright dog
+
+Original:   We're all working at the fashion studio :/
+Normalized: We are all working at the fashion studio :/
+
+Original:   Yeah I know and the way it happened is even worse, I'll tell you about it later. Yeah that would probably be helpful. She's also feels like she can't hang with nate's friends. But yeah I'm gonna try
+Normalized: Yeah I know and the way it happened is even worse, I will tell you about it later. Yeah that would probably be helpful. She is also feels like she cannot hang with nate's friends. But yeah I am going to try
+
+Original:   Awesome. Yeah cause ill already be in the city casual ill just drive in with my dad in the morning for his work 
+Normalized: Awesome. Yeah cause I will already be in the city casual I will just drive in with my dad in the morning for his work
+
+Original:   Or Tuesday??
+Normalized: Or Tuesday?
+
+Original:   Haha rad! Well that's good. Well if you want to hangout for a little today and maybe do a lesson we could also go to the Denver handmade home made market! 
+Normalized: Haha rad! Well that is good. Well if you want to hangout for a little today and maybe do a lesson we could also go to the Denver handmade home made market!
+
+Original:   We're back
+Normalized: We are back
+
+Original:   Wow jack's mom was working with your friend who passed away 
+Normalized: Wow jack's mom was working with your friend who passed away
+
+Original:   Ill meet you at the park
+Normalized: I will meet you at the park
+
+Original:   That's just ^
+Normalized: That is just ^
+
+Original:   And that my brakes don't work when it's cold
+Normalized: And that my brakes do not work when it is cold
+
+Original:   Aiiiiight cool, I'm here 
+Normalized: Alright cool, I am here
+
+Original:   That's not true I went and picked up carry out food
+Normalized: That is not true I went and picked up carry out food
+
+Original:   What's doin?
+Normalized: What is doing?
+
+Original:   Nothing's gonna happen it'll be chill
+Normalized: Nothing's going to happen it will be chill
+
+Original:   On our way. We're gonna get wine!
+Normalized: On our way. We are going to get wine!
+
+Original:   Hour and a halfs not too bad, just play a full length feature film in your head.
+Normalized: Hour and a halfs not too bad, just play a full 5 feature film in your head.
+
+Original:   Yo I could eveb skype in like half an hour 
+Normalized: Yo I could eveb skype in like half an hour
+
+Original:   I could kiss you! (if it weren't completely inappropriate and harassment) 
+Normalized: I could kiss you! (if it were not completely inappropriate and harassment)
+
+Original:   I'm at work now
+Normalized: I am at work now
+
+Original:   I've been listening to this band Tasseomancy a lot lately. They're like a lady duo Timber Timbre.
+Normalized: I have been listening to this band Tasseomancy a lot lately. They are like a lady duo Timber Timbre.
+
+Original:   I passed out last night, my bad. 
+Normalized: I passed out last night, my bad.
+
+Original:   Absolutely, I wanna meet your fiancé outside of all the wedding stuff.
+Normalized: Absolutely, I want to meet your fiancé outside of all the wedding stuff.
+
+Original:   I honestly didn't notice it. I did see the Charlotte puke on your shoulder though...
+Normalized: I honestly did not notice it. I did see the Charlotte puke on your shoulder though...
+
+Original:   Ha no worries. Unless you guys wanna do it tonight? Im fine with a rain check too though.
+Normalized: Hah no worries. Unless you guys want to do it tonight? I am fine with a rain check too though.
+
+Original:   Is color work is a touch wonky though. Guess it doesn't matter when our black is that good!
+Normalized: Is color work is a touch wonky though. Guess it does not matter when our black is that good!
+
+Original:   There's nothing going on tonight everyone is bored and unsure of what to do
+Normalized: There is nothing going on tonight everyone is bored and unsure of what to do
+
+Original:   I can't say that's a bad plan. Parts of me wish I was able to do that.
+Normalized: I cannot say that is a bad plan. Parts of me wish I was able to do that.
+
+Original:   I can do earlier now too 
+Normalized: I can do earlier now too
+
+Original:   Wow! They do! I just got accepted to saic! The scholarship letter hasn't come yet thought!
+Normalized: Wow! They do! I just got accepted to saic! The scholarship letter has not come yet thought!
+
+Original:   Both of those thangs!!!!
+Normalized: Both of those things!
+
+Original:   Aw man it's not like that :/
+Normalized: Aww man it is not like that :/
+
+Original:   Ufff I am not sure that I have one...
+Normalized: Uf I am not sure that I have one...
+
+Original:   Yea right? I was like HOLY SHIT, so I have to call back on Monday...
+Normalized: Yeah right? I was like HOLY SHIT, so I have to call back on Monday...
+
+Original:   Hey man
+Do u have the Johnni story/interview on your computer in a format that u can send me?
+Normalized: Hey man
+do you have the Johnni story/interview on your computer in a format that you can send me?
+
+Original:   Oh wow i didn't know you were in missippi! I will! Last night Gracie and I went to the fright night at kings dominion and rode a 300 ft roller coaster!
+Normalized: Oh wow i did not know you were in missippi! I will! Last night Gracie and I went to the fright night at kings dominion and rode a 300 ft roller coaster!
+
+Original:   What channel r u watching?
+Can u send a pic from ur view
+Normalized: What channel are you watching?
+can you send a picture from your view
+
+Original:   I've gotten 3 hours of sleep. Should I come in
+Normalized: I have gotten 3 hours of sleep. Should I come in
+
+Original:   Hahahahaha!
+Normalized: Haha!
+
+Original:   Hmm...yes.
+Normalized: Hm...yes.
+
+Original:   I'm home now. All safe and sound from all the scary things out there...
+Normalized: I am home now. All safe and sound from all the scary things out there...
+
+Original:   Damnit I can't see it
+Normalized: Damn it I cannot see it
+
+Original:   Can get every thing but sofa. Want 2 get loaded mon might sometime. Figured prob Eric and may be u. But if u can't I'll punt
+Normalized: Can get every thing but sofa. Want 2 get loaded Monday might sometime. Figured prob Eric and may be you. But if you cannot I will punt
+
+Original:    minute stop motion loops
+Normalized: minute stop motion loops
+
+Original:   I'm in shock. The rise of the planet of the apes was descent. Maybe  I'll give it a shot when it hits dvd haha 
+Normalized: I am in shock. The rise of the planet of the apes was descent. Maybe I will give it a shot when it hits dvd haha
+
+Original:   ok have fun in class. 
+Normalized: okay have fun in class.
+
+Original:   Today, but I be skipping dat tomorrow
+Normalized: Today, but I be skipping that tomorrow
+
+Original:   Hahah wow that sounds interesting hahah I'll let you know, might actual take you up on that 
+Normalized: Hahah wow that sounds interesting hahah I will let you know, might actual take you up on that
+

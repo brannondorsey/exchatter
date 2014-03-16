@@ -35,7 +35,6 @@ For each word in this order (If a word matches in any step accept it and move on
 2. Normalize use of 3+ letters (first to 2 and then 1)
 3. Slang Misspellings & Acronyms (also run onomatopoeia results on slang misspellings to further normalize).
 4. Slang Synonyms (using text_synonyms.csv)
-5. English
 
 
 ## Regexes
@@ -73,4 +72,6 @@ Match onomatopoeias
 	lol (or lololol)
 	/^(lol){1,}(ol)*$/
 	
+Length turns to 5
+hahah needs to become haha
 	

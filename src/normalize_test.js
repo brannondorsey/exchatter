@@ -22,21 +22,25 @@ var args = argv.option([{
 	    type: 'string',
 	    description: 'Defines the message to use',
 	    example: "'script --message=value' or 'script -m value'"
+	},{
+	    name: 'random',
+	    short: 'r',
+	    type: 'string',
+	    description: 'Grabs random messages from each corpus',
+	    example: "'script --random' or 'script -r'"
 	}]).run().options;
 
 var contraction = new Contraction();
-var startIndex = 500;
-var endIndex = 1000;
+var startIndex = 0;
+var endIndex = 100;
 
 if (!_.isUndefined(args.input) ||
-	!_.isUndefined(args.message)) {
+	!_.isUndefined(args.message) ||
+	!_.isUndefined(args.random)) {
 	
 	if (!_.isUndefined(args.message)) {
 
-		var normalized = normalizer.normalize(message.text);
-		console.log("Original:   " + args.message);
-		console.log("Normalized: " + normalized);
-		console.log();
+		output(message);
 
 	} else if (!_.isUndefined(args.input)) {
 
@@ -45,21 +49,30 @@ if (!_.isUndefined(args.input) ||
 			if (err) throw err;
 			var messages = JSON.parse(data);
 
-			
-			for ( var i = startIndex; i <= endIndex; i++) {
-
-				var message = messages[i];
-
-				// var normalized = normalizer.normalize(message.text);
-				var normalized = normalizer.normalize(message.text);
-				if (message.text != normalized) {
-				
-					console.log("Original:   " + message.text);
-					console.log("Normalized: " + normalized);
-					console.log();
-					
-				}	
+			for ( var i = startIndex; i <= messages.length; i++) {
+				output(messages[i].text);
 			}
+		});
+
+	} else if (!_.isUndefined(args.random)) {
+		var pathToCorpusFolders = 'data/corpuses/';
+		fs.readdir(pathToCorpusFolders, function(err, files) {
+			_.each(files, function(file){
+				fs.stat(pathToCorpusFolders + file, function(err, stats){
+					if (err) throw err;
+					if (stats.isDirectory()) {
+						fs.readFile(pathToCorpusFolders + file + '/all.json', function(err, data){
+							if (err) throw err;
+							var messages = JSON.parse(data);
+							var numbFromEachPerson = 30;
+							var sample = _.sample(messages, numbFromEachPerson);
+							_.each(sample, function(message){
+								output(message.text);
+							});
+						});
+					}
+				});
+			});
 		});
 	}
 
@@ -67,4 +80,17 @@ if (!_.isUndefined(args.input) ||
 
 	console.log('Please include an --input or -i value');
 	process.exit();
+}
+
+function output(text) {
+
+	if (!_.isUndefined(text)) {
+
+		var normalized = normalizer.normalize(text);
+		if (normalized != text) {
+			console.log("Original:   " + text);
+			console.log("Normalized: " + normalized);
+			console.log();
+		}
+	}
 }

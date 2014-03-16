@@ -260,12 +260,18 @@ PatternHelper.prototype.matchCase = function(input, output) {
 }
 
 // replaces ??, !!, or ?!?! with ?, !, and ?! respectively
-PatternHelper.prototype.replaceMultipleInterobangies = function(string) {
+PatternHelper.prototype.replaceMultipleInterrobangies = function(string) {
 	
-	string = string.replace(/\?{2,}/, function(match){ return '?' });
-	string = string.replace(/!{2,}/, function(match){ return '!' });
-	string = string.replace(/(((\?!)|(!\?)){2,})|\?+!+|!+\?+/, function(match){ return '?!' });
+	string = string.replace(/\?{2,}/g, function(match){ return '?' });
+	string = string.replace(/!{2,}/g, function(match){ return '!' });
+	string = string.replace(/(((\?!)|(!\?)){2,})|\?+!+|!+\?+/g, function(match){ return '?!' });
 	return string;
+}
+
+PatternHelper.prototype.replaceThreeOrMoreOfTheSameChars = function(string) {
+	return string.replace(/([a-zA-Z])\1\1+/g, function(match){
+		return match.charAt(0);
+	});
 }
 
 

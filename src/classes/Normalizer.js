@@ -1,28 +1,30 @@
-var fs = require('fs'),
+var _fs = require('fs'),
 _ = require('underscore')._,
-natural = require('natural'),
+_natural = require('natural'),
 PatternHelper = require('./PatternHelper'),
 Contraction = require('./Contraction');
 
-var patternHelper = new PatternHelper();
-var contraction = new Contraction();
-var slangDictionary;
-var ingDictionary;
-var dictionaryPath;
+var _patternHelper = new PatternHelper();
+var _contraction = new Contraction();
+var _slangDictionary;
+var _ingDictionary;
+var _dictionaryPath;
 
 function Normalizer() {
 
-	dictionaryPath = 'data/dictionaries';
-	slangDictionary = loadSlangDictionary();
-	ingDictionary = loadIngDictionary();
+	_dictionaryPath = 'data/dictionaries';
+	_slangDictionary = _loadSlangDictionary();
+	_ingDictionary = _loadIngDictionary();
 
 }
 
 Normalizer.prototype.normalize = function(string, shouldStem) {
 
-	string = patternHelper.normalizeOnomatos(string);
-	string = contraction.expand(string);
+	string = _patternHelper.normalizeOnomatos(string);
+	string = this.normalizeMultipleLetters(string);
 	string = this.normalizeSlang(string);
+	string = _contraction.expand(string);
+	string = this.normalizePunctuation(string);
 	if (shouldStem) string = this.stem(string); 
 	return string;
 }
@@ -30,11 +32,11 @@ Normalizer.prototype.normalize = function(string, shouldStem) {
 Normalizer.prototype.normalizeSlang = function(string) {
 
 	var self = this;
-	var returnVal = patternHelper.eachWord(string, function(word){
+	var returnVal = _patternHelper.eachWord(string, function(word){
 		var normalizedSlang = self.slangLookup(word.toLowerCase());
 		
 		if (normalizedSlang){
-			word = patternHelper.matchCase(word, normalizedSlang);
+			word = _patternHelper.matchCase(word, normalizedSlang);
 		} 
 
 		return word;
@@ -46,32 +48,35 @@ Normalizer.prototype.normalizeSlang = function(string) {
 // returns string on success, false on nothing found
 Normalizer.prototype.slangLookup = function(word) {
 
-	if (word in slangDictionary && typeof slangDictionary[word] != 'function') return slangDictionary[word];
-	else if (word in ingDictionary && typeof ingDictionary[word] != 'function') return ingDictionary[word];
+	if (word in _slangDictionary && typeof _slangDictionary[word] != 'function') return _slangDictionary[word];
+	else if (word in _ingDictionary && typeof _ingDictionary[word] != 'function') return _ingDictionary[word];
 	else return false;
 }
 
 Normalizer.prototype.stem = function(sentence) {
 
-	var sentence = patternHelper.eachWord(sentence, function(word){
-		return natural.PorterStemmer.stem(word);
+	var sentence = _patternHelper.eachWord(sentence, function(word){
+		return _natural.PorterStemmer.stem(word);
 	});
 	return sentence;
 }
 
 Normalizer.prototype.normalizeMultipleLetters = function(sentence) {
-
+	var sentence = _patternHelper.eachWord(sentence, function(word){
+		return _patternHelper.replaceThreeOrMoreOfTheSameChars(word);
+	});
+	return sentence;
 }
 
 // changes ??? to ? and !! to ! etc...
 Normalizer.prototype.normalizePunctuation = function(sentence) {
-
+	return _patternHelper.replaceMultipleInterrobangies(sentence);
 }
 
-function loadSlangDictionary() {
+function _loadSlangDictionary() {
 
-	var casualMisspellings = fs.readFileSync(dictionaryPath + '/casual_misspellings.csv', 'utf8');
-	var textAcronyms = fs.readFileSync(dictionaryPath + '/text_acronyms.csv', 'utf8');
+	var casualMisspellings = _fs.readFileSync(_dictionaryPath + '/casual_misspellings.csv', 'utf8');
+	var textAcronyms = _fs.readFileSync(_dictionaryPath + '/text_acronyms.csv', 'utf8');
 
 	casualMisspellings = casualMisspellings.split('\n');
 	textAcronyms = textAcronyms.split('\n');
@@ -86,9 +91,9 @@ function loadSlangDictionary() {
 	return dictionary;
 }
 
-function loadIngDictionary() {
+function _loadIngDictionary() {
 
-	var ingWords = fs.readFileSync(dictionaryPath + '/ing.csv', 'utf8');
+	var ingWords = _fs.readFileSync(_dictionaryPath + '/ing.csv', 'utf8');
 	var dictionary = [];
 	ingWords = ingWords.split('\n');
 	_.each(ingWords, function(ingWord){
