@@ -1,17 +1,17 @@
 var _ = require('underscore')._;
 
-var emoticons = {
+var _emoticons = {
 		has: {
-			positive: /[<=((=|)\[]?[:;8=BXx%][-^>*]{0,1}[\)\]bpPD>]/,
-			neutral: /[<=((=|)\[]?[:;8=BXx%][-^>*]{0,1}((\[\])|(\(\))|[oO])/,
-			negative: /[<=((=|)\[]?[:;8=BXx%][-^>*]{0,1}[XcC\/\\(|\[[Ss?]/
+			positive: /[<=((=|)\[]?[:;8=BXx%][-^>*]{0,1}[\)\]bpPD>]/g,
+			neutral: /[<=((=|)\[]?[:;8=BXx%][-^>*]{0,1}((\[\])|(\(\))|[oO])/g,
+			negative: /[<=((=|)\[]?[:;8=BXx%][-^>*]{0,1}[XcC\/\\(|\[[Ss?]/g
 		},
 		is: {
-			positive: /^[<=((=|)\[]?[:;8=BXx%][-^>*]{0,1}[\)\]bpPD>]$/,
-			neutral: /^[<=((=|)\[]?[:;8=BXx%][-^>*]{0,1}((\[\])|(\(\))|[oO])$/,
-			negative: /^[<=((=|)\[]?[:;8=BXx%][-^>*]{0,1}[XcC\/\\(|\[[Ss?]$/
+			positive: /^[<=((=|)\[]?[:;8=BXx%][-^>*]{0,1}[\)\]bpPD>]$/g,
+			neutral: /^[<=((=|)\[]?[:;8=BXx%][-^>*]{0,1}((\[\])|(\(\))|[oO])$/g,
+			negative: /^[<=((=|)\[]?[:;8=BXx%][-^>*]{0,1}[XcC\/\\(|\[[Ss?]$/g
 		}
-}
+	}
 
 var onomatos = [];
 onomatos['aww']  = /^a+w+$/gi;
@@ -158,40 +158,57 @@ PatternHelper.prototype.eachWord = function(sentence, fn) {
 
 PatternHelper.prototype.isEmoticon = function(word) {
 	
-	if (emoticons.is.positive.test(word)) return true;
-	else if (emoticons.is.neutral.test(word)) return true;
-	else if (emoticons.is.negative.test(word)) return true;
+	if (_emoticons.is.positive.test(word)) return true;
+	else if (_emoticons.is.neutral.test(word)) return true;
+	else if (_emoticons.is.negative.test(word)) return true;
 	else return false;
 }
 
 PatternHelper.prototype.hasEmoticon = function(sentence) {
 
-	if (emoticons.has.positive.test(word)) return true;
-	else if (emoticons.has.neutral.test(word)) return true;
-	else if (emoticons.has.negative.test(word)) return true;
+	if (_emoticons.has.positive.test(word)) return true;
+	else if (_emoticons.has.neutral.test(word)) return true;
+	else if (_emoticons.has.negative.test(word)) return true;
 	else return false;
 }
 
 PatternHelper.prototype.getEmoticons = function(sentence) {
 
 	var emoticons = [];
-	var array = emoticons.has.positive.exec(sentence);
-	if (array != null) emoticons.concat(array);
-	var array = emoticons.has.neutral.exec(sentence);
-	if (array != null) emoticons.concat(array);
-	var array = emoticons.has.negative.exec(sentence);
-	if (array != null) emoticons.concat(array);
-	return (emoticons.length > 0) ? emoticons : false;
-
+	var positiveEmoticons = sentence.match(_emoticons.has.positive);
+	var neutralEmoticons = sentence.match(_emoticons.has.neutral);
+	var negativeEmoticons = sentence.match(_emoticons.has.negative);
+	if (!_.isNull(positiveEmoticons)) emoticons = emoticons.concat(positiveEmoticons);
+	if (!_.isNull(neutralEmoticons)) emoticons = emoticons.concat(neutralEmoticons);
+	if (!_.isNull(negativeEmoticons)) emoticons = emoticons.concat(negativeEmoticons);
+	return emoticons;
 }
 
 PatternHelper.prototype.getEmoticonSentiment = function(word) {
 
-	if (emoticons.is.positive.test(word)) return true;
-	else if (emoticons.is.neutral.test(word)) return true;
-	else if (emoticons.is.negative.test(word)) return true;
+	if (_emoticons.is.positive.test(word)) return 1;
+	else if (_emoticons.is.neutral.test(word)) return 0;
+	else if (_emoticons.is.negative.test(word)) return -1;
 	else return false;
 }
+
+PatternHelper.prototype.getSentenceSentimentFromEmoticons = function(sentence, emoticonValue) {
+	var sentiment = 0;
+	var positiveMatches = sentence.match(_emoticons.has.positive);
+	var negativeMatches = sentence.match(_emoticons.has.negative);
+	if (!_.isNull(positiveMatches)) sentiment += positiveMatches.length * emoticonValue;
+	if (!_.isNull(negativeMatches)) sentiment += negativeMatches.length * -emoticonValue;
+	return sentiment;
+}
+
+PatternHelper.prototype.getPositiveEmoticons = function(sentence) {
+	return sentence.match(_emoticons.has.positive);
+}
+
+PatternHelper.prototype.getNegativeEmoticons = function(sentence) {
+	return sentence.match(_emoticons.has.negative);
+}
+
 
 PatternHelper.prototype.isEmoji = function(string) {
 
@@ -206,11 +223,19 @@ PatternHelper.prototype.getEmojiSentiment = function(string) {
 }
 
 PatternHelper.prototype.isQuestion = function(string) {
-	return /[^:;8=^]\?$/gi.text(string); // ^[emoticon eyes and noses]
+	return /[^:;8=^]\?\s*$/gi.test(string); // ^[emoticon eyes and noses]
 }
 
 PatternHelper.prototype.hasQuestion = function(string) {
-	return /[^:;8=^]\?/gi.text(string); // ^[emoticon eyes and noses]
+	return /[^:;8=^]\?/gi.test(string); // ^[emoticon eyes and noses]
+}
+
+PatternHelper.prototype.isExclamatory = function(string) {
+	return /!\s*$/gi.test(string); // ^[emoticon eyes and noses]
+}
+
+PatternHelper.prototype.hasExclamatory = function(string) {
+	return /!/gi.test(string); // ^[emoticon eyes and noses]
 }
 
 // haha, hehe, lol, hah, etc...
@@ -232,6 +257,11 @@ PatternHelper.prototype.hasLaugh = function(sentence) {
 
 PatternHelper.prototype.hasMultipleSentences = function(string) {
 
+}
+
+PatternHelper.prototype.getSentences = function(string) {
+	// return string.match(/\(?[^\.\?\!]+[\.!\?]\)?/g);
+	return string.replace(/([.?!])\s*(?=[A-Z])/, "$1|").split("|");
 }
 
 PatternHelper.prototype.splitPunctuation = function(string){
@@ -273,6 +303,5 @@ PatternHelper.prototype.replaceThreeOrMoreOfTheSameChars = function(string) {
 		return match.charAt(0);
 	});
 }
-
 
 module.exports = PatternHelper;

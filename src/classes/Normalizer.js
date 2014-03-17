@@ -8,13 +8,15 @@ var _patternHelper = new PatternHelper();
 var _contraction = new Contraction();
 var _slangDictionary;
 var _ingDictionary;
+var _stopWordDictionary;
 var _dictionaryPath;
 
 function Normalizer() {
 
-	_dictionaryPath = 'data/dictionaries';
-	_slangDictionary = _loadSlangDictionary();
-	_ingDictionary = _loadIngDictionary();
+	_dictionaryPath     = 'data/dictionaries';
+	_slangDictionary    = _loadSlangDictionary();
+	_ingDictionary      = _loadIngDictionary();
+	_stopWordDictionary = _loadStopWordDictionary();
 
 }
 
@@ -73,6 +75,18 @@ Normalizer.prototype.normalizePunctuation = function(sentence) {
 	return _patternHelper.replaceMultipleInterrobangies(sentence);
 }
 
+Normalizer.prototype.getStopWords = function(sentence) {
+	
+	var stopWords = [];
+	_patternHelper.eachWord(sentence, function(word){
+		if (_stopWordDictionary.indexOf(word) != -1) {
+			stopWords.push(word);
+		}
+	});
+	return stopWords;
+	
+}
+
 function _loadSlangDictionary() {
 
 	var casualMisspellings = _fs.readFileSync(_dictionaryPath + '/casual_misspellings.csv', 'utf8');
@@ -103,6 +117,12 @@ function _loadIngDictionary() {
 		}
 	});
 	return dictionary;
+}
+
+function _loadStopWordDictionary() {
+	var stopWords = _fs.readFileSync(_dictionaryPath + '/stop_words.csv', 'utf8');
+	stopWords = stopWords.split(',');
+	return stopWords;
 }
 
 module.exports = Normalizer;
