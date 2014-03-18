@@ -1,5 +1,6 @@
 var _ = require('underscore')._,
 _sentiment = require('sentiment'),
+_natural = require('natural'),
 Helpers = require('./Helpers'),
 PatternHelper = require('./PatternHelper'),
 Normalizer = require('./Normalizer'),
@@ -9,6 +10,7 @@ var _helpers = new Helpers();
 var _patternHelper = new PatternHelper();
 var _normalizer = new Normalizer();
 var _smsSentiment = new SMSSentiment();
+var _tokenizer = new _natural.WordTokenizer();
 
 function MessageObjectGenerator() {
 	
@@ -22,6 +24,10 @@ MessageObjectGenerator.prototype.getMessageObject = function(text, sender, sourc
 	messageObj.sender = sender;
 	messageObj.source = source;
 	messageObj.sentences = _getSentenceObjects(text);
+	messageObj.misspellings = [];
+	_.each(messageObj.sentences, function(sentence){ 
+		messageObj.misspellings = messageObj.misspellings.concat(sentence.misspellings) 
+	});
 	messageObj.topics = _getTopics(text);
 	messageObj.normalized = {};
 	messageObj.normalized.text = _normalizer.normalize(text);
@@ -41,7 +47,7 @@ function _getSentenceObjects(string) {
 	var sentenceObj = [];
 	var sentences = _patternHelper.getSentences(string);
 	_.each(sentences, function(sentence){
-		var words = _getWords(sentence);
+		var words = _tokenizer.tokenize(sentence);
 		sentenceObj.push({
 			sentence: sentence,
 			words: words,
@@ -56,14 +62,6 @@ function _getSentenceObjects(string) {
 	return sentenceObj;
 }
 
-function _getWords (sentence) {
-	var words = [];
-	_patternHelper.eachWord(sentence, function(word){
-		words.push(word);
-	});
-	return words;
-}
-
 function _getTopics(string) {
 
 }
@@ -76,8 +74,34 @@ function _getWordOrder(string) {
 
 }
 
-function _getMisspellingObjects(string) {
+function _getMisspellingObjects(words) {
+	var slangMisspellings = [];
+	_.each(words, function(word){
 
+		var threeOrMoreOfTheSameChar = false;
+		var lookup;
+		var lessLetters = _patternHelper.replaceThreeOrMoreOfTheSameChars(word);
+
+		if (word != lessLetters) {
+			threeOrMoreOfTheSameChar = true;
+			lookup = _normalizer.slangLookup(word);
+		} else lookup = _normalizer.slangLookup(word);
+		
+		if (lookup) {
+			slangMisspellings.push({
+				word: lookup,
+				misspelling: word,
+				confirmed: true
+			});
+		} else if (threeOrMoreOfTheSameChar) {
+			slangMisspellings.push({
+				word: lessLetters,
+				misspelling: word,
+				confirmed: false
+			});
+		}
+	});
+	return slangMisspellings;
 }
 
 module.exports = MessageObjectGenerator;

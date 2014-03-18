@@ -28,7 +28,8 @@
     "underscore": "1.6.0",
     "sentiment": "0.2.1",
     "spellcheck": "0.0.4",
-    "natural": "0.1.26"
+    "natural": "0.1.26",
+    "wordpos": "0.1.9"
   },
   "engines": {
     "node": ">=v0.10.0"

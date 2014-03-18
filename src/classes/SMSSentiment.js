@@ -14,7 +14,6 @@ SMSSentiment.prototype.getSentiment = function(string, callback) {
 		_sentiment(string, function(err, result){
 			
 			if (!err) {
-				
 				var emoticons = _patternHelper.getEmoticons(string);
 				var positiveEmoticons = _patternHelper.getPositiveEmoticons(string);
 				var negativeEmoticons = _patternHelper.getNegativeEmoticons(string);

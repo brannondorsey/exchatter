@@ -1,10 +1,8 @@
 var MessageObjectGenerator = require('./classes/MessageObjectGenerator'),
-PatternHelper = require('./classes/PatternHelper');
 util = require('util');
 var messageObjGenerator = new MessageObjectGenerator();
-var patternHelper = new PatternHelper();
 
-var message = "Heyyyyy, how are you ;-) Do you still want to  :( go to da movies later today :)";
+var message = "Daaaaang dawg I kno wha you mean :)";
 messageObjGenerator.getMessageObject(message, undefined, undefined, function(messageObj){
 
 	console.log(util.inspect(messageObj, {colors: true, depth: 4}));

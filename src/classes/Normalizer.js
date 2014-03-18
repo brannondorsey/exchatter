@@ -6,6 +6,7 @@ Contraction = require('./Contraction');
 
 var _patternHelper = new PatternHelper();
 var _contraction = new Contraction();
+var _tokenizer = new _natural.WordTokenizer();
 var _slangDictionary;
 var _ingDictionary;
 var _stopWordDictionary;
@@ -78,7 +79,8 @@ Normalizer.prototype.normalizePunctuation = function(sentence) {
 Normalizer.prototype.getStopWords = function(sentence) {
 	
 	var stopWords = [];
-	_patternHelper.eachWord(sentence, function(word){
+	var words = _tokenizer.tokenize(sentence);
+	_.each(words, function(word){
 		if (_stopWordDictionary.indexOf(word) != -1) {
 			stopWords.push(word);
 		}
