@@ -15,6 +15,9 @@ var normalizer = new Normalizer();
 var tokenizer = new natural.WordTokenizer();
 var wordPOS = new WordPOS();
 
+var messageObjs = [];
+var count = 0;
+
 var args = argv.option([{
 	   
 	    name: 'input',
@@ -22,6 +25,13 @@ var args = argv.option([{
 	    type: 'string',
 	    description: 'Defines the file to use',
 	    example: "'script --input=value' or 'script -i value'"
+	},{
+	   
+	    name: 'output',
+	    short: 'o',
+	    type: 'string',
+	    description: 'Defines the file to export to',
+	    example: "'script --output=value' or 'script -o value'"
 	},{
 	    name: 'message',
 	    short: 'm',
@@ -40,7 +50,8 @@ var contraction = new Contraction();
 var startIndex = 550;
 var endIndex = 600;
 
-if (!_.isUndefined(args.input) ||
+if (!_.isUndefined(args.input) &&
+	!_.isUndefined(args.output)||
 	!_.isUndefined(args.message) ||
 	!_.isUndefined(args.random)) {
 	
@@ -55,8 +66,8 @@ if (!_.isUndefined(args.input) ||
 			if (err) throw err;
 			var messages = JSON.parse(data);
 
-			for ( var i = startIndex; i <= endIndex; i++) {
-				output(messages[i].text);
+			for ( var i = startIndex; i <= messages.length; i++) {
+				output(messages[i], i, messages.length);
 			}
 		});
 
@@ -88,7 +99,7 @@ if (!_.isUndefined(args.input) ||
 	process.exit();
 }
 
-function output(message) {
+function output(message, i, max) {
 
 	if (!_.isUndefined(message)) {
 
@@ -102,9 +113,21 @@ function output(message) {
 		}
 
 		messageObjGenerator.getMessageObject(config, function(messageObj){
-			console.log(util.inspect(messageObj, {colors: true, depth: 4}));
-			console.log();
-			console.log();
+			
+			messageObjs.push(messageObj);
+
+			if (i == max - 1) {
+				
+				fs.writeFile(args.output, JSON.stringify(messageObjs), function (err) {
+				  if (err) throw err;
+				  console.log('Files saved to ' + args.output);
+				});
+			}
+			// console.log(count);
+			// count++;
+			// console.log(util.inspect(messageObj, {colors: true, depth: 4}));
+			// console.log();
+			// console.log();
 		});
 
 		// text = normalizer.normalize(text);

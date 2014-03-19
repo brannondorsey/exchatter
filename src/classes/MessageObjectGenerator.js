@@ -1,5 +1,4 @@
 var _ = require('underscore')._,
-_sentiment = require('sentiment'),
 _natural = require('natural'),
 Helpers = require('./Helpers'),
 PatternHelper = require('./PatternHelper'),
@@ -16,19 +15,34 @@ function MessageObjectGenerator() {
 	
 }
 
-MessageObjectGenerator.prototype.getMessageObject = function(text, sender, source, callback) {
+/* {
+	source: "string",
+	to: "string",
+	from: "string",
+	timestamp: "string",
+	text: "string"	
+} */
+MessageObjectGenerator.prototype.getMessageObject = function(config, callback) {
 	
 	var messageObj = {};
+	var text = config.text;
+	var source = config.source;
+	var from = config.from;
+	var to = config.to;
+	var timestamp = config.timestamp;
+
 	messageObj.id = _helpers.generateID(40);
-	messageObj.text = text;
-	messageObj.sender = sender;
+	messageObj.timestamp = timestamp;
+	messageObj.from = from;
+	messageObj.to = to;
 	messageObj.source = source;
+	messageObj.text = text;
 	messageObj.sentences = _getSentenceObjects(text);
-	messageObj.misspellings = [];
-	_.each(messageObj.sentences, function(sentence){ 
-		messageObj.misspellings = messageObj.misspellings.concat(sentence.misspellings) 
-	});
-	messageObj.topics = _getTopics(text);
+	// messageObj.misspellings = [];
+	// _.each(messageObj.sentences, function(sentence){ 
+	// 	messageObj.misspellings = messageObj.misspellings.concat(sentence.misspellings) 
+	// });
+	// messageObj.topics = _getTopics(text);
 	messageObj.normalized = {};
 	messageObj.normalized.text = _normalizer.normalize(text);
 	messageObj.normalized.sentences = _getSentenceObjects(messageObj.normalized.text);
@@ -53,8 +67,8 @@ function _getSentenceObjects(string) {
 			words: words,
 			isQuestion: _patternHelper.isQuestion(sentence),
 			isExclamatory: _patternHelper.isExclamatory(sentence),
-			subjects: _getSubjects(sentence),
-			wordOrder: _getWordOrder(sentence),
+			// subjects: _getSubjects(sentence),
+			// wordPOS: _getWordPOS(sentence),
 			misspellings: _getMisspellingObjects(words),
 			stopWords: _normalizer.getStopWords(sentence)
 		});
@@ -70,7 +84,7 @@ function _getSubjects(string) {
 
 }
 
-function _getWordOrder(string) {
+function _getWordPOS(string) {
 
 }
 
