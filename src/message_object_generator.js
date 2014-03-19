@@ -123,20 +123,6 @@ function output(message, i, max) {
 				  console.log('Files saved to ' + args.output);
 				});
 			}
-			// console.log(count);
-			// count++;
-			// console.log(util.inspect(messageObj, {colors: true, depth: 4}));
-			// console.log();
-			// console.log();
 		});
-
-		// text = normalizer.normalize(text);
-		// wordPOS.getPOS(text, function(result){
-		// 	console.log(util.inspect(text, {colors: true, depth: 4}));
-		// 	console.log(util.inspect(result, {colors: true, depth: 4}));
-		// 	console.log();
-		// 	console.log();
-		// });
-		
 	}
 }
