@@ -1,3 +1,7 @@
+/*
+	Script for testing the contraction module
+ */
+
 var Contraction = require('./classes/Contraction.js'),
 PatternHelper = require('./classes/PatternHelper.js'),
 patternHelper = new PatternHelper(),

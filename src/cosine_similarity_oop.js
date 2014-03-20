@@ -1,3 +1,7 @@
+/*
+	Script to test the cosine similarity module.
+ */
+
 var CosineSimilarity = require('./classes/CosineSimilarity.js'),
 argv = require('argv'),
 fs = require('fs');
@@ -16,7 +20,7 @@ if (typeof args.message !== 'undefined') {
 
 	var input = args.message;
 
-	fs.readFile('data/corpuses/brannon_dorsey/all.json', function(err, data){
+	fs.readFile('data/corpuses/brannon_dorsey/raw_iphone.json', function(err, data){
 		
 
 		if (err) throw err;

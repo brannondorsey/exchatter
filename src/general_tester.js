@@ -1,3 +1,8 @@
+/*
+	A general tester script that is meant to be changed and hacked regularly
+	to accommodate quick and dirty needs.
+ */
+
 var Contraction = require('./classes/Contraction.js'),
 PatternHelper = require('./classes/PatternHelper.js'),
 Normalizer = require('./classes/Normalizer'),
@@ -67,7 +72,7 @@ if (!_.isUndefined(args.input) ||
 				fs.stat(pathToCorpusFolders + file, function(err, stats){
 					if (err) throw err;
 					if (stats.isDirectory()) {
-						fs.readFile(pathToCorpusFolders + file + '/all.json', function(err, data){
+						fs.readFile(pathToCorpusFolders + file + '/raw_iphone.json', function(err, data){
 							if (err) throw err;
 							var messages = JSON.parse(data);
 							var numbFromEachPerson = 30;

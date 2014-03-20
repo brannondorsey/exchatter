@@ -1,3 +1,9 @@
+/*
+	Original test that does a raw nearest neighbor match to
+	match an input with a similar message and output the next
+	message from the corpus to the console. 
+ */
+
 var CosineSimilarity = require('./classes/CosineSimilarity.js'),
 readline = require('readline');
 fs = require('fs');
@@ -9,7 +15,7 @@ var rl = readline.createInterface({
 
 var cosineSimilarity, corpus, scoredCorpus;
 
-fs.readFile('data/corpuses/brannon_dorsey/all.json', function(err, data){
+fs.readFile('data/corpuses/brannon_dorsey/raw_iphone.json', function(err, data){
 
 	if (err) throw err;
 

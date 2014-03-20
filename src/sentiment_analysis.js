@@ -2,7 +2,7 @@ var fs = require('fs'),
 _ = require('underscore')._,
 sentiment = require('sentiment');
 
-fs.readFile('data/corpuses/brannon_dorsey/all.json', function (err, data) {
+fs.readFile('data/corpuses/brannon_dorsey/raw_iphone.json', function (err, data) {
   
   if (err) throw err;
   var messages = JSON.parse(data);

@@ -1,12 +1,14 @@
+/*
+	Lightweight CLI to run normalization tests on raw iPhone message data
+ */
+
 var Contraction = require('./classes/Contraction.js'),
-PatternHelper = require('./classes/PatternHelper.js'),
 Normalizer = require('./classes/Normalizer'),
 _ = require('underscore'),
 fs = require('fs'),
 natural = require('natural'),
 argv = require('argv');
 
-patternHelper = new PatternHelper();
 normalizer = new Normalizer();
 
 var args = argv.option([{
@@ -16,12 +18,6 @@ var args = argv.option([{
 	    type: 'string',
 	    description: 'Defines the file to use',
 	    example: "'script --input=value' or 'script -i value'"
-	},{
-	    name: 'message',
-	    short: 'm',
-	    type: 'string',
-	    description: 'Defines the message to use',
-	    example: "'script --message=value' or 'script -m value'"
 	},{
 	    name: 'random',
 	    short: 'r',
@@ -35,14 +31,9 @@ var startIndex = 0;
 var endIndex = 100;
 
 if (!_.isUndefined(args.input) ||
-	!_.isUndefined(args.message) ||
 	!_.isUndefined(args.random)) {
 	
-	if (!_.isUndefined(args.message)) {
-
-		output(message);
-
-	} else if (!_.isUndefined(args.input)) {
+	if (!_.isUndefined(args.input)) {
 
 		fs.readFile(args.input, function(err, data){
 
@@ -61,7 +52,7 @@ if (!_.isUndefined(args.input) ||
 				fs.stat(pathToCorpusFolders + file, function(err, stats){
 					if (err) throw err;
 					if (stats.isDirectory()) {
-						fs.readFile(pathToCorpusFolders + file + '/all.json', function(err, data){
+						fs.readFile(pathToCorpusFolders + file + '/raw_iphone.json', function(err, data){
 							if (err) throw err;
 							var messages = JSON.parse(data);
 							var numbFromEachPerson = 30;

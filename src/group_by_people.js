@@ -1,20 +1,20 @@
-var Contraction = require('./classes/Contraction.js'),
-PatternHelper = require('./classes/PatternHelper.js'),
-Normalizer = require('./classes/Normalizer'),
-MessageObjectGenerator = require('./classes/MessageObjectGenerator'),
-WordPOS = require('wordpos'),
+/*
+	Groups an iPhone corpus that has __aready__ been parsed into Message Objects
+	by phone numbers like this:
+	[{
+		number: "##########",
+		messages: [{}]
+	}]
+ */
+
+var MessageObjectGenerator = require('./classes/MessageObjectGenerator'),
 _ = require('underscore'),
 moment = require('moment'),
 fs = require('fs'),
 util = require('util'),
-natural = require('natural'),
 argv = require('argv');
 
 var messageObjGenerator = new MessageObjectGenerator();
-var patternHelper = new PatternHelper();
-var normalizer = new Normalizer();
-var tokenizer = new natural.WordTokenizer();
-var wordPOS = new WordPOS();
 
 var args = argv.option({
 	   
@@ -23,9 +23,17 @@ var args = argv.option({
 	    type: 'string',
 	    description: 'Defines the file to use',
 	    example: "'script --input=value' or 'script -i value'"
+	},{
+
+	    name: 'output',
+	    short: 'o',
+	    type: 'string',
+	    description: 'Defines the file to save',
+	    example: "'script --output=value' or 'script -o value'"
 	}).run().options;
 
-if (!_.isUndefined(args.input)) {
+if (!_.isUndefined(args.input) &&
+	!_.isUndefined(args.output)) {
 
 	fs.readFile(args.input, function(err, data){
 
@@ -67,39 +75,10 @@ if (!_.isUndefined(args.input)) {
 			return person.messages.length;
 		});
 
-		// _.each(people, function(person){
-		// 	console.log("Number: " + person.number);
-		// 	console.log("Messages: " + person.messages.length);
-		// 	console.log();
-		// });
-
-		console.log(JSON.stringify(people));
-
-		// _.each(persons, function(person){
-			
-		// });
-
-	 	// _.each(messageObjs, function(messageObj){
-	 	// 	if (!_.isUndefined(previousMessageObj)) {
-	 	// 		var lastTime = moment(previousMessageObj.timestamp);
-	 	// 		var thisTime = moment(messageObj.timestamp);
-	 	// 		var diff = thisTime.diff(lastTime, 'seconds', true);
-	 	// 	}
-	 	// 	// output(messageObj);
-	 	// 	previousMessageObj = messageObj
-	 	// });
+		fs.writeFile(args.output, JSON.stringify(people), function(err){
+			if (err) throw err; 
+			console.log("Saved file to " + args.output);
+		});
 	});
 
-} else {
-
-	console.log('Please include an --input or -i value');
-	process.exit();
-}
-
-function output(message) {
-
-	console.log("Timestamp: " + message.timestamp);
-	console.log("Original: " + message.text);
-	console.log("Normalized: " + message.normalized.text);
-	console.log();
-}
+} else argv.help();

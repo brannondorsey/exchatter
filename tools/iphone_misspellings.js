@@ -3,7 +3,7 @@ _ = require('underscore')._,
 SpellCheck = require('spellcheck'),
 spell = new SpellCheck( 'data/dictionaries/en_US.aff', 'data/dictionaries/en_US.dic');
 
-fs.readFile("/data/corpuses/brannon_dorsey/all.json", function (err, data) {
+fs.readFile("/data/corpuses/brannon_dorsey/raw_iphone.json", function (err, data) {
 
 	if (err) throw err;
 	var conversations = JSON.parse(data).conversations.conversation;
