@@ -1,3 +1,5 @@
+var _ = require('underscore')._;
+
 function Helpers(){
 
 }
@@ -41,7 +43,7 @@ Helpers.prototype.getRange = function(array) {
 Helpers.prototype.getVariance = function(array, average) {
 	
 	if (_.isUndefined(average)) {
-		average = mean(array);
+		average = this.getMean(array);
 	}
 
 	// console.log("Mean: " + average);
@@ -66,12 +68,17 @@ Helpers.prototype.getVariance = function(array, average) {
 	// printTimes("Differences Squared: " , differences, 15);
 	// console.log();
 
-	return mean(differences);	
+	return this.getMean(differences);	
 }
 
 Helpers.prototype.getStdDeviation = function(array, average) {
-	var v = variance(array, average);
+	if (_.isUndefined(average)) var average = this.getMean(array);
+	var v = this.getVariance(array, average);
 	return Math.sqrt(v);
+}
+
+Helpers.prototype.getPercentage = function(part, whole) {
+	return part / whole * 100;
 }
 
 module.exports = Helpers;
