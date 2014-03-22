@@ -1,3 +1,9 @@
+/*
+	Logs a list of misspelled words from the PAN-12 corpus. Like this:
+	frequency: word
+	Should be piped to "sort -nr" to order by most-misspelled
+ */
+
 var fs = require('fs'),
 _ = require('underscore')._,
 SpellCheck = require('spellcheck'),

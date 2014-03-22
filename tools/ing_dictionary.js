@@ -1,3 +1,7 @@
+/*
+	Prints each word in the "ing" dictionary (minus the "g") to the console
+ */
+
 var fs = require('fs'),
 _ = require('underscore')._;
 

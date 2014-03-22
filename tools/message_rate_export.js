@@ -30,13 +30,6 @@ var args = argv.option([{
 	    type: 'string',
 	    description: 'Defines the file to save',
 	    example: "'script --output=value' or 'script -o value'"
-	},{
-
-	    name: 'includeSelf',
-	    short: 's',
-	    type: 'boolean',
-	    description: 'Defines the file to use',
-	    example: "'script --include-self=value' or 'script -s value'"
 	}]).run().options;
 
 if (!_.isUndefined(args.input) &&
@@ -53,13 +46,8 @@ if (!_.isUndefined(args.input) &&
 		messageObjs = _.sortBy(messageObjs, function(obj){ return moment(obj.timestamp).valueOf() });
 		
 		_.each(messageObjs, function(messageObj){
-			if (!args.includeSelf) {
-				if (numbers.indexOf(messageObj.to) == -1 && messageObj.to != "Me") numbers.push(messageObj.to);
-				if (numbers.indexOf(messageObj.from) == -1 && messageObj.from != "Me") numbers.push(messageObj.from);
-			} else {
-				if (numbers.indexOf(messageObj.to) == -1) numbers.push(messageObj.to);
-				if (numbers.indexOf(messageObj.from) == -1) numbers.push(messageObj.from);
-			}
+			if (numbers.indexOf(messageObj.to) == -1 && messageObj.to != "Me") numbers.push(messageObj.to);
+			if (numbers.indexOf(messageObj.from) == -1 && messageObj.from != "Me") numbers.push(messageObj.from);
 		});
 
 		_.each(messageObjs, function(messageObj){
@@ -75,6 +63,7 @@ if (!_.isUndefined(args.input) &&
 		});
 		
 		var people = [];
+		
 		_.each(messagesByNumber, function(message, i){
 			people.push({
 				number: numbers[i],
@@ -86,18 +75,17 @@ if (!_.isUndefined(args.input) &&
 			return person.messages.length;
 		});
 
-		var sum = 0;
-		_.each(people, function(person){
-			sum += person.messages.length;
-		});
-		
-		// console.log(sum);
+		var sum = _.reduce(people, function(memo, person){
+			return person.messages.length;
+		})
 
-		fs.writeFile(args.output, JSON.stringify(people), function(err){
-			if (err) throw err; 
-			console.log("Saved file to " + args.output);
-		});
-		
+		console.log(sum);
+
+		// fs.writeFile(args.output, JSON.stringify(people), function(err){
+		// 	if (err) throw err; 
+		// 	console.log("Saved file to " + args.output);
+
+		// });
 	});
 
 } else argv.help();

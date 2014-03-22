@@ -77,6 +77,12 @@ Helpers.prototype.getStdDeviation = function(array, average) {
 	return Math.sqrt(v);
 }
 
+//to round to n decimal places
+Helpers.prototype.round = function(num, places) {
+    var multiplier = Math.pow(10, places);
+    return Math.round(num * multiplier) / multiplier;
+}
+
 Helpers.prototype.getPercentage = function(part, whole) {
 	return part / whole * 100;
 }

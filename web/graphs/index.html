@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+	<head>		
+		<title>Empty Example</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" >// jQuery </script>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+		<script type="text/javascript" src="dygraphs-1.0.1.js" >// Dygraphs </script>
+		<script type="text/javascript" src="data/frequency.js" >// Graph Data </script>
+		<script type="text/javascript" src="data/time_of_day.js" >// Graph Data </script>
+		<script type="text/javascript" src="script.js"></script>
+		<script type="text/javascript">
+			
+			$(document).ready(function(){
+				
+				var graph = new Dygraph( document.getElementById("graph"),
+				   graphData,
+				   {
+				   	title: "SMS Response Rate",
+				   	labels: ["X", "BD"],
+				   	xlabel: "Minutes",
+				   	ylabel: "Frequency"
+				   });
+
+				timeOfDayData.forEach(function(coords){
+					coords[0] = new Date(coords[0]);
+				});
+
+				var timeOfDayGraph = new Dygraph( document.getElementById("time-of-day"),
+				   timeOfDayData,
+				   {
+				   	title: "SMS Responses Times",
+				   	labels: ["X", "BD"],
+				    xlabel: "Hours",
+				   	ylabel: "Frequency (messages per 10 min)",
+				   	axes: {
+				   		x: {
+				   			axisLabelFormatter: function(date){
+						   		return moment(date).format("h A");
+						   	}
+				   		}
+				   	}
+				   });
+			});
+
+		</script>
+	</head>
+	
+	<body>
+		<div id="graph" class="graph" style="width: 800px;"></div>
+		<div id="time-of-day" class="graph" style="width: 800px;"></div>
+	</body>
+</html>
