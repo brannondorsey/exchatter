@@ -1,4 +1,5 @@
 .DS_Store
+twilio_cleverbot/*
 node_modules/*
 data/corpuses/*
 data/pan-12/*
