@@ -48,7 +48,7 @@ if (!_.isUndefined(args.input) &&
 			}
 		});
 
-	} 
+	}
 
 } else argv.help();
 
