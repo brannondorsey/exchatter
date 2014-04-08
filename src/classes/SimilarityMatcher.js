@@ -1,5 +1,5 @@
-var cosine = require('cosine'),
-PersonalCorpus = require('./PersonalCorpus');
+var PersonalCorpus = require('./PersonalCorpus'),
+_cosine = require('cosine'),
 _ = require('underscore')._,
 _natural = require('natural'),
 _fs = require('fs');
@@ -12,17 +12,47 @@ function SimilarityMatcher(callback) {
 		pan: 0.7
 	}
 
-	this.minScore = 0.6;
+	this.minScore = 0.8;
 	// callback = _.after(1, callback);
 	// _fs.readFiles();
 	// Load personal corpus
 }
 
+// returns the nearest response (using timestamp) to a message from the corpus
 SimilarityMatcher.prototype.getNearestResponse = function(message, personalCorpus) {
-	var similar = this.getSimilar(message, personalCorpus);
-	var mostSimilar = _.find(personalCorpus.messages, function(message){
-		return message.id == similar[0].message.id;
-	});
+	
+	var matchIndex = [];
+	
+	for (var i = 0; i < personalCorpus.corpus.length; i++) {
+		
+		var person = personalCorpus.corpus[i];
+		var shouldBreak = false;
+		
+		for (var j = 0; j < person.messages.length; j++) {
+			// console.log(message.id);
+			if (person.messages[j].id == message.id) {
+				matchIndex = [i, j];
+				shouldBreak = true;
+				break;
+			}
+		}
+
+		if (shouldBreak) break;
+	}
+
+	if (!_.isEmpty(matchIndex)){
+		var personIndex = matchIndex[0];
+		var messageIndex = matchIndex[1];
+
+		var conversation = personalCorpus.corpus[personIndex].messages;
+
+		for (var i = messageIndex; i < conversation.length; i++) {
+			if (conversation[i].from != message.from) {
+				return conversation[i];
+			} 
+		}
+	} else return false;
+
 }
 
 SimilarityMatcher.prototype.loadPersonalCorpus = function(filename, callback){
@@ -34,35 +64,41 @@ SimilarityMatcher.prototype.loadPersonalCorpus = function(filename, callback){
 	});
 }
 
-SimilarityMatcher.prototype.getSimilar = function(message, personalCorpus) {
+// returns an array of similar messages sent to sentTo
+SimilarityMatcher.prototype.getSimilar = function(message, sentTo, personalCorpus) {
 
 	var similar = [];
 	var self = this;
 
-	personalCorpus.eachMessage(function(corpusMessage){
-		
-		var messageWords = [];
-		_.each(message.normalized.sentences, function(sentence){
-			_.each(sentence.words, function(word){
-				messageWords.push(word);
-			});
-		});
-
-		var corpusMessageWords = [];
-		_.each(corpusMessage.normalized.sentences, function(sentence){
-			_.each(sentence.words, function(word){
-				corpusMessageWords.push(word);
-			});
-		});
-		
-		var score = self.getSimilarityScore(messageWords, corpusMessageWords);
-		
-		similar.push({
-			score: score,
-			message: corpusMessage
+	var messageWords = [];
+	_.each(message.normalized.sentences, function(sentence){
+		_.each(sentence.words, function(word){
+			messageWords.push(word);
 		});
 	});
 
+	personalCorpus.eachMessage(function(corpusMessage){
+	
+		if (corpusMessage.to == sentTo) {
+
+			var corpusMessageWords = [];
+			_.each(corpusMessage.normalized.sentences, function(sentence){
+				_.each(sentence.words, function(word){
+					corpusMessageWords.push(word);
+				});
+			});
+			
+			var score = self.getSimilarityScore(messageWords, corpusMessageWords);
+			
+			similar.push({
+				score: score,
+				message: corpusMessage
+			});
+		}
+		
+	});
+
+	similar = _.filter(similar, function(obj){ return obj.score >= self.minScore});
 	similar = _.sortBy(similar, function(obj){ return - obj.score });
 	return similar;
 }
@@ -75,7 +111,7 @@ SimilarityMatcher.prototype.getSimilarityScore = function(wordArray1, wordArray2
 		wordArray1 = _.map(wordArray1, function(word){ return word.toLowerCase() });
 		wordArray2 = _.map(wordArray2, function(word){ return word.toLowerCase() });
 
-		var cos = cosine(wordArray1, wordArray2);
+		var cos = _cosine(wordArray1, wordArray2);
 		var lev = this._getLevenshteinDistance(wordArray1, wordArray2);
 		return cos;
 
