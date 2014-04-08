@@ -3,10 +3,10 @@
 	to accommodate quick and dirty needs.
  */
 
-var Contraction = require('./classes/Contraction.js'),
-PatternHelper = require('./classes/PatternHelper.js'),
-Normalizer = require('./classes/Normalizer'),
-MessageObjectGenerator = require('./classes/MessageObjectGenerator'),
+var Contraction = require('../classes/Contraction.js'),
+PatternHelper = require('../classes/PatternHelper.js'),
+Normalizer = require('../classes/Normalizer'),
+MessageObjectGenerator = require('../classes/MessageObjectGenerator'),
 _ = require('underscore'),
 fs = require('fs'),
 util = require('util'),

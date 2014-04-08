@@ -2,8 +2,8 @@
 	Lightweight CLI to run normalization tests on raw iPhone message data
  */
 
-var Contraction = require('./classes/Contraction.js'),
-Normalizer = require('./classes/Normalizer'),
+var Contraction = require('../classes/Contraction.js'),
+Normalizer = require('../classes/Normalizer'),
 _ = require('underscore'),
 fs = require('fs'),
 natural = require('natural'),

@@ -13,7 +13,7 @@ var _smsSentiment = new SMSSentiment();
 var _tokenizer = new _natural.WordTokenizer();
 
 function MessageObjectGenerator() {
-	
+	this.userProperties = [];
 }
 
 /* {
@@ -25,6 +25,7 @@ function MessageObjectGenerator() {
 } */
 MessageObjectGenerator.prototype.getMessageObject = function(config, callback) {
 	
+	var self = this;
 	var messageObj = {};
 	var text = config.text;
 	var source = config.source;
@@ -54,7 +55,17 @@ MessageObjectGenerator.prototype.getMessageObject = function(config, callback) {
 	_smsSentiment.getSentiment(messageObj.normalized.text, function(err, result){
 		if (err) throw err;
 		messageObj.sentiment = result;
+		_.each(self.userProperties, function(userProperty){
+			messageObj[userProperty.name] = fn(messageObj);
+		})
 		callback(messageObj);
+	});
+}
+
+MessageObjectGenerator.prototype.addProperty = function(propertyName, fn) {
+	this.userProperties.push({
+		name: propertyName,
+		fn: fn
 	});
 }
 

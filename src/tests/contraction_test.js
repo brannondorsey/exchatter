@@ -2,10 +2,10 @@
 	Script for testing the contraction module
  */
 
-var Contraction = require('./classes/Contraction.js'),
-PatternHelper = require('./classes/PatternHelper.js'),
+var Contraction = require('../classes/Contraction.js'),
+PatternHelper = require('../classes/PatternHelper.js'),
 patternHelper = new PatternHelper(),
-Normalizer = require('./classes/Normalizer'),
+Normalizer = require('../classes/Normalizer'),
 _ = require('underscore'),
 fs = require('fs'),
 argv = require('argv');

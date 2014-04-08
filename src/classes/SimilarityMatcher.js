@@ -4,7 +4,7 @@ _ = require('underscore')._,
 _natural = require('natural'),
 _fs = require('fs');
 
-function SimilarityMatcher(callback) {
+function SimilarityMatcher() {
 	
 	this.sourceModifier = {
 		personal: 1,
@@ -13,9 +13,6 @@ function SimilarityMatcher(callback) {
 	}
 
 	this.minScore = 0.75;
-	// callback = _.after(1, callback);
-	// _fs.readFiles();
-	// Load personal corpus
 }
 
 // returns the nearest response (using timestamp) to a message from the corpus
@@ -138,7 +135,6 @@ SimilarityMatcher.prototype._getLevenshteinDistance = function(wordArray1, wordA
 
 		if (!_.isEmpty(scores)){
 			var matchIndex = scores.indexOf(_.min(scores))
-			// console.log("Match: " + uniqWord1 + ", " + uniqWords2[matchIndex]);
 			levenshtein += scores[matchIndex];
 			uniqWords2.splice(matchIndex, 1);
 		}
