@@ -10,15 +10,14 @@ function PersonalCorpus(filename, callback) {
 
 	if (!_.isUndefined(filename)){
 		this.filename = filename;
-		console.log(filename);
-		this.corpus = this.load(filename, callback);
+		this.load(filename, callback);
 	}
 }
 
 PersonalCorpus.prototype.eachMessage = function(fn) {
 
 	_.each(this.corpus, function(messagesWithPerson){
-		_.each(messagesWithPerson, function(messageObj){
+		_.each(messagesWithPerson.messages, function(messageObj){
 			fn(messageObj);
 		});
 	})
@@ -66,9 +65,15 @@ PersonalCorpus.prototype.generateFromRaw = function(filename, type, callback) {
 
 PersonalCorpus.prototype.load = function(filename, callback) {
 	
+	var self = this;
 	_fs.readFile(filename, 'utf-8', function(err, data){
 		if (err) throw err;
-		this.corpus = JSON.parse(data);
+		self.corpus = JSON.parse(data);
+		var messages = [];
+		_.each(self.corpus, function(person){
+			messages = messages.concat(person.messages);
+		});
+		self.messages = messages;
 		callback();
 	});
 	
@@ -120,4 +125,4 @@ PersonalCorpus.prototype._generateCorpusFromMessageObjs = function(messageObjs) 
 		return corpus;
 }
 
-module.exports = PersonalCorpus;
+module.exports = exports = PersonalCorpus;

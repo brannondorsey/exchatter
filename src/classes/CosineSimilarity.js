@@ -26,49 +26,6 @@ CosineSimilarity.prototype.findSimilar = function(query, options){
 			}
 		}
 
-		// //check message agains all onlyScore filters
-		// if (typeof options.onlyScore === 'object'){
-			
-		// 	// boolean array that holds which onlyScore objects 
-		// 	// message passes (represented as `true`)
-		// 	var matchesFilters = [];
-
-		// 	//for all onlyScore filter objects...
-		// 	for (var i = 0; i < options.onlyScore.length; i++) {
-				
-		// 		var matches = [];
-		// 		var filterObj = options.onlyScore[i];
-		// 		var propertyValueIsArray; //boolean
-
-		// 		self._forEachFilterObjProp(message, filterObj, function(value, propertyName, isArray){
-					
-		// 			propertyValueIsArray = isArray;
-		// 			var pattern = new RegExp(value, 'i');
-		// 			var isMatch = (pattern.test(message[propertyName])) ? true : false;
-		// 			matches.push(isMatch);
-
-		// 		});
-				
-		// 		var passes = (matches.indexOf(false) == -1 || 
-		// 			          propertyValueIsArray && matches.indexOf(true) != -1) ? true : false;
-
-		// 		matchesFilters.push(passes);
-		// 	}
-
-		// 	// if message passes no onlyScore instruction objects
-		// 	if (matchesFilters.indexOf(true) == -1) passesAllFilterSets = false;
-		// }
-		
-		// if (typeof options.dontScore === 'object' && 
-		// 	passesAllFilterSets){
-			
-		// 	self._filter(message, options.dontScore, function(optionValue, propertyName){
-		// 		var pattern = new RegExp(optionValue, 'i');
-		// 		// this message should be neglected (given a score of 0)
-		// 		if(pattern.test(message[propertyName])) passesAllFilterSets = false;
-		// 	});
-		// }
-
 		//calculate similarity score
 		var score = (passesAllFilterSets) ? _cosine(query.split(' '), message.text.split(' ')) : 0;
 		message.score = score;
