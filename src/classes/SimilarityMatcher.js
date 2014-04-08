@@ -12,7 +12,7 @@ function SimilarityMatcher(callback) {
 		pan: 0.7
 	}
 
-	this.minScore = 0.8;
+	this.minScore = 0.75;
 	// callback = _.after(1, callback);
 	// _fs.readFiles();
 	// Load personal corpus

@@ -1,4 +1,5 @@
-node src/message_object_generator.js -i data/corpuses/paul_levack/raw_iphone.json -o data/corpuses/paul_levack/messages.json
-node src/group_by_people.js -i data/corpuses/paul_levack/messages.json -o data/corpuses/paul_levack/messages_from_grouped.json
-node src/group_by_people.js -i data/corpuses/paul_levack/messages.json -o data/corpuses/paul_levack/messages_grouped.json -s true
-node src/message_rate_export.js -i data/corpuses/paul_levack/messages_from_grouped.json > web/graphs/data/frequency.js
+node src/generate_personal_corpus -p 
+#node src/message_object_generator.js -i data/corpuses/paul_levack/raw_iphone.json -o data/corpuses/paul_levack/messages.json
+#node src/group_by_people.js -i data/corpuses/paul_levack/messages.json -o data/corpuses/paul_levack/messages_from_grouped.json
+#node src/group_by_people.js -i data/corpuses/paul_levack/messages.json -o data/corpuses/paul_levack/messages_grouped.json -s true
+#node src/message_rate_export.js -i data/corpuses/paul_levack/messages_from_grouped.json > web/graphs/data/frequency.js

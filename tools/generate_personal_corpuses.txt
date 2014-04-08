@@ -1,0 +1,11 @@
+# used with 'source' command. Must be run from project directory.
+
+node src/generate_personal_corpus.js -p "arjuna_capulong"
+node src/generate_personal_corpus.js -p "brannon_dorsey"
+node src/generate_personal_corpus.js -p "cory_feder"
+node src/generate_personal_corpus.js -p "jacob_blizzard"
+node src/generate_personal_corpus.js -p "kyle_edson"
+node src/generate_personal_corpus.js -p "lauren_quin"
+node src/generate_personal_corpus.js -p "michael_delewski"
+node src/generate_personal_corpus.js -p "paul_levack"
+
