@@ -16,11 +16,11 @@ function PersonalCorpus(filename, callback) {
 
 PersonalCorpus.prototype.eachMessage = function(fn) {
 
-	_.each(this.corpus, function(messagesWithPerson){
+	_.each(this.corpus, function(messagesWithPerson) {
 		_.each(messagesWithPerson.messages, function(messageObj){
 			fn(messageObj);
 		});
-	})
+	});
 }
 
 PersonalCorpus.prototype.generateFromRaw = function(filename, type, callback) {
@@ -74,7 +74,7 @@ PersonalCorpus.prototype.load = function(filename, callback) {
 			messages = messages.concat(person.messages);
 		});
 		self.messages = messages;
-		callback();
+		callback(self.corpus);
 	});
 	
 }
@@ -90,36 +90,50 @@ PersonalCorpus.prototype.save = function(filename, callback) {
 PersonalCorpus.prototype._generateCorpusFromMessageObjs = function(messageObjs) {
 		
 		var numbers = [];
-		var messagesByNumber = [];
-		messageObjs = _.sortBy(messageObjs, function(obj){ return moment(obj.timestamp).valueOf() });
+		// var messagesByNumber = [];
+		var corpus = [];
+		// messageObjs = _.sortBy(messageObjs, function(obj){ return moment(obj.timestamp).valueOf() });
 		
 		_.each(messageObjs, function(messageObj){
 			if (numbers.indexOf(messageObj.to) == -1) numbers.push(messageObj.to);
 			if (numbers.indexOf(messageObj.from) == -1) numbers.push(messageObj.from);
 		});
 		
-		_.each(messageObjs, function(messageObj){
-			var toIndex = numbers.indexOf(messageObj.to);
-			var fromIndex = numbers.indexOf(messageObj.to);
-			if (toIndex != -1) {
-				if (_.isUndefined(messagesByNumber[toIndex])) messagesByNumber[toIndex] = [];
-				messagesByNumber[toIndex].push(messageObj);
-			} else if (fromIndex != -1) {
-				if (_.isUndefined(messagesByNumber[fromIndex])) messagesByNumber[fromIndex] = [];
-				messagesByNumber[fromIndex].push(messageObj);
-			}
-		});
-	
-		var corpus = [];
-		_.each(messagesByNumber, function(message, i){
+		// _.each(messageObjs, function(messageObj){
+		// 	var toIndex = numbers.indexOf(messageObj.to);
+		// 	var fromIndex = numbers.indexOf(messageObj.to);
+		// 	if (toIndex != -1) {
+		// 		if (_.isUndefined(messagesByNumber[toIndex])) messagesByNumber[toIndex] = [];
+		// 		messagesByNumber[toIndex].push(messageObj);
+		// 	} else if (fromIndex != -1) {
+		// 		if (_.isUndefined(messagesByNumber[fromIndex])) messagesByNumber[fromIndex] = [];
+		// 		messagesByNumber[fromIndex].push(messageObj);
+		// 	}
+		// });
+		
+		numbers = _.without(numbers, "Me");
+		_.each(numbers, function(number){
+
+			var messages = _.filter(messageObjs, function(messageObj){
+				return messageObj.to == number || messageObj.from == number;
+			});
+
 			corpus.push({
-				number: numbers[i],
-				messages: messagesByNumber[i]
+				number: number,
+				messages: messages
 			});
 		});
+	
+		
+		// _.each(messagesByNumber, function(message, i){
+		// 	corpus.push({
+		// 		number: numbers[i],
+		// 		messages: messagesByNumber[i]
+		// 	});
+		// });
 
 		corpus = _.sortBy(corpus, function(corpus){
-			return corpus.messages.length;
+			return - corpus.messages.length;
 		});
 
 		return corpus;

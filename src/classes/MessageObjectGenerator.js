@@ -1,5 +1,6 @@
 var _ = require('underscore')._,
 _natural = require('natural'),
+_phone = require('phone'),
 Helpers = require('./Helpers'),
 PatternHelper = require('./PatternHelper'),
 Normalizer = require('./Normalizer'),
@@ -33,8 +34,8 @@ MessageObjectGenerator.prototype.getMessageObject = function(config, callback) {
 
 	messageObj.id = _helpers.generateID(40);
 	messageObj.timestamp = timestamp;
-	messageObj.from = from;
-	messageObj.to = to;
+	messageObj.from = _phone(from, '') || from;
+	messageObj.to = _phone(to, '') || to;
 	messageObj.source = source;
 	messageObj.text = text;
 	messageObj.sentences = _getSentenceObjects(text);
