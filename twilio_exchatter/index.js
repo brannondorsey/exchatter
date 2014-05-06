@@ -85,9 +85,7 @@ function text(message, phoneNumber) {
     }
 
     var timeout = _.sample(rateModel) * 1000 * 60;
-    console.log('message:' + message);
  
-    // var message = 'Hey, what are you doin later?';
 	messageObjGenerator.getMessageObject({
 		source: "string",
 		to: "Exchatter",
@@ -116,37 +114,8 @@ function text(message, phoneNumber) {
 				});
 		}, timeout);
 	});
-	// });
 }
 
 function getQueryParam(name, req) {
     return req.body[name];
-}
-
-
-//------------------------------------------------------------------
-
-function respond(response) {
-	rl.question(response, function(input){
-
-	// var message = 'Hey, what are you doin later?';
-		messageObjGenerator.getMessageObject({
-			source: "string",
-			to: "string",
-			from: "string",
-			timestamp: "string",
-			text: input
-		}, function(messageObj){
-
-			var response = "NO SIMILAR MESSAGE FOUND";
-			var similarResults = similarityMatcher.getSimilar(messageObj, "Me", personalCorpus);
-			if (similarResults.length > 0) {
-				var similar = _.sample(similarResults);
-				var response = similarityMatcher.getNearestResponse(similar.message, personalCorpus);
-				if (response) response = response.text;
-			}
-			
-			respond(response + '\n');
-		});
-	});
 }
