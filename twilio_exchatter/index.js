@@ -10,6 +10,7 @@ var SimilarityMatcher = require(__dirname + '/../src/classes/SimilarityMatcher')
 MessageObjectGenerator = require(__dirname + '/../src/classes/MessageObjectGenerator'),
 PersonalCorpus = require( __dirname + '/../src/classes/PersonalCorpus'),
 Cleverbot = require('cleverbot-node'),
+Eliza = require('./ElizaBot'),
 config = require('./config'),
 twilioClient = require('twilio')(config.accountSid, config.authToken),
 express = require('express'),
@@ -36,6 +37,7 @@ var args = argv.option([{
 var messageObjGenerator = new MessageObjectGenerator();
 var similarityMatcher = new SimilarityMatcher();
 var cleverbot = new Cleverbot();
+var eliza = new Eliza();
 var personalCorpus;
 
 if (!_.isUndefined(args.person)) {
@@ -81,8 +83,6 @@ if (!_.isUndefined(args.person)) {
 
 function text(message, phoneNumber) {
 
-
-	// cleverbot.write(message, function(response){
 	if (_.indexOf(numbers, phoneNumber) == -1) {
 	    numbers.push(phoneNumber);
     }
@@ -103,7 +103,18 @@ function text(message, phoneNumber) {
 		} else {
 			console.log("No response found in personal corpus. Using Cleverbot...");
 			cleverbot.write(messageObj.text, function(response){
-				sendMessage(response.text, phoneNumber);
+				
+				if (response.message == "<html>") {
+			        if (_.indexOf(numbers, phoneNumber) == -1) {
+			          console.log("NEW NUMBER")
+			          response.message = eliza.getInitial();
+			          numbers.push(phoneNumber);
+			        } else {
+			         response.message = eliza.transform(message);
+			        }
+			    }
+
+				sendMessage(response.message, phoneNumber);
 			});
 		}
 	});
