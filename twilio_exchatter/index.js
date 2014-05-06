@@ -85,6 +85,7 @@ function text(message, phoneNumber) {
     }
 
     var timeout = _.sample(rateModel) * 1000 * 60;
+    console.log('message:' + message);
  
     // var message = 'Hey, what are you doin later?';
 	messageObjGenerator.getMessageObject({
@@ -92,7 +93,7 @@ function text(message, phoneNumber) {
 		to: "Exchatter",
 		from: phoneNumber,
 		timestamp: "string",
-		text: input
+		text: message
 	}, function(messageObj){
 
 		var response = "NO SIMILAR MESSAGE FOUND";
