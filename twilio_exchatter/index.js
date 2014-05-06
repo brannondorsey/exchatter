@@ -103,7 +103,7 @@ function text(message, phoneNumber) {
 		} else {
 			console.log("No response found in personal corpus. Using Cleverbot...");
 			cleverbot.write(messageObj.text, function(response){
-				sendMessage(resonse.text, phoneNumber);
+				sendMessage(response.text, phoneNumber);
 			});
 		}
 	});
