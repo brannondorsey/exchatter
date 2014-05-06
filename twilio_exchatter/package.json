@@ -1,5 +1,5 @@
 {
-  "name": "exChatter",
+  "name": "Twilio-exchatter",
   "version": "0.0.1",
   "description": "A Node js framework for creating personalized chatbots using a corpus of SMS and Facebook style chats",
   "keywords": [
