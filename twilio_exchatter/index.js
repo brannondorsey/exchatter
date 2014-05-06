@@ -105,6 +105,7 @@ function text(message, phoneNumber) {
 			cleverbot.write(messageObj.text, function(response){
 				
 				if (response.message == "<html>") {
+					console.log("Cleverbot API is down. Using Eliza...");
 			        if (_.indexOf(numbers, phoneNumber) == -1) {
 			          console.log("NEW NUMBER")
 			          response.message = eliza.getInitial();
@@ -130,7 +131,7 @@ function sendMessage(text, phoneNumber) {
 				body: text,    
 			}, function(err, message) {
 				if (err) throw err;
-				console.log("Sent to " + phoneNumber + ": " + response); 
+				console.log("Sent to " + phoneNumber + ": " + text); 
 			});
 	}, timeout);
 }
