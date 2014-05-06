@@ -9,6 +9,7 @@
 var SimilarityMatcher = require(__dirname + '/../src/classes/SimilarityMatcher'),
 MessageObjectGenerator = require(__dirname + '/../src/classes/MessageObjectGenerator'),
 PersonalCorpus = require( __dirname + '/../src/classes/PersonalCorpus'),
+Cleverbot = require('cleverbot-node'),
 config = require('./config'),
 twilioClient = require('twilio')(config.accountSid, config.authToken),
 express = require('express'),
@@ -22,6 +23,7 @@ var server;
 var rateModel;
 var numbers = [];
 
+
 var args = argv.option([{
 	   
 	    name: 'person',
@@ -33,6 +35,7 @@ var args = argv.option([{
 
 var messageObjGenerator = new MessageObjectGenerator();
 var similarityMatcher = new SimilarityMatcher();
+var cleverbot = new Cleverbot();
 var personalCorpus;
 
 if (!_.isUndefined(args.person)) {
@@ -83,8 +86,6 @@ function text(message, phoneNumber) {
 	if (_.indexOf(numbers, phoneNumber) == -1) {
 	    numbers.push(phoneNumber);
     }
-
-    var timeout = _.sample(rateModel) * 1000 * 60;
  
 	messageObjGenerator.getMessageObject({
 		source: "string",
@@ -94,26 +95,33 @@ function text(message, phoneNumber) {
 		text: message
 	}, function(messageObj){
 
-		var response = "NO SIMILAR MESSAGE FOUND";
 		var similarResults = similarityMatcher.getSimilar(messageObj, "Me", personalCorpus);
 		if (similarResults.length > 0) {
 			var similar = _.sample(similarResults);
-			response = similarityMatcher.getNearestResponse(similar.message, personalCorpus);
-			if (response) response = response.text;
+			var response = similarityMatcher.getNearestResponse(similar.message, personalCorpus);
+			sendMessage(response.text, phoneNumber);
+		} else {
+			console.log("No response found in personal corpus. Using Cleverbot...");
+			cleverbot.write(messageObj.text, function(response){
+				sendMessage(resonse.text, phoneNumber);
+			});
 		}
-
-		console.log("Will respond with: \"" + response + "\" in " + (timeout / 1000 / 60) + " minutes.");
-		setTimeout( function(){
-		  twilioClient.sendMessage({
-					to: phoneNumber,  
-					from: config.twilioNumber,
-					body: response,    
-				}, function(err, message) {
-					if (err) throw err;
-					console.log("Sent to " + phoneNumber + ": " + response); 
-				});
-		}, timeout);
 	});
+}
+
+function sendMessage(text, phoneNumber) {
+	var timeout = _.sample(rateModel) * 1000 * 60;
+	console.log("Will respond with: \"" + text + "\" in " + (timeout / 1000 / 60) + " minutes.");
+	setTimeout( function(){
+	  twilioClient.sendMessage({
+				to: phoneNumber,  
+				from: config.twilioNumber,
+				body: text,    
+			}, function(err, message) {
+				if (err) throw err;
+				console.log("Sent to " + phoneNumber + ": " + response); 
+			});
+	}, timeout);
 }
 
 function getQueryParam(name, req) {
