@@ -12,6 +12,7 @@ PersonalCorpus = require( __dirname + '/../src/classes/PersonalCorpus'),
 config = require('./config'),
 twilioClient = require('twilio')(config.accountSid, config.authToken),
 express = require('express'),
+moment = require('moment'),
 _ = require('underscore'),
 argv = require('argv'),
 fs = require('fs');
